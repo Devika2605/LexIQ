@@ -1,0 +1,62 @@
+lexiq/
+└── data/
+    └── raw/
+        ├── legislation/
+        │   ├── contract_law/
+        │   │   └── indian_contract_act_1872.pdf
+        │   ├── business_law/
+        │   │   ├── sale_of_goods_act_1930.pdf
+        │   │   ├── partnership_act_1932.pdf
+        │   │   ├── companies_act_2013.pdf
+        │   │   └── llp_act_2008.pdf
+        │   ├── labour_law/
+        │   │   ├── payment_of_wages_act_1936.pdf
+        │   │   ├── minimum_wages_act_1948.pdf
+        │   │   ├── payment_of_gratuity_act_1972.pdf
+        │   │   ├── contract_labour_act_1970.pdf
+        │   │   └── industrial_disputes_act_1947.pdf
+        │   ├── ip_law/
+        │   │   ├── patents_act_1970.pdf
+        │   │   ├── copyright_act_1957.pdf
+        │   │   ├── trademarks_act_1999.pdf
+        │   │   └── it_act_2000.pdf
+        │   ├── dispute_resolution/
+        │   │   ├── arbitration_conciliation_act_1996.pdf
+        │   │   ├── specific_relief_act_1963.pdf
+        │   │   └── limitation_act_1963.pdf
+        │   ├── property_law/
+        │   │   └── transfer_of_property_act_1882.pdf
+        │   └── consumer_law/
+        │       └── consumer_protection_act_2019.pdf
+        ├── compliance/
+        │   ├── gst/
+        │   │   ├── cgst_act_2017.pdf
+        │   │   ├── cgst_rules_2017.pdf
+        │   │   ├── igst_act_2017.pdf
+        │   │   └── gst_faq.pdf
+        │   └── msme/
+        │       ├── msmed_act_2006.pdf
+        │       └── msme_45day_payment_rules.pdf
+        |       |__msefc_delayed_payment_rules.pdf
+        ├── templates/
+            ├── employment/
+            │   └── template_employment_agreement.pdf
+            ├── confidentiality/
+            │   ├── template_nda.pdf
+            │   └── template_ip_confidentiality_assignment.pdf
+            ├── business_formation/
+            │   ├── template_founder_agreement.pdf
+            │   └── template_partnership_deed.pdf
+            ├── services/
+            │   ├── template_consultancy_agreement.pdf
+            │   ├── template_service_agreement.pdf
+            |   ├── template_master_service_agreement.pdf
+            │   └── template_freelancer_agreement.pdf
+            ├── ip/
+            │   └── template_ip_assignment.pdf
+            ├── lease/
+            │   ├── template_lease_residential.pdf
+            │   └── template_lease_commercial.pdf
+            └── reference/
+                └── template_contracts_guide.pdf
+        

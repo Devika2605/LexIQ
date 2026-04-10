@@ -1,0 +1,257 @@
+[
+  {
+    "question": "What is the penalty for breach of contract under Indian law?",
+    "ground_truth": "Under Section 73 of the Indian Contract Act 1872, when a contract is broken, the party who suffers is entitled to receive compensation for any loss or damage caused. Under Section 74, if a sum is named in the contract as the amount to be paid in case of breach, the party complaining of breach is entitled to receive reasonable compensation not exceeding that amount.",
+    "ground_truth_context": "Section 73 and 74 of the Indian Contract Act 1872 deal with compensation for breach of contract."
+  },
+  {
+    "question": "How many days does a buyer have to make payment to an MSME supplier?",
+    "ground_truth": "Under the MSMED Act 2006, if there is no written agreement, the buyer must make payment within 15 days. If there is a written agreement, payment must be made within the agreed period which cannot exceed 45 days from the day of acceptance of goods or services.",
+    "ground_truth_context": "MSMED Act 2006 Section 15 specifies payment timelines for buyers dealing with micro and small enterprises."
+  },
+  {
+    "question": "What interest rate does an MSME receive for delayed payments?",
+    "ground_truth": "Under Section 16 of the MSMED Act 2006, the buyer is liable to pay compound interest with monthly rests at three times the bank rate notified by the Reserve Bank of India on the amount due.",
+    "ground_truth_context": "MSMED Act 2006 Section 16 specifies the interest rate for delayed payments to MSMEs as three times the RBI bank rate."
+  },
+  {
+    "question": "What is a force majeure clause in a contract?",
+    "ground_truth": "A force majeure clause exempts parties from liability for failure or delay in performance of obligations due to circumstances beyond their reasonable control such as natural disasters, war, strikes, government actions, or other extraordinary events.",
+    "ground_truth_context": "Force majeure clauses appear in service agreements and vendor contracts to excuse non-performance due to extraordinary circumstances."
+  },
+  {
+    "question": "What are the essential elements of a valid contract under Indian law?",
+    "ground_truth": "Under the Indian Contract Act 1872, a valid contract requires offer and acceptance, lawful consideration, capacity of parties to contract, free consent, lawful object, and the agreement must not be expressly declared void.",
+    "ground_truth_context": "Section 10 of the Indian Contract Act 1872 defines what agreements are contracts."
+  },
+  {
+    "question": "What is the notice period for employee termination in a founder agreement?",
+    "ground_truth": "Based on the founder agreement template, a founder must give the company 6 months notice in writing for termination. The notice period may be waived by the company after receipt of the notice from the founder.",
+    "ground_truth_context": "The founder agreement template specifies a 6 month notice period for termination."
+  },
+  {
+    "question": "What happens when a minor enters into a contract under Indian law?",
+    "ground_truth": "Under the Indian Contract Act 1872, a contract entered into by a minor is void ab initio meaning it has no legal effect from the beginning. A minor is not competent to contract and any agreement with a minor cannot be ratified even after the minor attains majority.",
+    "ground_truth_context": "Section 11 of the Indian Contract Act 1872 specifies who is competent to contract and excludes minors."
+  },
+  {
+    "question": "What is consideration in a contract?",
+    "ground_truth": "Under Section 2(d) of the Indian Contract Act 1872, consideration is when at the desire of the promisor, the promisee or any other person has done or abstained from doing something, or does or abstains from doing something, or promises to do or abstain from doing something. Consideration can be past, present, or future.",
+    "ground_truth_context": "Section 2(d) and Section 25 of the Indian Contract Act 1872 define consideration."
+  },
+  {
+    "question": "What are the GST registration requirements for businesses?",
+    "ground_truth": "Under GST law, every supplier whose aggregate turnover exceeds the threshold limit must register. The threshold is 20 lakhs for most states and 10 lakhs for special category states. Certain businesses must register regardless of turnover including interstate suppliers and e-commerce operators.",
+    "ground_truth_context": "The CGST Act 2017 specifies registration requirements and thresholds for GST registration."
+  },
+  {
+    "question": "What is an NDA and what does it protect?",
+    "ground_truth": "A Non Disclosure Agreement is a legally binding contract where parties agree to keep certain information confidential. It protects trade secrets, business strategies, technical information, client lists, and other proprietary information from being disclosed to third parties.",
+    "ground_truth_context": "NDA templates define confidential information and the obligations of parties to maintain secrecy."
+  },
+  {
+    "question": "What is the limitation period for filing a contract dispute in India?",
+    "ground_truth": "Under the Limitation Act 1963, the limitation period for a suit based on a contract is three years from the date the cause of action arises. For specific performance of a contract, the limitation period is three years from the date fixed for performance or when the plaintiff has notice that performance is refused.",
+    "ground_truth_context": "The Limitation Act 1963 Schedule specifies limitation periods for various types of contract disputes."
+  },
+  {
+    "question": "What is arbitration and when is it used in Indian contracts?",
+    "ground_truth": "Arbitration is an alternative dispute resolution mechanism where parties agree to submit their disputes to one or more arbitrators whose decision is binding. Under the Arbitration and Conciliation Act 1996, parties can include arbitration clauses in contracts to resolve disputes outside of courts, which is faster and more confidential.",
+    "ground_truth_context": "The Arbitration and Conciliation Act 1996 governs arbitration proceedings in India."
+  },
+  {
+    "question": "What intellectual property does an employee assign to the company?",
+    "ground_truth": "Under a standard IP assignment agreement, an employee assigns all intellectual property created during the course of employment to the company. This includes inventions, software, designs, trade secrets, and any work product created using company resources or related to company business.",
+    "ground_truth_context": "IP assignment and confidentiality agreements specify what IP employees must assign to the employer."
+  },
+  {
+    "question": "What are the payment terms in a standard service agreement?",
+    "ground_truth": "In a standard service agreement, payment terms typically specify the invoice period, payment due date, late payment interest, and currency. The service provider raises invoices at agreed intervals and the client must pay within the specified number of days.",
+    "ground_truth_context": "Service agreement templates include payment terms clauses specifying invoice and payment timelines."
+  },
+  {
+    "question": "What are the termination clauses in a consultancy agreement?",
+    "ground_truth": "A consultancy agreement can be terminated by either party with written notice, typically 30 to 90 days. It can also be terminated immediately for cause including breach of contract, insolvency, or misconduct. Upon termination the consultant must return all confidential information and company property.",
+    "ground_truth_context": "Consultancy agreement templates include termination clauses specifying notice periods and grounds for immediate termination."
+  },
+  {
+    "question": "What is specific performance as a remedy for breach of contract?",
+    "ground_truth": "Under the Specific Relief Act 1963, specific performance is a remedy where a court orders a party to perform their contractual obligations rather than pay damages. It is available when monetary compensation would be inadequate, typically in contracts involving unique goods, land, or irreplaceable items.",
+    "ground_truth_context": "The Specific Relief Act 1963 governs when courts can order specific performance of contracts."
+  },
+  {
+    "question": "What is the difference between void and voidable contracts?",
+    "ground_truth": "Under the Indian Contract Act 1872, a void contract has no legal effect from the beginning and cannot be enforced by either party. A voidable contract is valid and enforceable but can be avoided at the option of one of the parties, typically where consent was obtained by coercion, undue influence, fraud, or misrepresentation.",
+    "ground_truth_context": "Sections 2(g), 2(i), 19 and 19A of the Indian Contract Act 1872 distinguish between void and voidable contracts."
+  },
+  {
+    "question": "What are the confidentiality obligations in an NDA?",
+    "ground_truth": "Under a standard NDA, the receiving party must keep all disclosed confidential information secret, use it only for the specified purpose, not disclose it to third parties without prior written consent, and protect it with at least the same degree of care used to protect their own confidential information.",
+    "ground_truth_context": "NDA templates specify the obligations of the receiving party to maintain confidentiality of disclosed information."
+  },
+  {
+    "question": "What is the difference between a partnership and an LLP in India?",
+    "ground_truth": "A traditional partnership under the Indian Partnership Act 1932 has unlimited liability meaning partners are personally liable for firm debts. An LLP under the LLP Act 2008 provides limited liability protection where partners are only liable to the extent of their contribution and are not personally liable for other partners misconduct.",
+    "ground_truth_context": "The Indian Partnership Act 1932 and LLP Act 2008 govern the two different business structures with different liability protections."
+  },
+  {
+    "question": "What are the rights of a buyer when goods do not match the contract?",
+    "ground_truth": "Under the Sale of Goods Act 1930, when goods do not conform to the contract, the buyer has the right to reject the goods and treat the contract as repudiated, or accept the goods and claim damages for breach of warranty. The buyer can also set up the breach of warranty in diminution of the price.",
+    "ground_truth_context": "The Sale of Goods Act 1930 Sections 12 to 16 and Section 59 specify buyer rights when goods do not conform to contractual specifications."
+  },
+  {
+    "question": "What is indemnification in a contract?",
+    "ground_truth": "Indemnification is a contractual obligation where one party agrees to compensate the other party for specified losses, damages, or liabilities. Under the Indian Contract Act 1872 Section 124, a contract of indemnity is where one party promises to save the other from loss caused by the conduct of the promisor or any other person.",
+    "ground_truth_context": "Section 124 of the Indian Contract Act 1872 defines contracts of indemnity."
+  },
+  {
+    "question": "What happens if a contract is entered into under coercion?",
+    "ground_truth": "Under Section 15 and 19 of the Indian Contract Act 1872, a contract entered into under coercion is voidable at the option of the party whose consent was obtained by coercion. Coercion means committing or threatening to commit any act forbidden by the Indian Penal Code or unlawfully detaining property.",
+    "ground_truth_context": "Sections 15 and 19 of the Indian Contract Act 1872 deal with coercion and its effect on contracts."
+  },
+  {
+    "question": "What are the GST rules for interstate supply of services?",
+    "ground_truth": "Under the IGST Act 2017, interstate supply of services is taxed under Integrated GST. The place of supply determines whether a transaction is interstate or intrastate. For services, if the location of the supplier and the place of supply are in different states, it is treated as interstate supply subject to IGST.",
+    "ground_truth_context": "The IGST Act 2017 governs the taxation of interstate transactions including supply of services between different states."
+  },
+  {
+    "question": "What is the role of an arbitrator in dispute resolution?",
+    "ground_truth": "Under the Arbitration and Conciliation Act 1996, an arbitrator is an impartial third party appointed by the parties to hear and decide their dispute. The arbitrator must be independent and impartial, conduct proceedings fairly, give each party a reasonable opportunity to present their case, and issue a binding arbitral award.",
+    "ground_truth_context": "The Arbitration and Conciliation Act 1996 Sections 10 to 15 deal with the appointment and qualifications of arbitrators."
+  },
+  {
+    "question": "What are non-compete obligations in an employment agreement?",
+    "ground_truth": "Non-compete clauses restrict employees from working for competitors or starting competing businesses for a specified period after leaving employment. However under Indian law non-compete clauses that operate after the termination of employment are generally considered void under Section 27 of the Indian Contract Act 1872 as restraint of trade.",
+    "ground_truth_context": "Section 27 of the Indian Contract Act 1872 restricts agreements in restraint of trade and affects enforceability of post-employment non-compete clauses."
+  },
+  {
+    "question": "What are the mandatory disclosures in a franchise agreement?",
+    "ground_truth": "I cannot find this in the provided documents.",
+    "ground_truth_context": "Franchise agreements are not covered in the current document corpus."
+  },
+  {
+    "question": "What is the process for registering a trademark in India?",
+    "ground_truth": "Under the Trademarks Act 1999, trademark registration involves filing an application with the Trade Marks Registry, examination of the application, publication in the Trademarks Journal, opposition period of four months, and if unopposed or opposition fails, registration is granted with a certificate valid for ten years and renewable.",
+    "ground_truth_context": "The Trademarks Act 1999 specifies the procedure for trademark registration in India."
+  },
+  {
+    "question": "What is the copyright duration for literary works in India?",
+    "ground_truth": "Under the Copyright Act 1957, copyright in literary works subsists for the lifetime of the author plus sixty years from the beginning of the calendar year following the year in which the author dies.",
+    "ground_truth_context": "The Copyright Act 1957 Section 22 specifies the duration of copyright for literary, dramatic, musical and artistic works."
+  },
+  {
+    "question": "What are the consumer rights under the Consumer Protection Act 2019?",
+    "ground_truth": "Under the Consumer Protection Act 2019, consumers have the right to be protected against hazardous goods, right to be informed about quality and price, right to access goods at competitive prices, right to be heard, right to seek redressal against unfair trade practices, and right to consumer education.",
+    "ground_truth_context": "The Consumer Protection Act 2019 Section 2 defines consumer rights and protections available to buyers of goods and services."
+  },
+  {
+    "question": "What are the minimum wages obligations for employers in India?",
+    "ground_truth": "Under the Minimum Wages Act 1948, employers must pay workers at least the minimum wages fixed by the appropriate government for their scheduled employment. Employers must also ensure the minimum wage is revised periodically and maintain registers and records of wages paid.",
+    "ground_truth_context": "The Minimum Wages Act 1948 specifies employer obligations to pay minimum wages and maintain records."
+  },
+  {
+    "question": "What is the gratuity entitlement for employees in India?",
+    "ground_truth": "Under the Payment of Gratuity Act 1972, an employee who has completed five years of continuous service is entitled to gratuity on termination of employment. Gratuity is calculated at 15 days wages for each completed year of service based on the last drawn salary.",
+    "ground_truth_context": "The Payment of Gratuity Act 1972 specifies gratuity entitlement and calculation method for employees."
+  },
+  {
+    "question": "What are the working hours regulations under the Shops Act?",
+    "ground_truth": "Under the Karnataka Shops and Commercial Establishments Act 1961, employees cannot be required to work more than 8 hours per day and 48 hours per week. Overtime is permitted with additional wages and workers are entitled to one day of rest per week.",
+    "ground_truth_context": "The Karnataka Shops and Commercial Establishments Act 1961 specifies working hours, rest periods and overtime regulations."
+  },
+  {
+    "question": "What is the process for dispute resolution in a service agreement?",
+    "ground_truth": "In a standard service agreement, disputes are typically resolved through a tiered process starting with direct negotiation between the parties, followed by mediation if negotiation fails, and finally arbitration or litigation as the final step. Most service agreements specify the jurisdiction and governing law.",
+    "ground_truth_context": "Service agreement templates include dispute resolution clauses specifying the process and jurisdiction for resolving conflicts."
+  },
+  {
+    "question": "What are the data protection obligations under Indian IT law?",
+    "ground_truth": "Under the Information Technology Act 2000 and its amendments, companies handling sensitive personal data must implement reasonable security practices, obtain consent before collecting data, use data only for specified purposes, and maintain data securely. Failure to protect data can result in compensation liability.",
+    "ground_truth_context": "The Information Technology Act 2000 and IT Amendment Act 2008 specify data protection obligations for companies handling personal information."
+  },
+  {
+    "question": "What are the shareholding rights in a shareholders agreement?",
+    "ground_truth": "A shareholders agreement typically grants rights including pre-emption rights on share transfers, tag-along rights allowing minority shareholders to sell when majority sells, drag-along rights allowing majority to compel minority to sell, anti-dilution protection, and information rights to inspect company records.",
+    "ground_truth_context": "Shareholders agreement templates specify the rights and obligations of shareholders including transfer restrictions and protective provisions."
+  },
+  {
+    "question": "How is intellectual property ownership determined in a consultancy agreement?",
+    "ground_truth": "In a consultancy agreement, intellectual property created by the consultant during the engagement typically belongs to the client company if it is created specifically for the client and paid for by the client. The agreement should explicitly specify IP ownership and include an assignment clause transferring all created IP to the client.",
+    "ground_truth_context": "Consultancy agreement templates include IP ownership clauses specifying who owns work product created during the engagement."
+  },
+  {
+    "question": "What are the conditions for a valid sale under the Sale of Goods Act?",
+    "ground_truth": "Under the Sale of Goods Act 1930, a valid sale requires a seller and buyer, goods that are the subject of the sale, a price in money, and transfer of property in goods from seller to buyer. The seller must have title to the goods or authority to sell them.",
+    "ground_truth_context": "The Sale of Goods Act 1930 Sections 4 to 6 specify the essentials of a contract of sale."
+  },
+  {
+    "question": "What penalties apply for GST non-compliance?",
+    "ground_truth": "Under the CGST Act 2017, penalties for non-compliance include a penalty equal to the tax evaded for deliberate evasion, a penalty of ten thousand rupees or ten percent of tax due whichever is higher for other offences, and prosecution for serious offences. Officers cannot impose penalties for minor procedural breaches.",
+    "ground_truth_context": "The CGST Act 2017 Sections 122 to 128 specify the penalties for various GST offences and the principles governing penalty imposition."
+  },
+  {
+    "question": "What is a contract of guarantee and who are the parties involved?",
+    "ground_truth": "Under Section 126 of the Indian Contract Act 1872, a contract of guarantee is a contract to perform the promise or discharge the liability of a third person in case of their default. The three parties are the surety who gives the guarantee, the principal debtor whose default is guaranteed, and the creditor to whom the guarantee is given.",
+    "ground_truth_context": "Sections 126 to 147 of the Indian Contract Act 1872 govern contracts of guarantee and the rights and liabilities of the surety."
+  },
+  {
+    "question": "What are the rights of an unpaid seller under the Sale of Goods Act?",
+    "ground_truth": "Under the Sale of Goods Act 1930, an unpaid seller has the right of lien to retain possession of goods until payment, right of stoppage in transit to stop goods being delivered to an insolvent buyer, and right of resale. The seller can also sue for the price or damages for non-acceptance.",
+    "ground_truth_context": "The Sale of Goods Act 1930 Sections 45 to 54 specify the rights of an unpaid seller against the goods and the buyer."
+  },
+  {
+    "question": "What are the contractor obligations in a freelancer agreement?",
+    "ground_truth": "Under a freelancer agreement, the contractor is typically obligated to deliver work to the specified quality and timeline, maintain confidentiality of client information, not subcontract work without permission, assign all created IP to the client, and comply with applicable laws. The contractor is responsible for their own taxes and insurance.",
+    "ground_truth_context": "Freelancer agreement templates specify contractor obligations including delivery, confidentiality, IP assignment and compliance requirements."
+  },
+  {
+    "question": "What is the effect of frustration on a contract?",
+    "ground_truth": "Under Section 56 of the Indian Contract Act 1872, when performance of a contract becomes impossible or unlawful after the contract is made due to circumstances beyond the control of parties, the contract becomes void. This doctrine of frustration discharges both parties from their obligations.",
+    "ground_truth_context": "Section 56 of the Indian Contract Act 1872 deals with agreements to do impossible acts and the doctrine of frustration."
+  },
+  {
+    "question": "What are the patent rights granted under the Patents Act 1970?",
+    "ground_truth": "Under the Patents Act 1970, a patent grants the patentee the exclusive right to make, use, exercise, sell or distribute the patented invention in India for a period of twenty years from the date of filing. Others cannot use the patented invention without a license from the patentee.",
+    "ground_truth_context": "The Patents Act 1970 Sections 48 and 53 specify the rights conferred by a patent and the duration of patent protection."
+  },
+  {
+    "question": "What are the key clauses in a commercial lease agreement?",
+    "ground_truth": "A commercial lease agreement typically includes clauses on rent amount and escalation, security deposit, lease term and renewal options, permitted use of premises, maintenance obligations, fit-out rights, sub-letting restrictions, termination conditions, and handover obligations at the end of the lease.",
+    "ground_truth_context": "Commercial lease agreement templates include clauses governing rent, term, permitted use, maintenance and termination of commercial property leases."
+  },
+  {
+    "question": "What are the grounds for winding up a company in India?",
+    "ground_truth": "I cannot find this in the provided documents.",
+    "ground_truth_context": "Detailed winding up procedures under the Companies Act 2013 may not be fully covered in the current corpus."
+  },
+  {
+    "question": "What are the rights and duties of partners in a partnership firm?",
+    "ground_truth": "Under the Indian Partnership Act 1932, partners have the right to take part in the conduct of the business, inspect books, share profits, and receive interest on capital. Partners have the duty to act in good faith, carry on business to greatest common advantage, render true accounts, and indemnify for losses caused by wilful neglect.",
+    "ground_truth_context": "The Indian Partnership Act 1932 Sections 9 to 17 specify the mutual rights and duties of partners."
+  },
+  {
+    "question": "What is the implied warranty of title in a sale of goods contract?",
+    "ground_truth": "Under Section 14 of the Sale of Goods Act 1930, in every contract of sale there is an implied warranty that the buyer shall have and enjoy quiet possession of the goods and that the goods shall be free from any charge or encumbrance in favour of any third party. The seller also warrants they have the right to sell the goods.",
+    "ground_truth_context": "Section 14 of the Sale of Goods Act 1930 specifies the implied conditions and warranties in every contract of sale."
+  },
+  {
+    "question": "What are the contract labour regulations in India?",
+    "ground_truth": "Under the Contract Labour Regulation and Abolition Act 1970, establishments employing 20 or more contract workers must register and contractors must obtain a licence. The principal employer is responsible for ensuring contractors pay minimum wages and provide basic facilities. Contract labour can be abolished in certain circumstances by the appropriate government.",
+    "ground_truth_context": "The Contract Labour Regulation and Abolition Act 1970 specifies registration, licensing and welfare obligations for contract labour."
+  },
+  {
+    "question": "What is the process for transferring property under Indian law?",
+    "ground_truth": "Under the Transfer of Property Act 1882, property can be transferred by sale, mortgage, lease, exchange, or gift. A transfer must be by a person competent to contract, for a lawful consideration and object, and in some cases must be in writing and registered. Immovable property worth more than 100 rupees must be transferred by a registered instrument.",
+    "ground_truth_context": "The Transfer of Property Act 1882 Sections 5 to 8 specify the general rules for transfer of property in India."
+  },
+  {
+    "question": "What are the industrial dispute resolution mechanisms in India?",
+    "ground_truth": "Under the Industrial Disputes Act 1947, industrial disputes can be resolved through works committees for minor disputes, conciliation by a conciliation officer, mediation by a Board of Conciliation, arbitration by agreement of parties, or adjudication by Labour Courts, Industrial Tribunals or National Tribunals depending on the nature of the dispute.",
+    "ground_truth_context": "The Industrial Disputes Act 1947 Sections 3 to 10 specify the authorities and mechanisms for resolving industrial disputes."
+  },
+  {
+    "question": "What are the requirements for a valid arbitration agreement?",
+    "ground_truth": "Under Section 7 of the Arbitration and Conciliation Act 1996, a valid arbitration agreement must be in writing, refer existing or future disputes to arbitration, and be signed by the parties or contained in an exchange of letters, telex, or other means of communication. An arbitration clause in a contract constitutes an arbitration agreement.",
+    "ground_truth_context": "Section 7 of the Arbitration and Conciliation Act 1996 specifies the requirements for a valid arbitration agreement."
+  }
+]
