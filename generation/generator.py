@@ -35,7 +35,7 @@ MIN_SCORE = 0.005
 def query_lexiq(
     question: str,
     strategy: str  = "clause",
-    top_k:    int  = 10,
+    top_k:    int  = 5,
     chunks:   list = None,
     bm25            = None,
 ) -> dict:
@@ -156,7 +156,7 @@ if __name__ == "__main__":
 
     for question in test_questions:
         print(f"\n{'='*65}")
-        result = query_lexiq(question, chunks=chunks, bm25=bm25)
+        result = query_lexiq(question, chunks=chunks, bm25=bm25, top_k=5)
 
         print(f"\n📋 ANSWER:")
         print(result["answer"])

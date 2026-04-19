@@ -38,3 +38,30 @@ for i, r in enumerate(results, 1):
     print(f"#{i} [{score:.3f}] {filename} page {page}")
     print(f"   {text}")
     print()
+
+from retrieval.query_expander import expand_query
+
+print("=== Query Expansion Test ===")
+print(f"Q07 expanded: {expand_query(q07)}")
+print()
+print(f"Q10 expanded: {expand_query(q10)}")
+print()
+
+# Test Q07 with expanded query
+from retrieval.query_expander import expand_query
+q07_expanded = expand_query(q07)
+q10_expanded = expand_query(q10)
+
+print("=== Q07 After Expansion ===")
+results = dense_search(q07_expanded, strategy='clause', top_k=5)
+for i, r in enumerate(results, 1):
+    print(f"#{i} [{r['score']:.3f}] {r['metadata']['filename']} page {r['metadata']['page']}")
+    print(f"   {r['text'][:200]}")
+    print()
+
+print("=== Q10 After Expansion ===")
+results = dense_search(q10_expanded, strategy='clause', top_k=5)
+for i, r in enumerate(results, 1):
+    print(f"#{i} [{r['score']:.3f}] {r['metadata']['filename']} page {r['metadata']['page']}")
+    print(f"   {r['text'][:200]}")
+    print()

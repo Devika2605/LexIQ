@@ -19,36 +19,38 @@ model  = SentenceTransformer("all-MiniLM-L6-v2")
 def dense_search(query: str, strategy: str = "clause", top_k: int = 10) -> list[dict]:
     """
     Searches ChromaDB using cosine similarity.
-    Returns top_k most semantically similar chunks.
-
-    Args:
-        query    : the user's question
-        strategy : which collection to search (fixed/recursive/clause)
-        top_k    : how many chunks to return
+    Now includes query expansion for better legal term matching.
     """
+    import sys
+    from pathlib import Path
+    sys.path.insert(0, str(Path(__file__).parent.parent))
+
+    try:
+        from retrieval.query_expander import expand_query
+        query = expand_query(query)
+    except Exception:
+        pass  # if expansion fails, use original query
+
     if strategy not in COLLECTIONS:
         raise ValueError(f"Invalid strategy: {strategy}. Choose from {list(COLLECTIONS.keys())}")
 
     collection = client.get_collection(COLLECTIONS[strategy])
 
-    # Embed the query
     query_embedding = model.encode(query).tolist()
 
-    # Search ChromaDB
     results = collection.query(
         query_embeddings=[query_embedding],
         n_results=top_k,
         include=["documents", "metadatas", "distances"]
     )
 
-    # Format results
     chunks = []
     for i in range(len(results["ids"][0])):
         chunks.append({
             "chunk_id":  results["ids"][0][i],
             "text":      results["documents"][0][i],
             "metadata":  results["metadatas"][0][i],
-            "score":     1 - results["distances"][0][i],  # convert distance to similarity
+            "score":     1 - results["distances"][0][i],
             "retriever": "dense",
         })
 

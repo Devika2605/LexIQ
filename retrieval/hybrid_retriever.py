@@ -67,28 +67,19 @@ def hybrid_search(
     top_k:    int = 5,
     rrf_k:    int = 60
 ) -> list[dict]:
-    """
-    Full hybrid search pipeline.
-    1. Dense search  → top 10 semantically similar chunks
-    2. Sparse search → top 10 keyword matched chunks
-    3. RRF fusion    → combine and rerank → return top_k
+    # Add query expansion
+    import sys
+    from pathlib import Path
+    sys.path.insert(0, str(Path(__file__).parent.parent))
+    from retrieval.query_expander import expand_query
 
-    Args:
-        query    : user's question
-        chunks   : full BM25 corpus
-        bm25     : fitted BM25 index
-        strategy : chunking strategy to use
-        top_k    : final number of chunks to return
-        rrf_k    : RRF constant (default 60)
-    """
-    # Get candidates from both retrievers
-    dense_results  = dense_search(query,  strategy=strategy, top_k=10)
-    sparse_results = sparse_search(query, chunks, bm25,      top_k=10)
+    expanded_query = expand_query(query)
 
-    # Fuse with RRF
+    # Use expanded query for retrieval
+    dense_results  = dense_search(expanded_query, strategy=strategy, top_k=10)
+    sparse_results = sparse_search(expanded_query, chunks, bm25, top_k=10)
+
     fused = reciprocal_rank_fusion(dense_results, sparse_results, k=rrf_k)
-
-    # Return top_k
     return fused[:top_k]
 
 
