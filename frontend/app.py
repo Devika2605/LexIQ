@@ -7,979 +7,755 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 
 import streamlit as st
 
-# ── Config ────────────────────────────────────────────────
 API_URL = "http://localhost:8000"
 
 st.set_page_config(
-    page_title = "LexIQ — Legal Intelligence",
-    page_icon  = "⚖️",
-    layout     = "wide",
-    initial_sidebar_state = "collapsed",
+    page_title="LexIQ — Legal Intelligence",
+    page_icon="⚖️",
+    layout="wide",
+    initial_sidebar_state="expanded",
 )
 
-# ── Dark Glassmorphism CSS ────────────────────────────────
+# ── Session State ─────────────────────────────────────────
+for k, v in [
+    ("messages", []),
+    ("session_id", None),
+    ("uploaded_file_name", None),
+    ("scan_results", None),
+    ("pending_question", None),
+]:
+    if k not in st.session_state:
+        st.session_state[k] = v
+
+# ══════════════════════════════════════════════════════════
+# GLOBAL STYLES
+# ══════════════════════════════════════════════════════════
 st.markdown("""
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
 
-/* ── Reset & Base ── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-.stApp {
-    background: #050810;
-    background-image:
-        radial-gradient(ellipse 80% 60% at 20% 10%, rgba(67, 113, 203, 0.15) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 50% at 80% 80%, rgba(139, 92, 246, 0.10) 0%, transparent 60%),
-        radial-gradient(ellipse 40% 40% at 50% 50%, rgba(16, 185, 129, 0.04) 0%, transparent 70%);
-    font-family: 'Sora', sans-serif;
-    min-height: 100vh;
+:root {
+    --sidebar-bg:     #3D2814;
+    --sidebar-active: #5C3D1E;
+    --sidebar-hover:  #4A3020;
+    --sidebar-text:   #F5EDE0;
+    --sidebar-muted:  #9E8070;
+    --bg:             #F2EDE6;
+    --surface:        #FFFFFF;
+    --border:         #E5DDD5;
+    --border2:        #CEC5BA;
+    --text:           #1C1410;
+    --text2:          #6B5F55;
+    --text3:          #A09285;
+    --brown:          #5C3D1E;
+    --brown-dk:       #3D2814;
+    --brown-lt:       #7B5230;
+    --brown-bg:       #F5EDE0;
+    --red:            #C0392B;
+    --red-bg:         #FDF0EE;
+    --amber:          #B7770D;
+    --amber-bg:       #FFFBF0;
+    --green:          #1A7A4A;
+    --green-bg:       #EDF7F2;
+    --radius:         10px;
+    --shadow:         0 1px 3px rgba(0,0,0,0.08),0 1px 2px rgba(0,0,0,0.04);
+    --shadow-md:      0 4px 16px rgba(0,0,0,0.10),0 2px 4px rgba(0,0,0,0.05);
 }
 
-/* Hide streamlit branding */
+*, *::before, *::after { box-sizing: border-box; }
+
 #MainMenu, footer, header { visibility: hidden; }
-.stDeployButton { display: none; }
-[data-testid="stToolbar"] { display: none; }
-section[data-testid="stSidebar"] { display: none; }
+.stDeployButton, [data-testid="stToolbar"] { display: none !important; }
+[data-testid="collapsedControl"] { display: none !important; }
 
-/* ── Top Navigation Bar ── */
-.lexiq-navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 18px 36px;
-    background: rgba(255,255,255,0.03);
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-    backdrop-filter: blur(20px);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    margin-bottom: 24px;
+.stApp { background: var(--bg) !important; font-family: 'DM Sans', sans-serif !important; }
+.main .block-container { padding: 0 !important; max-width: 100% !important; }
+
+/* ════════════════════════════════════════
+   SIDEBAR
+════════════════════════════════════════ */
+section[data-testid="stSidebar"] {
+    background: var(--sidebar-bg) !important;
+    width: 240px !important;
+    min-width: 240px !important;
+    border-right: none !important;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.12) !important;
 }
 
-.lexiq-logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+section[data-testid="stSidebar"] > div:first-child {
+    background: var(--sidebar-bg) !important;
+    padding: 0 !important;
 }
 
-.lexiq-logo-icon {
-    width: 38px;
-    height: 38px;
-    background: linear-gradient(135deg, #4371CB, #8B5CF6);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    box-shadow: 0 4px 20px rgba(67, 113, 203, 0.4);
+section[data-testid="stSidebar"] * { color: var(--sidebar-muted) !important; font-family: 'DM Sans', sans-serif !important; }
+section[data-testid="stSidebar"] ::-webkit-scrollbar { width: 0; }
+
+/* ════════════════════════════════════════
+   TOPBAR
+════════════════════════════════════════ */
+.lex-topbar {
+    position: sticky; top: 0;
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center;
+    padding: 0 24px; height: 60px; gap: 14px;
+    z-index: 99;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
-
-.lexiq-logo-text {
-    font-size: 1.4rem;
-    font-weight: 800;
-    color: #FFFFFF;
-    letter-spacing: -0.02em;
+.lex-search-box {
+    flex: 1; max-width: 420px;
+    display: flex; align-items: center; gap: 7px;
+    height: 36px; background: #F7F3EF;
+    border: 1px solid var(--border); border-radius: 8px;
+    padding: 0 10px;
+    color: var(--text3); font-size: 0.83rem; font-family: 'DM Sans', sans-serif;
 }
-
-.lexiq-logo-sub {
-    font-size: 0.72rem;
-    color: rgba(255,255,255,0.4);
-    font-weight: 400;
-    letter-spacing: 0.01em;
+.lex-search-kbd {
+    margin-left: auto; font-family: 'DM Mono', monospace;
+    font-size: 0.66rem; background: #EDE8E2;
+    color: var(--text3); border-radius: 4px; padding: 1px 5px;
 }
-
-/* ── Tab Pills ── */
-.tab-pills {
-    display: flex;
-    gap: 4px;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 12px;
-    padding: 4px;
+.lex-topbar-right { margin-left: auto; display: flex; align-items: center; gap: 10px; }
+.lex-icon-btn {
+    width: 34px; height: 34px; border: 1px solid var(--border);
+    border-radius: 8px; background: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem; cursor: pointer; color: var(--text2);
 }
-
-.tab-pill {
-    padding: 8px 20px;
-    border-radius: 9px;
-    font-size: 0.82rem;
-    font-weight: 500;
-    color: rgba(255,255,255,0.5);
-    cursor: pointer;
-    transition: all 0.2s;
-    border: none;
-    background: transparent;
-    font-family: 'Sora', sans-serif;
+.lex-user-chip { display: flex; align-items: center; gap: 8px; cursor: pointer; }
+.lex-avatar {
+    width: 32px; height: 32px;
+    background: linear-gradient(135deg, #7B5230, #3D2814);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    color: white !important; font-size: 0.74rem; font-weight: 700;
 }
+.lex-user-name { font-size: 0.82rem; font-weight: 600; color: var(--text) !important; font-family: 'DM Sans', sans-serif !important; }
+.lex-user-plan { font-size: 0.68rem; color: var(--text3) !important; }
 
-.tab-pill.active {
-    background: linear-gradient(135deg, #4371CB, #8B5CF6);
-    color: white;
-    box-shadow: 0 2px 12px rgba(67,113,203,0.4);
-}
-
-/* ── Glass Cards ── */
-.glass-card {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 20px;
-    backdrop-filter: blur(20px);
-    padding: 24px;
-    margin-bottom: 16px;
-    transition: border-color 0.2s, box-shadow 0.2s;
-}
-
-.glass-card:hover {
-    border-color: rgba(67,113,203,0.3);
-    box-shadow: 0 8px 32px rgba(67,113,203,0.08);
-}
-
-.glass-card-dark {
-    background: rgba(0,0,0,0.3);
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 20px;
-    backdrop-filter: blur(20px);
-    padding: 24px;
-    margin-bottom: 16px;
-}
-
-/* ── Section Headers ── */
-.section-title {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #FFFFFF;
-    margin-bottom: 6px;
-    letter-spacing: -0.01em;
-}
-
-.section-sub {
-    font-size: 0.8rem;
-    color: rgba(255,255,255,0.4);
-    margin-bottom: 20px;
-    line-height: 1.5;
-}
-
-/* ── Chat Messages ── */
-.chat-bubble-user {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    margin-bottom: 16px;
-    justify-content: flex-end;
-}
-
-.chat-bubble-user .bubble {
-    background: linear-gradient(135deg, rgba(67,113,203,0.3), rgba(139,92,246,0.2));
-    border: 1px solid rgba(67,113,203,0.3);
-    border-radius: 18px 18px 4px 18px;
-    padding: 12px 18px;
-    max-width: 80%;
-    color: rgba(255,255,255,0.9);
-    font-size: 0.88rem;
-    line-height: 1.6;
-}
-
-.chat-bubble-ai {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    margin-bottom: 20px;
-}
-
-.ai-avatar {
-    width: 36px;
-    height: 36px;
-    background: linear-gradient(135deg, #4371CB, #8B5CF6);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-    flex-shrink: 0;
-    box-shadow: 0 4px 16px rgba(67,113,203,0.3);
-}
-
-.chat-bubble-ai .bubble {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 4px 18px 18px 18px;
-    padding: 16px 20px;
-    max-width: 90%;
-    color: rgba(255,255,255,0.85);
-    font-size: 0.88rem;
-    line-height: 1.7;
-    flex: 1;
-}
-
-/* ── Risk Badges ── */
-.risk-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 4px 14px;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    margin-top: 10px;
-}
-
-.risk-high   { background: rgba(239,68,68,0.15);  border: 1px solid rgba(239,68,68,0.3);  color: #F87171; }
-.risk-medium { background: rgba(245,158,11,0.15); border: 1px solid rgba(245,158,11,0.3); color: #FBBF24; }
-.risk-low    { background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.3); color: #34D399; }
-
-/* ── Source Pills ── */
-.source-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 8px;
-    padding: 5px 12px;
-    font-size: 0.75rem;
-    color: rgba(255,255,255,0.6);
-    margin: 3px;
-    font-family: 'JetBrains Mono', monospace;
-}
-
-/* ── Chat Input ── */
-.stChatInput {
-    background: rgba(255,255,255,0.04) !important;
-    border: 1px solid rgba(255,255,255,0.1) !important;
-    border-radius: 16px !important;
-    color: white !important;
-}
-
-.stChatInput:focus {
-    border-color: rgba(67,113,203,0.5) !important;
-    box-shadow: 0 0 0 3px rgba(67,113,203,0.1) !important;
-}
-
-/* ── Upload Area ── */
-.upload-area {
-    border: 2px dashed rgba(255,255,255,0.12);
-    border-radius: 16px;
-    padding: 28px 20px;
-    text-align: center;
-    background: rgba(255,255,255,0.02);
-    transition: all 0.2s;
-    cursor: pointer;
-}
-
-.upload-area:hover {
-    border-color: rgba(67,113,203,0.4);
-    background: rgba(67,113,203,0.04);
-}
-
-.upload-icon { font-size: 2rem; margin-bottom: 8px; }
-.upload-title { font-size: 0.9rem; font-weight: 600; color: rgba(255,255,255,0.8); }
-.upload-sub { font-size: 0.75rem; color: rgba(255,255,255,0.35); margin-top: 4px; }
-
-/* ── Buttons ── */
-.btn-primary {
-    background: linear-gradient(135deg, #4371CB, #8B5CF6);
-    border: none;
-    border-radius: 12px;
-    color: white;
-    font-family: 'Sora', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 600;
-    padding: 12px 24px;
-    cursor: pointer;
-    width: 100%;
-    transition: all 0.2s;
-    box-shadow: 0 4px 16px rgba(67,113,203,0.3);
-    letter-spacing: 0.01em;
-}
-
-.btn-primary:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 8px 24px rgba(67,113,203,0.4);
-}
-
-.btn-secondary {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 10px;
-    color: rgba(255,255,255,0.7);
-    font-family: 'Sora', sans-serif;
-    font-size: 0.8rem;
-    font-weight: 500;
-    padding: 9px 18px;
-    cursor: pointer;
-    width: 100%;
-    text-align: left;
-    transition: all 0.2s;
-    margin-bottom: 6px;
-}
-
-.btn-secondary:hover {
-    background: rgba(67,113,203,0.1);
-    border-color: rgba(67,113,203,0.3);
-    color: white;
-}
-
-/* ── Session Card ── */
-.session-card {
-    background: rgba(67,113,203,0.08);
-    border: 1px solid rgba(67,113,203,0.2);
-    border-radius: 14px;
-    padding: 16px;
-    margin-bottom: 16px;
-}
-
-.session-label {
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: rgba(255,255,255,0.35);
-    margin-bottom: 4px;
-}
-
-.session-value {
-    font-size: 0.85rem;
-    color: rgba(255,255,255,0.8);
-    font-weight: 500;
-}
-
-.session-id {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem;
-    color: #7CB9E8;
-    background: rgba(124,185,232,0.1);
-    padding: 3px 8px;
-    border-radius: 6px;
-    display: inline-block;
-    margin-top: 4px;
-}
-
-/* ── Risk Scanner ── */
-.risk-summary-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
-    margin: 16px 0;
-}
-
-.risk-metric {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 14px;
-    padding: 16px;
-    text-align: center;
-}
-
-.risk-metric-num {
-    font-size: 1.8rem;
-    font-weight: 800;
-    line-height: 1;
-    margin-bottom: 4px;
-}
-
-.risk-metric-label {
-    font-size: 0.72rem;
-    color: rgba(255,255,255,0.4);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-}
-
-.clause-item {
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.07);
-    border-radius: 12px;
-    padding: 14px 16px;
-    margin-bottom: 8px;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.clause-item:hover {
-    background: rgba(255,255,255,0.05);
-    border-color: rgba(255,255,255,0.12);
-}
-
-.clause-item.high   { border-left: 3px solid #F87171; }
-.clause-item.medium { border-left: 3px solid #FBBF24; }
-.clause-item.low    { border-left: 3px solid #34D399; }
-
-.clause-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 6px;
-}
-
-.clause-num {
-    font-size: 0.72rem;
-    color: rgba(255,255,255,0.35);
-    font-family: 'JetBrains Mono', monospace;
-}
-
-.clause-text {
-    font-size: 0.8rem;
-    color: rgba(255,255,255,0.65);
-    line-height: 1.5;
-}
-
-/* ── Eval Table ── */
-.eval-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.82rem;
-    margin-top: 16px;
-}
-
-.eval-table th {
-    background: rgba(67,113,203,0.15);
-    color: rgba(255,255,255,0.6);
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    padding: 10px 14px;
-    text-align: left;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-
-.eval-table td {
-    padding: 10px 14px;
-    color: rgba(255,255,255,0.75);
-    border-bottom: 1px solid rgba(255,255,255,0.04);
-}
-
-.eval-table tr:hover td { background: rgba(255,255,255,0.02); }
-.eval-table tr.best td { background: rgba(16,185,129,0.06); }
-.eval-table .score { font-family: 'JetBrains Mono', monospace; font-weight: 500; }
-.eval-table .best-score { color: #34D399; font-weight: 700; }
-
-/* ── Streamlit overrides ── */
+/* ════════════════════════════════════════
+   TABS
+════════════════════════════════════════ */
 .stTabs [data-baseweb="tab-list"] {
-    background: rgba(255,255,255,0.04) !important;
-    border: 1px solid rgba(255,255,255,0.08) !important;
-    border-radius: 14px !important;
-    padding: 4px !important;
-    gap: 4px !important;
-}
-
-.stTabs [data-baseweb="tab"] {
     background: transparent !important;
-    color: rgba(255,255,255,0.45) !important;
-    border-radius: 10px !important;
-    font-family: 'Sora', sans-serif !important;
-    font-size: 0.82rem !important;
-    font-weight: 500 !important;
-    padding: 8px 20px !important;
-    border: none !important;
+    border-bottom: 1px solid var(--border) !important;
+    border-radius: 0 !important; padding: 0 !important; gap: 0 !important;
 }
-
+.stTabs [data-baseweb="tab"] {
+    background: transparent !important; color: var(--text3) !important;
+    border-radius: 0 !important; font-family: 'DM Sans', sans-serif !important;
+    font-size: 0.83rem !important; font-weight: 500 !important;
+    padding: 10px 18px !important; border: none !important;
+    border-bottom: 2px solid transparent !important; margin-bottom: -1px !important;
+}
 .stTabs [aria-selected="true"] {
-    background: linear-gradient(135deg, #4371CB, #8B5CF6) !important;
-    color: white !important;
-    box-shadow: 0 2px 12px rgba(67,113,203,0.35) !important;
+    background: transparent !important; color: var(--brown) !important;
+    font-weight: 700 !important; border-bottom: 2px solid var(--brown) !important;
+    box-shadow: none !important;
 }
+.stTabs [data-baseweb="tab-panel"] { padding: 20px 0 0 0 !important; }
 
-.stFileUploader {
-    background: rgba(255,255,255,0.03) !important;
-    border: 2px dashed rgba(255,255,255,0.1) !important;
-    border-radius: 14px !important;
+/* ════════════════════════════════════════
+   CHAT INPUT
+════════════════════════════════════════ */
+[data-testid="stChatMessage"] { background: transparent !important; border: none !important; padding: 0 !important; }
+[data-testid="stChatInput"] {
+    background: var(--surface) !important; border: 1px solid var(--border2) !important;
+    border-radius: var(--radius) !important; box-shadow: var(--shadow) !important;
 }
-
-.stButton button {
-    background: linear-gradient(135deg, #4371CB, #8B5CF6) !important;
-    border: none !important;
-    border-radius: 12px !important;
-    color: white !important;
-    font-family: 'Sora', sans-serif !important;
-    font-weight: 600 !important;
-    padding: 10px 24px !important;
-    box-shadow: 0 4px 16px rgba(67,113,203,0.3) !important;
-    transition: all 0.2s !important;
+[data-testid="stChatInput"]:focus-within {
+    border-color: var(--brown-lt) !important;
+    box-shadow: 0 0 0 3px rgba(92,61,30,0.08) !important;
 }
-
-.stButton button:hover {
-    transform: translateY(-1px) !important;
-    box-shadow: 0 8px 24px rgba(67,113,203,0.4) !important;
-}
-
 [data-testid="stChatInput"] textarea {
-    background: rgba(255,255,255,0.04) !important;
-    border: 1px solid rgba(255,255,255,0.1) !important;
-    border-radius: 14px !important;
-    color: white !important;
-    font-family: 'Sora', sans-serif !important;
+    color: var(--text) !important; font-family: 'DM Sans', sans-serif !important;
+    font-size: 0.875rem !important; background: transparent !important;
+}
+[data-testid="stChatInput"] textarea::placeholder { color: var(--text3) !important; }
+
+/* ════════════════════════════════════════
+   CHAT MESSAGE STYLES
+════════════════════════════════════════ */
+.chat-msg-user {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 14px 0; border-bottom: 1px solid var(--border);
+}
+.chat-avatar {
+    width: 30px; height: 30px; border-radius: 50%;
+    background: var(--brown-dk); color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.72rem; font-weight: 700; flex-shrink: 0;
+}
+.chat-q-text { font-size: 0.87rem; color: var(--text); line-height: 1.6; padding-top: 4px; }
+
+/* ════════════════════════════════════════
+   RESULT CARD
+════════════════════════════════════════ */
+.result-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); overflow: hidden;
+    box-shadow: var(--shadow); margin: 4px 0 16px;
+}
+.result-card-top {
+    display: flex; align-items: center; gap: 8px;
+    background: #FAFAF8; border-bottom: 1px solid var(--border);
+    padding: 9px 14px; font-size: 0.77rem; color: var(--text2);
+}
+.risk-pill {
+    display: inline-flex; align-items: center; gap: 5px;
+    border-radius: 20px; padding: 2px 10px;
+    font-size: 0.71rem; font-weight: 700;
+    letter-spacing: 0.04em; text-transform: uppercase;
+}
+.rp-high   { background: #FEF2F2; color: #DC2626 !important; border: 1px solid #FECACA; }
+.rp-medium { background: #FFFBEB; color: #D97706 !important; border: 1px solid #FDE68A; }
+.rp-low    { background: #F0FDF4; color: #16A34A !important; border: 1px solid #BBF7D0; }
+.risk-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+.rd-high { background: #DC2626; }
+.rd-medium { background: #D97706; }
+.rd-low { background: #16A34A; }
+.result-body { padding: 16px 16px 12px; }
+.result-assess-row {
+    display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+    font-size: 0.8rem; font-weight: 700; color: var(--text); margin-bottom: 12px;
+}
+.result-assess-sub { font-size: 0.71rem; color: var(--text3); font-weight: 400; }
+.sources-section { border-top: 1px solid var(--border); padding: 12px 16px; }
+.sources-hd { display: flex; align-items: center; justify-content: space-between; font-size: 0.77rem; font-weight: 600; color: var(--text2); margin-bottom: 9px; }
+.source-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.source-chip {
+    display: flex; align-items: center; gap: 6px;
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: 6px; padding: 4px 9px; font-size: 0.69rem; color: var(--text2);
 }
 
-[data-testid="stChatMessageContent"] {
-    color: rgba(255,255,255,0.85) !important;
+/* ════════════════════════════════════════
+   BUTTONS (main area)
+════════════════════════════════════════ */
+.stButton button {
+    background: var(--brown-dk) !important; color: white !important;
+    border: none !important; border-radius: 8px !important;
+    font-family: 'DM Sans', sans-serif !important; font-weight: 600 !important;
+    font-size: 0.82rem !important; box-shadow: var(--shadow) !important;
+    transition: all 0.14s !important; padding: 10px 18px !important;
+}
+.stButton button:hover {
+    background: var(--brown-lt) !important; transform: translateY(-1px) !important;
+    box-shadow: var(--shadow-md) !important;
+}
+.btn-outline .stButton button {
+    background: var(--surface) !important; color: var(--text2) !important;
+    border: 1px solid var(--border) !important;
+}
+.btn-outline .stButton button:hover {
+    background: var(--bg) !important; color: var(--text) !important;
+    transform: none !important; box-shadow: none !important;
+}
+.btn-danger .stButton button {
+    background: var(--surface) !important; color: #DC2626 !important;
+    border: 1px solid #FECACA !important;
+}
+.btn-danger .stButton button:hover {
+    background: #FEF2F2 !important; transform: none !important; box-shadow: none !important;
+}
+.chip-btn .stButton button {
+    background: var(--surface) !important; color: var(--text2) !important;
+    border: 1px solid var(--border) !important; font-weight: 500 !important;
+    font-size: 0.81rem !important; padding: 9px 14px !important;
+}
+.chip-btn .stButton button:hover {
+    background: var(--brown-bg) !important; color: var(--brown) !important;
+    border-color: var(--border2) !important; transform: none !important; box-shadow: none !important;
 }
 
-/* Expander */
-.streamlit-expanderHeader {
-    background: rgba(255,255,255,0.04) !important;
-    border: 1px solid rgba(255,255,255,0.08) !important;
-    border-radius: 10px !important;
-    color: rgba(255,255,255,0.6) !important;
-    font-family: 'Sora', sans-serif !important;
-    font-size: 0.8rem !important;
+/* ════════════════════════════════════════
+   RIGHT PANEL
+════════════════════════════════════════ */
+.panel-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); overflow: hidden;
+    box-shadow: var(--shadow); margin-bottom: 14px;
+}
+.panel-card-head {
+    display: flex; align-items: center; gap: 10px;
+    padding: 14px 16px; border-bottom: 1px solid var(--border);
+}
+.panel-icon {
+    width: 32px; height: 32px; border-radius: 8px;
+    background: var(--brown-bg);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 15px; flex-shrink: 0;
+}
+.panel-title { font-family: 'Lora', serif; font-size: 0.95rem; font-weight: 600; color: var(--text) !important; }
+.panel-body { padding: 14px 16px; }
+.panel-desc { font-size: 0.79rem; color: var(--text2); line-height: 1.5; margin-bottom: 12px; }
+.panel-label {
+    font-size: 0.68rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.07em; color: var(--text3); margin-bottom: 8px;
+    display: flex; align-items: center; justify-content: space-between;
+}
+.file-chip {
+    display: flex; align-items: center; gap: 9px;
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: 8px; padding: 8px 12px; margin-bottom: 10px;
+}
+.file-chip-name { font-size: 0.79rem; font-weight: 600; color: var(--text); flex: 1; }
+.file-chip-size { font-size: 0.68rem; color: var(--text3); }
+.session-row { font-size: 0.81rem; color: var(--text2); margin-bottom: 5px; }
+.session-row strong { color: var(--text) !important; }
+.session-id { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--brown-lt) !important; }
+.view-all {
+    font-size: 0.78rem; font-weight: 600; color: var(--brown-lt);
+    margin-top: 8px; cursor: pointer; display: flex; align-items: center; gap: 4px;
+}
+.q-item {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 0; border-bottom: 1px solid var(--border);
+    font-size: 0.81rem; color: var(--text); cursor: pointer;
+}
+.q-item:last-child { border-bottom: none; }
+
+/* Override button styles inside the panel Q card specifically */
+.qs-panel .stButton button {
+    background: transparent !important; color: var(--text) !important;
+    border: none !important; border-bottom: 1px solid var(--border) !important;
+    border-radius: 0 !important; text-align: left !important;
+    padding: 10px 0 !important; font-weight: 400 !important;
+    font-size: 0.81rem !important; box-shadow: none !important; width: 100% !important;
+}
+.qs-panel .stButton button:hover {
+    background: transparent !important; color: var(--brown-lt) !important;
+    transform: none !important; box-shadow: none !important;
 }
 
-/* Metric */
-[data-testid="stMetricValue"] {
-    color: white !important;
-    font-family: 'Sora', sans-serif !important;
-    font-weight: 700 !important;
+/* ════════════════════════════════════════
+   SCAN + EVAL
+════════════════════════════════════════ */
+.scan-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; margin: 14px 0; }
+.scan-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 14px 10px; text-align: center; }
+.scan-num { font-size: 1.5rem; font-weight: 700; color: var(--text); line-height: 1; }
+.scan-lbl { font-size: 0.66rem; color: var(--text3); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 4px; }
+
+.eval-tbl { width: 100%; border-collapse: collapse; font-size: 0.81rem; }
+.eval-tbl th { background: #FAFAF8; color: var(--text3); font-size: 0.67rem; text-transform: uppercase; letter-spacing: 0.07em; padding: 10px 13px; text-align: left; border-bottom: 1px solid var(--border); font-weight: 600; }
+.eval-tbl td { padding: 10px 13px; color: var(--text); border-bottom: 1px solid var(--border); }
+.eval-tbl tr:hover td { background: #FAFAF8; }
+.eval-tbl tr.best-row td { background: #F0FDF4; }
+.eval-tbl .mono { font-family: 'DM Mono', monospace; }
+.eval-tbl .best-val { color: #16A34A; font-weight: 700; }
+.chip-strategy { background: var(--brown-bg); color: var(--brown); border: 1px solid #DDD0BE; border-radius: 5px; padding: 2px 8px; font-size: 0.71rem; font-weight: 600; }
+
+/* ════════════════════════════════════════
+   MISC
+════════════════════════════════════════ */
+.stAlert { background: var(--bg) !important; border: 1px solid var(--border) !important; border-radius: var(--radius) !important; font-family: 'DM Sans', sans-serif !important; }
+.stSpinner > div { border-top-color: var(--brown-lt) !important; }
+[data-testid="stMetricValue"] { font-family: 'DM Sans', sans-serif !important; font-weight: 700 !important; color: var(--text) !important; }
+[data-testid="stMetricLabel"] { font-family: 'DM Sans', sans-serif !important; color: var(--text3) !important; }
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
+details summary {
+    background: #FAFAF8 !important; border: 1px solid var(--border) !important;
+    border-radius: 8px !important; color: var(--text2) !important;
+    font-size: 0.79rem !important; font-family: 'DM Sans', sans-serif !important; font-weight: 500 !important;
 }
-
-[data-testid="stMetricLabel"] {
-    color: rgba(255,255,255,0.45) !important;
-    font-family: 'Sora', sans-serif !important;
-}
-
-/* Scrollbar */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: rgba(255,255,255,0.02); }
-::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
-
-/* Success / Info / Warning */
-.stAlert {
-    background: rgba(255,255,255,0.04) !important;
-    border: 1px solid rgba(255,255,255,0.08) !important;
-    border-radius: 12px !important;
-    color: rgba(255,255,255,0.75) !important;
-}
-
-/* Spinner */
-.stSpinner { color: #4371CB !important; }
-
-/* General text */
-p, li, span {
-    color: rgba(255,255,255,0.75);
-    font-family: 'Sora', sans-serif;
-}
-
-h1, h2, h3 {
-    color: white;
-    font-family: 'Sora', sans-serif;
-    font-weight: 700;
+[data-testid="stFileUploader"] {
+    background: var(--bg) !important; border: 1.5px dashed var(--border2) !important;
+    border-radius: 8px !important;
 }
 </style>
 """, unsafe_allow_html=True)
 
 
-# ── Session State ─────────────────────────────────────────
-if "messages"            not in st.session_state: st.session_state.messages            = []
-if "session_id"          not in st.session_state: st.session_state.session_id          = None
-if "uploaded_file_name"  not in st.session_state: st.session_state.uploaded_file_name  = None
-if "scan_results"        not in st.session_state: st.session_state.scan_results        = None
-if "active_tab"          not in st.session_state: st.session_state.active_tab          = "chat"
-
-
-# ── Navbar ────────────────────────────────────────────────
-st.markdown("""
-<div class="lexiq-navbar">
-    <div class="lexiq-logo">
-        <div class="lexiq-logo-icon">⚖️</div>
-        <div>
-            <div class="lexiq-logo-text">LexIQ</div>
-            <div class="lexiq-logo-sub">Legal Contract Intelligence for Indian SMBs</div>
+# ══════════════════════════════════════════════════════════
+# SIDEBAR  (Streamlit native)
+# ══════════════════════════════════════════════════════════
+with st.sidebar:
+    st.markdown("""
+    <div style="padding:18px 16px 16px;border-bottom:1px solid rgba(255,255,255,0.07);margin-bottom:8px;">
+        <div style="display:flex;align-items:center;gap:10px;">
+            <div style="width:38px;height:38px;background:#7B5230;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">⚖️</div>
+            <div>
+                <div style="font-family:'Lora',serif;font-size:1.2rem;color:#F5EDE0 !important;font-weight:600;line-height:1.1;">LexIQ</div>
+                <div style="font-size:0.6rem;color:#9E8070 !important;margin-top:1px;line-height:1.3;">Legal Intelligence for Indian SMBs</div>
+            </div>
         </div>
     </div>
-</div>
-""", unsafe_allow_html=True)
+    """, unsafe_allow_html=True)
 
+    nav_items = [
+        ("", "Dashboard", True),
+        ("", "Ask LexIQ", False, True),   # last bool = show dot
+        ("", "Contract Scanner", False, False),
+        ("", "Eval Results", False, False),
+        ("", "Document Library", False, False),
+    ]
 
-# ── Main Layout ───────────────────────────────────────────
-col_main, col_side = st.columns([2.2, 1], gap="large")
+    for item in nav_items:
+        icon, label, active = item[0], item[1], item[2]
+        dot = item[3] if len(item) > 3 else False
+        dot_html = '<span style="width:7px;height:7px;background:#E86C3A;border-radius:50%;margin-left:auto;display:inline-block;"></span>' if dot else ""
+        bg = "#281B0D" if active else "transparent"
+        col = "#F5EDE0" if active else "#9E8070"
+        fw = "600" if active else "500"
+        st.markdown(f"""
+        <div style="background:{bg};display:flex;align-items:center;gap:9px;padding:9px 12px;border-radius:8px;
+                    font-size:0.83rem;font-family:'DM Sans',sans-serif;cursor:pointer;margin-bottom:1px;">
+            <span style="font-size:0.95rem;width:18px;text-align:center;color:{col} !important;">{icon}</span>
+            <span style="color:{col} !important;font-weight:{fw};">{label}</span>
+            {dot_html}
+        </div>
+        """, unsafe_allow_html=True)
+
+    st.markdown('<div style="height:1px;background:rgba(255,255,255,0.07);margin:10px 0;"></div>', unsafe_allow_html=True)
+
+    # Clickable quick questions
+    st.markdown('<div style="font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#9E8070 !important;padding:0 12px;margin-bottom:4px;">Quick Questions</div>', unsafe_allow_html=True)
+    sidebar_qs = [
+        "Penalty for breach of contract?",
+        "MSME 45-day payment rule?",
+        "GST invoice fields?",
+        "What is force majeure?",
+        "Void vs voidable contract?",
+    ]
+    for q in sidebar_qs:
+        if st.button(q, key=f"sb_{q}"):
+            st.session_state.messages.append({"role": "user", "content": q})
+            st.rerun()
+
+    st.markdown('<div style="height:1px;background:rgba(255,255,255,0.07);margin:10px 0;"></div>', unsafe_allow_html=True)
+
+    # Upgrade card
+    st.markdown("""
+    <div style="margin:0 6px 8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.09);border-radius:10px;padding:14px;">
+        <div style="width:30px;height:30px;background:#7B5230;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:13px;margin-bottom:9px;">👑</div>
+        <div style="font-size:0.82rem;font-weight:700;color:#F5EDE0 !important;margin-bottom:3px;">Upgrade to Pro</div>
+        <div style="font-size:0.71rem;color:#9E8070 !important;line-height:1.5;margin-bottom:10px;">Unlock advanced analysis, bulk uploads, and priority support.</div>
+    </div>
+    """, unsafe_allow_html=True)
+    if st.button("Upgrade Now →", key="upgrade_btn"):
+        pass
+
+    st.markdown('<div style="height:1px;background:rgba(255,255,255,0.07);margin:8px 0;"></div>', unsafe_allow_html=True)
+    st.markdown('<div style="display:flex;align-items:center;gap:8px;padding:10px 14px;font-size:0.79rem;color:#9E8070 !important;cursor:pointer;">🎧 <span style="color:#9E8070 !important;">Support</span> <span style="margin-left:auto;color:#9E8070 !important;">›</span></div>', unsafe_allow_html=True)
 
 
 # ══════════════════════════════════════════════════════════
-# MAIN COLUMN
+# MAIN AREA
 # ══════════════════════════════════════════════════════════
-with col_main:
 
-    tab_chat, tab_scan, tab_eval = st.tabs(["💬  Ask LexIQ", "🔍  Contract Scanner", "📊  Eval Results"])
+# Handle pending question
+if st.session_state.pending_question:
+    q = st.session_state.pending_question
+    st.session_state.pending_question = None
+    st.session_state.messages.append({"role": "user", "content": q})
 
-    # ── TAB 1: CHAT ───────────────────────────────────────
+
+# Content columns
+col_center, col_right = st.columns([2.7, 1], gap="medium")
+
+# ── CENTER ────────────────────────────────────────────────
+with col_center:
+    st.markdown('<div style="padding:24px 4px 24px 20px;">', unsafe_allow_html=True)
+
+    st.markdown("""
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:20px;gap:12px;">
+        <div>
+            <div style="font-family:'Lora',serif;font-size:1.5rem;font-weight:600;color:#1C1410;letter-spacing:-0.02em;line-height:1.2;">Ask a Legal Question</div>
+            <div style="font-size:0.79rem;color:#A09285;margin-top:4px;">Get instant, accurate answers backed by Indian law.</div>
+        </div>
+        <button style="display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid #E5DDD5;border-radius:8px;padding:7px 14px;font-size:0.78rem;font-weight:500;color:#6B5F55;white-space:nowrap;cursor:pointer;font-family:'DM Sans',sans-serif;margin-top:4px;">▷ How it works</button>
+    </div>
+    """, unsafe_allow_html=True)
+
+    if st.session_state.uploaded_file_name:
+        st.markdown(f"""
+        <div style="display:flex;align-items:center;gap:8px;background:#fff;border:1px solid #E5DDD5;border-radius:10px;padding:10px 14px;font-size:0.81rem;color:#6B5F55;margin-bottom:18px;">
+            📄 Contract loaded: <strong style="color:#1C1410;">{st.session_state.uploaded_file_name}</strong>
+            — questions will reference this contract AND the legal corpus.
+        </div>
+        """, unsafe_allow_html=True)
+
+    tab_chat, tab_scan, tab_eval = st.tabs(["💬 Ask LexIQ", "🔍 Contract Scanner", "📊 Eval Results"])
+
+    # ── CHAT TAB ─────────────────────────────────────────
     with tab_chat:
-        st.markdown('<div class="section-title">Ask a Legal Question</div>', unsafe_allow_html=True)
-        st.markdown('<div class="section-sub">Get answers grounded in Indian contract law, GST rules, MSME regulations and more — with source citations and risk assessment.</div>', unsafe_allow_html=True)
-
-        # Contract loaded banner
-        if st.session_state.uploaded_file_name:
-            st.markdown(f"""
-            <div style="background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.25);
-                        border-radius: 12px; padding: 12px 16px; margin-bottom: 16px;
-                        display: flex; align-items: center; gap: 10px;">
-                <span style="font-size:1.2rem">📄</span>
-                <div>
-                    <div style="font-size:0.8rem; color: #34D399; font-weight:600;">Contract Loaded</div>
-                    <div style="font-size:0.78rem; color:rgba(255,255,255,0.6);">
-                        <b>{st.session_state.uploaded_file_name}</b> — questions reference this contract AND the legal corpus
-                    </div>
-                </div>
+        if not st.session_state.messages:
+            st.markdown("""
+            <div style="text-align:center;padding:40px 0 24px;">
+                <div style="width:52px;height:52px;background:#fff;border:1px solid #E5DDD5;border-radius:13px;display:inline-flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,0.07);">⚖️</div>
+                <div style="font-family:'Lora',serif;font-size:1.3rem;color:#1C1410;margin-bottom:6px;">How can I help you today?</div>
+                <div style="font-size:0.8rem;color:#A09285;max-width:340px;margin:0 auto 26px;line-height:1.6;">Ask about contracts, laws, or upload your contract for detailed risk analysis.</div>
             </div>
             """, unsafe_allow_html=True)
 
-        # Chat history
+            chips = [
+                "Penalty for breach of contract?", "MSME delayed payment rule?",
+                "GST invoice mandatory fields?", "Force majeure explained",
+                "Void vs voidable contract?", "NDA obligations in India",
+            ]
+            c1, c2 = st.columns(2)
+            for i, chip in enumerate(chips):
+                with (c1 if i % 2 == 0 else c2):
+                    st.markdown('<div class="chip-btn">', unsafe_allow_html=True)
+                    if st.button(chip, key=f"chip_{i}"):
+                        st.session_state.pending_question = chip
+                        st.rerun()
+                    st.markdown('</div>', unsafe_allow_html=True)
+
         for msg in st.session_state.messages:
             if msg["role"] == "user":
-                with st.chat_message("user"):
-                    st.markdown(msg["content"])
+                st.markdown(f"""
+                <div class="chat-msg-user">
+                    <div class="chat-avatar">A</div>
+                    <div class="chat-q-text">{msg["content"]}</div>
+                </div>
+                """, unsafe_allow_html=True)
             else:
-                with st.chat_message("assistant"):
-                    st.markdown(msg["content"])
+                rl = msg.get("risk_level", "LOW")
+                rp_cls = {"HIGH": "rp-high", "MEDIUM": "rp-medium", "LOW": "rp-low"}.get(rl, "rp-low")
+                rd_cls = {"HIGH": "rd-high", "MEDIUM": "rd-medium", "LOW": "rd-low"}.get(rl, "rd-low")
 
-                    # Risk badge
-                    risk_level = msg.get("risk_level", "LOW")
-                    risk_emoji = msg.get("risk_emoji", "🟢")
-                    risk_class = {"HIGH": "risk-high", "MEDIUM": "risk-medium", "LOW": "risk-low"}.get(risk_level, "risk-low")
-                    st.markdown(f'<span class="risk-badge {risk_class}">{risk_emoji} {risk_level} RISK</span>', unsafe_allow_html=True)
+                sources_html = ""
+                if msg.get("sources"):
+                    cmap = {"HIGH": "#DC2626", "MEDIUM": "#D97706", "LOW": "#16A34A"}
+                    chips_html = "".join([
+                        f'<div class="source-chip"><span style="width:8px;height:8px;border-radius:50%;background:{cmap.get(s.get("risk","LOW"),"#A09285")};flex-shrink:0;display:inline-block;"></span>{s.get("filename","?")} — p{s.get("page","?")}</div>'
+                        for s in msg["sources"]
+                    ])
+                    sources_html = f'<div class="sources-section"><div class="sources-hd"><span>📖 Sources Used</span><span style="color:#A09285;cursor:pointer;">∧</span></div><div class="source-grid">{chips_html}</div></div>'
 
-                    # Sources
-                    if msg.get("sources"):
-                        sources_html = "".join([
-                            f'<span class="source-pill">📄 {s.get("filename","?")} · p{s.get("page","?")}</span>'
-                            for s in msg["sources"]
-                        ])
-                        with st.expander("📚 Sources", expanded=False):
-                            st.markdown(sources_html, unsafe_allow_html=True)
+                st.markdown(f"""
+                <div class="result-card">
+                    <div class="result-card-top">📊 Result: <span class="risk-pill {rp_cls}"><span class="risk-dot {rd_cls}" style="display:inline-block;"></span>{rl} RISK</span></div>
+                    <div class="result-body">
+                        <div class="result-assess-row">
+                            Risk Assessment: <span class="risk-pill {rp_cls}">⚠️ {rl} RISK</span>
+                            <span class="result-assess-sub">These clauses can expose the business to significant liability if not properly addressed.</span>
+                        </div>
+                        <div style="font-size:0.84rem;color:#1C1410;line-height:1.75;">{msg["content"]}</div>
+                    </div>
+                    {sources_html}
+                </div>
+                """, unsafe_allow_html=True)
 
-                    # No-RAG comparison
-                    if msg.get("no_rag_answer"):
-                        with st.expander("🔄 Without RAG (baseline)", expanded=False):
-                            st.markdown(f'<div style="color:rgba(255,255,255,0.5); font-size:0.82rem; font-style:italic;">{msg["no_rag_answer"][:500]}...</div>', unsafe_allow_html=True)
+                if msg.get("no_rag_answer"):
+                    with st.expander("Without RAG (baseline)", expanded=False):
+                        st.markdown(f'<div style="font-size:0.79rem;color:#6B5F55;line-height:1.6;background:#FAFAF8;border-radius:8px;padding:12px;">{msg["no_rag_answer"][:600]}...</div>', unsafe_allow_html=True)
 
-        # ── Chat Input ────────────────────────────────────
+        if st.session_state.messages and st.session_state.messages[-1]["role"] == "user":
+            question = st.session_state.messages[-1]["content"]
+            with st.spinner("Searching legal corpus..."):
+                try:
+                    resp   = requests.post(f"{API_URL}/query", json={"question": question, "session_id": st.session_state.session_id, "strategy": "clause", "top_k": 5}, timeout=60)
+                    result = resp.json()
+                    st.session_state.messages.append({
+                        "role": "assistant",
+                        "content": result.get("answer", "Error."),
+                        "sources": result.get("sources", []),
+                        "risk_level": result.get("risk_level", "LOW"),
+                        "risk_emoji": result.get("risk_emoji", "🟢"),
+                        "no_rag_answer": result.get("no_rag_answer", ""),
+                    })
+                    st.rerun()
+                except requests.exceptions.ConnectionError:
+                    st.error("❌ API not running. Start with: `python api/main.py`")
+                except Exception as e:
+                    st.error(f"❌ {str(e)}")
+
         question = st.chat_input("Ask about Indian contracts, laws, or your uploaded document...")
-
         if question:
             st.session_state.messages.append({"role": "user", "content": question})
-            with st.chat_message("user"):
-                st.markdown(question)
+            st.rerun()
 
-            with st.chat_message("assistant"):
-                with st.spinner("Searching legal corpus..."):
-                    try:
-                        payload = {
-                            "question":   question,
-                            "session_id": st.session_state.session_id,
-                            "strategy":   "clause",
-                            "top_k":      5,
-                        }
-                        resp   = requests.post(f"{API_URL}/query", json=payload, timeout=60)
-                        result = resp.json()
-
-                        answer     = result.get("answer", "Error getting answer.")
-                        sources    = result.get("sources", [])
-                        risk_level = result.get("risk_level", "LOW")
-                        risk_emoji = result.get("risk_emoji", "🟢")
-                        no_rag     = result.get("no_rag_answer", "")
-
-                        st.markdown(answer)
-
-                        risk_class = {"HIGH": "risk-high", "MEDIUM": "risk-medium", "LOW": "risk-low"}.get(risk_level, "risk-low")
-                        st.markdown(f'<span class="risk-badge {risk_class}">{risk_emoji} {risk_level} RISK</span>', unsafe_allow_html=True)
-
-                        if sources:
-                            sources_html = "".join([
-                                f'<span class="source-pill">📄 {s.get("filename","?")} · p{s.get("page","?")}</span>'
-                                for s in sources
-                            ])
-                            with st.expander("📚 Sources Used", expanded=True):
-                                st.markdown(sources_html, unsafe_allow_html=True)
-
-                        if no_rag:
-                            with st.expander("🔄 Without RAG (baseline)", expanded=False):
-                                st.markdown(f'<div style="color:rgba(255,255,255,0.5); font-size:0.82rem; font-style:italic;">{no_rag[:500]}...</div>', unsafe_allow_html=True)
-
-                        st.session_state.messages.append({
-                            "role":          "assistant",
-                            "content":       answer,
-                            "sources":       sources,
-                            "risk_level":    risk_level,
-                            "risk_emoji":    risk_emoji,
-                            "no_rag_answer": no_rag,
-                        })
-
-                    except requests.exceptions.ConnectionError:
-                        st.error("❌ Cannot connect to LexIQ API. Make sure `python api/main.py` is running.")
-                    except Exception as e:
-                        st.error(f"❌ Error: {str(e)}")
-
-    # ── TAB 2: CONTRACT SCANNER ───────────────────────────
+    # ── SCANNER TAB ───────────────────────────────────────
     with tab_scan:
-        st.markdown('<div class="section-title">Automatic Contract Risk Scanner</div>', unsafe_allow_html=True)
-        st.markdown('<div class="section-sub">Upload a contract and every clause is automatically classified as HIGH, MEDIUM, or LOW risk — in seconds.</div>', unsafe_allow_html=True)
+        st.markdown('<div style="margin-bottom:14px;"><div style="font-family:\'Lora\',serif;font-size:1.05rem;color:#1C1410;margin-bottom:3px;">Contract Risk Scanner</div><div style="font-size:0.77rem;color:#A09285;">Every clause classified automatically in seconds.</div></div>', unsafe_allow_html=True)
 
         if not st.session_state.session_id:
-            st.markdown("""
-            <div style="background: rgba(245,158,11,0.08); border: 1px solid rgba(245,158,11,0.2);
-                        border-radius: 14px; padding: 20px; text-align: center; margin-top: 20px;">
-                <div style="font-size: 2rem; margin-bottom: 8px;">📄</div>
-                <div style="font-size: 0.9rem; font-weight: 600; color: rgba(255,255,255,0.8);">No Contract Uploaded</div>
-                <div style="font-size: 0.78rem; color: rgba(255,255,255,0.4); margin-top: 4px;">Upload a contract using the panel on the right to begin scanning</div>
-            </div>
-            """, unsafe_allow_html=True)
+            st.markdown('<div style="background:#FFFBF0;border:1px solid #FDE68A;border-radius:10px;padding:22px;text-align:center;"><div style="font-size:1.4rem;margin-bottom:8px;">📂</div><div style="font-size:0.88rem;font-weight:600;color:#1C1410;">Upload a contract first</div><div style="font-size:0.77rem;color:#A09285;margin-top:3px;">Use the upload panel on the right →</div></div>', unsafe_allow_html=True)
         else:
-            st.markdown(f"""
-            <div style="background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.2);
-                        border-radius: 12px; padding: 12px 16px; margin-bottom: 20px;">
-                <span style="color:#34D399; font-weight:600; font-size:0.82rem;">✓ Ready to scan:</span>
-                <span style="color:rgba(255,255,255,0.7); font-size:0.82rem; margin-left:8px;">{st.session_state.uploaded_file_name}</span>
-            </div>
-            """, unsafe_allow_html=True)
-
-            if st.button("🔍 Scan All Clauses for Risk", type="primary"):
-                with st.spinner("Analysing every clause..."):
+            st.markdown(f'<div style="background:#EDF7F2;border:1px solid #BBF7D0;border-radius:8px;padding:9px 13px;margin-bottom:13px;font-size:0.81rem;color:#1A7A4A;font-weight:500;">✓ Ready: <strong>{st.session_state.uploaded_file_name}</strong></div>', unsafe_allow_html=True)
+            if st.button("🔍 Scan All Clauses"):
+                with st.spinner("Analysing clauses..."):
                     try:
                         resp = requests.post(f"{API_URL}/scan", json={"session_id": st.session_state.session_id}, timeout=60)
                         st.session_state.scan_results = resp.json()
                     except Exception as e:
-                        st.error(f"❌ Scan failed: {str(e)}")
+                        st.error(f"❌ {str(e)}")
 
             if st.session_state.scan_results:
-                scan    = st.session_state.scan_results
+                scan = st.session_state.scan_results
                 overall = scan.get("overall_risk", "LOW")
                 emoji   = scan.get("overall_emoji", "🟢")
                 summary = scan.get("summary", {})
-
-                risk_class = {"HIGH": "risk-high", "MEDIUM": "risk-medium", "LOW": "risk-low"}.get(overall, "risk-low")
-
+                rp_cls  = {"HIGH": "rp-high", "MEDIUM": "rp-medium", "LOW": "rp-low"}.get(overall, "rp-low")
                 st.markdown(f"""
-                <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
-                            border-radius: 18px; padding: 24px; margin: 16px 0;">
-                    <div style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.08em;
-                                color:rgba(255,255,255,0.35); margin-bottom:8px;">Overall Contract Risk</div>
-                    <span class="risk-badge {risk_class}" style="font-size:0.9rem; padding: 8px 20px;">
-                        {emoji} {overall} RISK
-                    </span>
-                    <div style="display:grid; grid-template-columns: repeat(4,1fr); gap:12px; margin-top:20px;">
-                        <div style="text-align:center; background:rgba(255,255,255,0.03); border-radius:12px; padding:14px;">
-                            <div style="font-size:1.8rem; font-weight:800; color:white;">{summary.get('total_clauses',0)}</div>
-                            <div style="font-size:0.7rem; color:rgba(255,255,255,0.35); text-transform:uppercase; letter-spacing:0.06em;">Total</div>
-                        </div>
-                        <div style="text-align:center; background:rgba(239,68,68,0.08); border-radius:12px; padding:14px;">
-                            <div style="font-size:1.8rem; font-weight:800; color:#F87171;">{summary.get('high_risk',0)}</div>
-                            <div style="font-size:0.7rem; color:rgba(248,113,113,0.6); text-transform:uppercase; letter-spacing:0.06em;">High Risk</div>
-                        </div>
-                        <div style="text-align:center; background:rgba(245,158,11,0.08); border-radius:12px; padding:14px;">
-                            <div style="font-size:1.8rem; font-weight:800; color:#FBBF24;">{summary.get('medium_risk',0)}</div>
-                            <div style="font-size:0.7rem; color:rgba(251,191,36,0.6); text-transform:uppercase; letter-spacing:0.06em;">Medium Risk</div>
-                        </div>
-                        <div style="text-align:center; background:rgba(16,185,129,0.08); border-radius:12px; padding:14px;">
-                            <div style="font-size:1.8rem; font-weight:800; color:#34D399;">{summary.get('low_risk',0)}</div>
-                            <div style="font-size:0.7rem; color:rgba(52,211,153,0.6); text-transform:uppercase; letter-spacing:0.06em;">Low Risk</div>
-                        </div>
+                <div style="background:#fff;border:1px solid #E5DDD5;border-radius:10px;padding:18px;margin:12px 0;box-shadow:0 1px 3px rgba(0,0,0,0.07);">
+                    <div style="font-size:0.67rem;text-transform:uppercase;letter-spacing:0.08em;color:#A09285;margin-bottom:8px;">Overall Assessment</div>
+                    <span class="risk-pill {rp_cls}" style="font-size:0.78rem;padding:4px 14px;">{emoji} {overall} Risk Contract</span>
+                    <div class="scan-grid">
+                        <div class="scan-card"><div class="scan-num">{summary.get('total_clauses',0)}</div><div class="scan-lbl">Total</div></div>
+                        <div class="scan-card" style="border-left:3px solid #DC2626;"><div class="scan-num" style="color:#DC2626;">{summary.get('high_risk',0)}</div><div class="scan-lbl">High</div></div>
+                        <div class="scan-card" style="border-left:3px solid #D97706;"><div class="scan-num" style="color:#D97706;">{summary.get('medium_risk',0)}</div><div class="scan-lbl">Medium</div></div>
+                        <div class="scan-card" style="border-left:3px solid #16A34A;"><div class="scan-num" style="color:#16A34A;">{summary.get('low_risk',0)}</div><div class="scan-lbl">Low</div></div>
                     </div>
                 </div>
                 """, unsafe_allow_html=True)
+                for label, color, key in [("🔴 High Risk Clauses", "#DC2626", "high_risk_clauses"), ("🟡 Medium Risk Clauses", "#D97706", "medium_risk_clauses"), ("🟢 Low Risk Clauses", "#16A34A", "low_risk_clauses")]:
+                    clauses = scan.get(key, [])
+                    if clauses:
+                        st.markdown(f'<div style="font-size:0.81rem;font-weight:600;color:{color};margin:16px 0 7px;">{label}</div>', unsafe_allow_html=True)
+                        show = clauses[:5] if key == "low_risk_clauses" else clauses
+                        for c in show:
+                            with st.expander(f"Clause {c['clause_number']} — p.{c['page']}"):
+                                st.markdown(f'<div style="font-size:0.79rem;color:#6B5F55;line-height:1.6;">{c["text"]}</div>', unsafe_allow_html=True)
+                        if key == "low_risk_clauses" and len(clauses) > 5:
+                            st.markdown(f'<div style="font-size:0.74rem;color:#A09285;">+ {len(clauses)-5} more low risk clauses</div>', unsafe_allow_html=True)
 
-                # High risk clauses
-                high_clauses = scan.get("high_risk_clauses", [])
-                if high_clauses:
-                    st.markdown('<div style="font-size:0.9rem; font-weight:700; color:#F87171; margin:20px 0 10px;">🔴 High Risk Clauses</div>', unsafe_allow_html=True)
-                    for clause in high_clauses:
-                        with st.expander(f"Clause {clause['clause_number']} — Page {clause['page']}"):
-                            st.markdown(f'<div style="font-size:0.82rem; color:rgba(255,255,255,0.7); line-height:1.6;">{clause["text"]}</div>', unsafe_allow_html=True)
-
-                # Medium risk clauses
-                med_clauses = scan.get("medium_risk_clauses", [])
-                if med_clauses:
-                    st.markdown('<div style="font-size:0.9rem; font-weight:700; color:#FBBF24; margin:20px 0 10px;">🟡 Medium Risk Clauses</div>', unsafe_allow_html=True)
-                    for clause in med_clauses:
-                        with st.expander(f"Clause {clause['clause_number']} — Page {clause['page']}"):
-                            st.markdown(f'<div style="font-size:0.82rem; color:rgba(255,255,255,0.7); line-height:1.6;">{clause["text"]}</div>', unsafe_allow_html=True)
-
-                # Low risk
-                low_clauses = scan.get("low_risk_clauses", [])
-                if low_clauses:
-                    st.markdown('<div style="font-size:0.9rem; font-weight:700; color:#34D399; margin:20px 0 10px;">🟢 Low Risk Clauses</div>', unsafe_allow_html=True)
-                    for clause in low_clauses[:5]:
-                        with st.expander(f"Clause {clause['clause_number']} — Page {clause['page']}"):
-                            st.markdown(f'<div style="font-size:0.82rem; color:rgba(255,255,255,0.7); line-height:1.6;">{clause["text"]}</div>', unsafe_allow_html=True)
-                    if len(low_clauses) > 5:
-                        st.markdown(f'<div style="font-size:0.78rem; color:rgba(255,255,255,0.3); margin-top:8px;">...and {len(low_clauses)-5} more low risk clauses</div>', unsafe_allow_html=True)
-
-    # ── TAB 3: EVAL RESULTS ───────────────────────────────
+    # ── EVAL TAB ──────────────────────────────────────────
     with tab_eval:
-        st.markdown('<div class="section-title">Evaluation Results</div>', unsafe_allow_html=True)
-        st.markdown('<div class="section-sub">9-experiment ablation study across 3 chunking strategies × 3 retrieval methods. Measured on a hand-curated 51-question test set.</div>', unsafe_allow_html=True)
+        st.markdown('<div style="margin-bottom:14px;"><div style="font-family:\'Lora\',serif;font-size:1.05rem;color:#1C1410;margin-bottom:3px;">Evaluation Results</div><div style="font-size:0.77rem;color:#A09285;">9 experiments · 51 questions · 4 metrics.</div></div>', unsafe_allow_html=True)
 
-        if st.button("📊 Load Experiment Results"):
+        if st.button("Load Results"):
             try:
                 resp    = requests.get(f"{API_URL}/results", timeout=10)
                 results = resp.json().get("experiments", [])
-
                 if results:
                     best_faith = max(r["faithfulness"] for r in results)
-
-                    # Build table HTML
                     rows = ""
                     for r in results:
-                        is_best   = r["faithfulness"] == best_faith
-                        row_class = "best" if is_best else ""
-                        star      = " ★" if is_best else ""
-                        faith_cls = "best-score" if is_best else "score"
-                        rows += f"""
-                        <tr class="{row_class}">
-                            <td><span style="background:rgba(67,113,203,0.15); padding:3px 10px; border-radius:6px; font-size:0.75rem; font-weight:600;">{r['strategy']}</span></td>
-                            <td><span style="color:rgba(255,255,255,0.5);">{r['retriever']}</span></td>
-                            <td class="{faith_cls}">{r['faithfulness']:.4f}{star}</td>
-                            <td class="score">{r['answer_relevancy']:.4f}</td>
-                            <td class="score">{r['context_precision']:.4f}</td>
-                            <td class="score">{r['context_recall']:.4f}</td>
-                        </tr>
-                        """
-
-                    st.markdown(f"""
-                    <table class="eval-table">
-                        <thead>
-                            <tr>
-                                <th>Chunking</th>
-                                <th>Retriever</th>
-                                <th>Faithfulness</th>
-                                <th>Ans. Relevancy</th>
-                                <th>Ctx. Precision</th>
-                                <th>Ctx. Recall</th>
-                            </tr>
-                        </thead>
-                        <tbody>{rows}</tbody>
-                    </table>
-                    """, unsafe_allow_html=True)
-
-                    # Key metrics
+                        is_best = r["faithfulness"] == best_faith
+                        vc = "best-val mono" if is_best else "mono"
+                        rc = "best-row" if is_best else ""
+                        star = " ★" if is_best else ""
+                        rows += f'<tr class="{rc}"><td><span class="chip-strategy">{r["strategy"]}</span></td><td style="color:#6B5F55;">{r["retriever"]}</td><td class="{vc}">{r["faithfulness"]:.4f}{star}</td><td class="mono">{r["answer_relevancy"]:.4f}</td><td class="mono">{r["context_precision"]:.4f}</td><td class="mono">{r["context_recall"]:.4f}</td></tr>'
+                    st.markdown(f'<div style="background:#fff;border:1px solid #E5DDD5;border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.07);margin-bottom:18px;"><table class="eval-tbl"><thead><tr><th>Chunking</th><th>Retriever</th><th>Faithfulness</th><th>Ans. Rel.</th><th>Ctx. Prec.</th><th>Ctx. Rec.</th></tr></thead><tbody>{rows}</tbody></table></div>', unsafe_allow_html=True)
                     best  = max(results, key=lambda x: x["faithfulness"])
                     worst = min(results, key=lambda x: x["faithfulness"])
                     impr  = ((best["faithfulness"] - worst["faithfulness"]) / max(worst["faithfulness"], 0.001)) * 100
-
-                    st.markdown("<br>", unsafe_allow_html=True)
                     c1, c2, c3 = st.columns(3)
-                    with c1:
-                        st.metric("Best Config", f"{best['strategy']} + {best['retriever']}", f"↑ {best['faithfulness']:.3f} faithfulness")
-                    with c2:
-                        st.metric("Worst Config", f"{worst['strategy']} + {worst['retriever']}", f"↓ {worst['faithfulness']:.3f} faithfulness")
-                    with c3:
-                        st.metric("Improvement", f"{impr:.1f}%", "worst → best config")
-
-                    # Bar chart
-                    st.markdown('<div style="margin-top:24px; font-size:0.85rem; font-weight:600; color:rgba(255,255,255,0.7); margin-bottom:8px;">Faithfulness by Configuration</div>', unsafe_allow_html=True)
+                    with c1: st.metric("Best Config", f"{best['strategy']} + {best['retriever']}", f"↑ {best['faithfulness']:.3f}")
+                    with c2: st.metric("Worst Config", f"{worst['strategy']} + {worst['retriever']}", f"↓ {worst['faithfulness']:.3f}")
+                    with c3: st.metric("Improvement", f"{impr:.1f}%", "worst → best")
                     import pandas as pd
-                    chart_data = pd.DataFrame({
-                        "Config":      [f"{r['strategy']}+{r['retriever']}" for r in results],
-                        "Faithfulness": [r["faithfulness"] for r in results],
-                    }).set_index("Config")
-                    st.bar_chart(chart_data, color="#4371CB")
-
+                    df = pd.DataFrame({"Config": [f"{r['strategy']}+{r['retriever']}" for r in results], "Faithfulness": [r["faithfulness"] for r in results]}).set_index("Config")
+                    st.bar_chart(df)
                 else:
-                    st.warning("No evaluation results found. Run `python evaluation/ragas_eval.py` first.")
-
+                    st.info("No results yet. Run `python evaluation/ragas_eval.py` first.")
             except requests.exceptions.ConnectionError:
-                st.error("❌ Cannot connect to API server.")
+                st.error("❌ API not running.")
             except Exception as e:
-                st.error(f"❌ Error loading results: {str(e)}")
+                st.error(f"❌ {str(e)}")
+
+    st.markdown('</div>', unsafe_allow_html=True)
 
 
-# ══════════════════════════════════════════════════════════
-# SIDE COLUMN
-# ══════════════════════════════════════════════════════════
-with col_side:
+# ── RIGHT PANEL ───────────────────────────────────────────
+with col_right:
+    st.markdown('<div style="padding:24px 16px 24px 4px;">', unsafe_allow_html=True)
 
-    # ── Upload Section ────────────────────────────────────
+    # Upload card
     st.markdown("""
-    <div class="glass-card">
-        <div class="section-title">📄 Upload Your Contract</div>
-        <div class="section-sub">Upload a PDF to get cross-referenced analysis against Indian law.</div>
-    </div>
+    <div class="panel-card">
+        <div class="panel-card-head">
+            <div class="panel-icon">📄</div>
+            <div class="panel-title">Upload Your Contract</div>
+        </div>
+        <div class="panel-body">
+            <div class="panel-desc">Upload a PDF contract to get cross-referenced analysis against Indian law.</div>
+            <div class="panel-label">Choose a PDF contract <span>ℹ️</span></div>
     """, unsafe_allow_html=True)
 
-    uploaded_file = st.file_uploader(
-        "Choose a PDF contract",
-        type = ["pdf"],
-        label_visibility = "collapsed",
-    )
+    uploaded = st.file_uploader("PDF contract", type=["pdf"], label_visibility="collapsed")
 
-    if uploaded_file:
-        if st.button("📤 Process Contract"):
-            with st.spinner("Parsing and indexing..."):
+    if uploaded:
+        sz = round(len(uploaded.getvalue()) / 1024, 1)
+        st.markdown(f"""
+        <div class="file-chip">
+            <span style="font-size:1rem;">📄</span>
+            <span class="file-chip-name">{uploaded.name}</span>
+            <span class="file-chip-size">{sz}KB</span>
+            <span style="color:#A09285;cursor:pointer;">✕</span>
+        </div>
+        """, unsafe_allow_html=True)
+
+        if st.button("⚙️ Process Contract", key="process_btn"):
+            with st.spinner("Parsing PDF..."):
                 try:
-                    files  = {"file": (uploaded_file.name, uploaded_file.getvalue(), "application/pdf")}
+                    files  = {"file": (uploaded.name, uploaded.getvalue(), "application/pdf")}
                     resp   = requests.post(f"{API_URL}/upload", files=files, timeout=120)
                     result = resp.json()
-
                     if resp.status_code == 200:
                         st.session_state.session_id         = result["session_id"]
                         st.session_state.uploaded_file_name = result["filename"]
                         st.session_state.scan_results       = None
-
-                        st.markdown(f"""
-                        <div style="background:rgba(16,185,129,0.08); border:1px solid rgba(16,185,129,0.25);
-                                    border-radius:12px; padding:14px; margin-top:12px;">
-                            <div style="color:#34D399; font-weight:600; font-size:0.82rem; margin-bottom:8px;">✓ Contract Processed</div>
-                            <div style="font-size:0.78rem; color:rgba(255,255,255,0.55); line-height:1.8;">
-                                📄 {result['filename']}<br>
-                                📖 {result['pages']} pages<br>
-                                🧩 {result['chunks']} chunks indexed
-                            </div>
-                        </div>
-                        """, unsafe_allow_html=True)
+                        st.success(f"✓ {result['pages']} pages · {result['chunks']} chunks")
+                        st.rerun()
                     else:
-                        st.error(f"Upload failed: {result.get('detail', 'Unknown error')}")
-
+                        st.error(result.get("detail", "Upload failed"))
                 except requests.exceptions.ConnectionError:
-                    st.error("❌ API not running. Start with `python api/main.py`")
+                    st.error("❌ Start API: `python api/main.py`")
                 except Exception as e:
                     st.error(f"❌ {str(e)}")
 
-    # ── Active Session ────────────────────────────────────
+    st.markdown('</div></div>', unsafe_allow_html=True)
+
+    # Active session card
     if st.session_state.session_id:
         st.markdown(f"""
-        <div class="session-card">
-            <div class="session-label">Active Session</div>
-            <div class="session-value">{st.session_state.uploaded_file_name}</div>
-            <div class="session-id">{st.session_state.session_id}</div>
-        </div>
+        <div class="panel-card">
+            <div class="panel-card-head">
+                <div class="panel-icon">🔗</div>
+                <div class="panel-title">Active Session</div>
+            </div>
+            <div class="panel-body">
+                <div class="session-row">File: <strong>{st.session_state.uploaded_file_name}</strong></div>
+                <div class="session-row">Session ID: <span class="session-id">{st.session_state.session_id[:12]}...</span></div>
         """, unsafe_allow_html=True)
 
-        if st.button("🗑️ Clear Contract"):
+        st.markdown('<div class="btn-danger" style="margin-top:10px;">', unsafe_allow_html=True)
+        if st.button("🗑 Clear Contract", key="clear_btn"):
             try:
                 requests.delete(f"{API_URL}/session/{st.session_state.session_id}", timeout=10)
             except Exception:
                 pass
-            st.session_state.session_id         = None
+            st.session_state.session_id = None
             st.session_state.uploaded_file_name = None
-            st.session_state.scan_results       = None
+            st.session_state.scan_results = None
             st.rerun()
+        st.markdown('</div></div></div>', unsafe_allow_html=True)
 
-    st.markdown("---")
+    # Try These Questions card
+    st.markdown("""
+    <div class="panel-card">
+        <div class="panel-card-head">
+            <div class="panel-icon">💡</div>
+            <div class="panel-title">Try These Questions</div>
+        </div>
+        <div class="panel-body" style="padding:0 16px 2px;">
+    """, unsafe_allow_html=True)
 
-    # ── Sample Questions ──────────────────────────────────
-    st.markdown('<div class="section-title">💡 Try These</div>', unsafe_allow_html=True)
-
-    sample_questions = [
-        "Penalty for breach of contract?",
-        "MSME delayed payment interest rate?",
-        "GST invoice mandatory fields?",
-        "What is force majeure?",
-        "How to void a contract in India?",
-        "Non-compete clause enforceability?",
+    st.markdown('<div class="qs-panel">', unsafe_allow_html=True)
+    panel_qs = [
+        "What is the penalty for breach of contract?",
+        "How many days to pay an MSME supplier?",
+        "What are the GST invoice requirements?",
+        "Explain force majeure clause",
+        "What makes a contract void in India?",
     ]
-
-    for q in sample_questions:
-        if st.button(q, key=f"sq_{q}"):
+    for q in panel_qs:
+        if st.button(q, key=f"pq_{q}"):
             st.session_state.messages.append({"role": "user", "content": q})
             st.rerun()
+    st.markdown('</div>', unsafe_allow_html=True)
 
-    st.markdown("---")
+    st.markdown("""
+        </div>
+        <div style="padding:4px 16px 14px;">
+            <div class="view-all">View all questions →</div>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
 
-    # ── About ─────────────────────────────────────────────
-    with st.expander("ℹ️ About LexIQ"):
-        st.markdown("""
-        **LexIQ** is an AI-powered legal assistant for Indian SMBs built with a rigorous evaluation framework.
-
-        **Corpus:** 38 documents — Indian Contract Act, GST Act, MSMED Act, 10+ contract templates.
-
-        **Stack:** ChromaDB · BM25 · Llama 3.1 · Groq · FastAPI · Streamlit
-
-        **Eval:** 9 experiments · 51 questions · 4 RAGAS-style metrics · 93% improvement from worst to best config.
-        """)
+    st.markdown('</div>', unsafe_allow_html=True)
