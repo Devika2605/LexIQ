@@ -22,7 +22,30 @@ RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 groq_client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 MODEL       = "llama-3.1-8b-instant"
 
-
+def call_groq_with_retry(prompt: str, max_retries: int = 3) -> str:
+    """
+    Calls Groq with automatic retry on rate limit errors.
+    Waits 30 seconds between retries.
+    """
+    for attempt in range(max_retries):
+        try:
+            response = groq_client.chat.completions.create(
+                model       = MODEL,
+                messages    = [{"role": "user", "content": prompt}],
+                temperature = 0.0,
+                max_tokens  = 10,
+            )
+            return response.choices[0].message.content.strip()
+        except Exception as e:
+            error_msg = str(e).lower()
+            if "rate limit" in error_msg or "429" in error_msg:
+                wait_time = 30 * (attempt + 1)
+                print(f"\n    ⏳ Rate limited. Waiting {wait_time}s (retry {attempt+1}/{max_retries})...")
+                time.sleep(wait_time)
+            else:
+                print(f"\n    ❌ Groq error: {e}")
+                return "0.5"
+    return "0.5"
 # ── Load Test Dataset ─────────────────────────────────────
 def load_test_dataset() -> list[dict]:
     with open(TEST_DATASET_PATH, "r", encoding="utf-8") as f:
@@ -66,10 +89,6 @@ Answer:"""
 # This avoids the OpenAI dependency completely
 
 def score_faithfulness(question: str, answer: str, contexts: list[str]) -> float:
-    """
-    Measures if the answer is grounded in the retrieved contexts.
-    Asks LLM: does the answer contain only information from the context?
-    """
     context_text = "\n".join(contexts)
     prompt = f"""You are evaluating whether an answer is faithful to the provided context.
 
@@ -79,31 +98,21 @@ Context:
 Question: {question}
 Answer: {answer}
 
-Is every claim in the answer supported by the context? 
+Is every claim in the answer supported by the context?
 Respond with a score from 0.0 to 1.0 where:
 - 1.0 = answer is completely grounded in the context
-- 0.5 = answer is partially grounded, some claims not in context  
+- 0.5 = answer is partially grounded
 - 0.0 = answer contains information not in the context
 
 Respond with ONLY a number between 0.0 and 1.0. Nothing else."""
 
+    result = call_groq_with_retry(prompt)
     try:
-        response = groq_client.chat.completions.create(
-            model       = MODEL,
-            messages    = [{"role": "user", "content": prompt}],
-            temperature = 0.0,
-            max_tokens  = 10,
-        )
-        score_str = response.choices[0].message.content.strip()
-        return min(1.0, max(0.0, float(score_str)))
+        return min(1.0, max(0.0, float(result)))
     except:
         return 0.5
 
-
 def score_answer_relevancy(question: str, answer: str) -> float:
-    """
-    Measures if the answer actually addresses the question.
-    """
     prompt = f"""You are evaluating whether an answer is relevant to the question.
 
 Question: {question}
@@ -117,23 +126,14 @@ Respond with a score from 0.0 to 1.0 where:
 
 Respond with ONLY a number between 0.0 and 1.0. Nothing else."""
 
+    result = call_groq_with_retry(prompt)
     try:
-        response = groq_client.chat.completions.create(
-            model       = MODEL,
-            messages    = [{"role": "user", "content": prompt}],
-            temperature = 0.0,
-            max_tokens  = 10,
-        )
-        score_str = response.choices[0].message.content.strip()
-        return min(1.0, max(0.0, float(score_str)))
+        return min(1.0, max(0.0, float(result)))
     except:
         return 0.5
 
 
 def score_context_precision(question: str, contexts: list[str]) -> float:
-    """
-    Measures what fraction of retrieved contexts are actually relevant.
-    """
     if not contexts:
         return 0.0
 
@@ -145,28 +145,21 @@ Question: {question}
 Context: {ctx[:500]}
 
 Respond with ONLY 1 (relevant) or 0 (not relevant). Nothing else."""
+
+        result = call_groq_with_retry(prompt)
         try:
-            response = groq_client.chat.completions.create(
-                model       = MODEL,
-                messages    = [{"role": "user", "content": prompt}],
-                temperature = 0.0,
-                max_tokens  = 5,
-            )
-            score_str = response.choices[0].message.content.strip()
-            if "1" in score_str:
+            if "1" in result:
                 relevant += 1
         except:
             relevant += 0.5
+        time.sleep(0.5)  # small delay between each chunk scoring
 
     return relevant / len(contexts)
 
 
 def score_context_recall(question: str, ground_truth: str, contexts: list[str]) -> float:
-    """
-    Measures if the retrieved contexts contain enough to answer correctly.
-    """
     context_text = "\n".join(contexts)
-    prompt = f"""You are checking if the provided context contains enough information to answer a question correctly.
+    prompt = f"""You are checking if the provided context contains enough information to answer correctly.
 
 Ground Truth Answer: {ground_truth}
 Retrieved Context: {context_text[:2000]}
@@ -179,15 +172,9 @@ Respond with a score from 0.0 to 1.0 where:
 
 Respond with ONLY a number between 0.0 and 1.0. Nothing else."""
 
+    result = call_groq_with_retry(prompt)
     try:
-        response = groq_client.chat.completions.create(
-            model       = MODEL,
-            messages    = [{"role": "user", "content": prompt}],
-            temperature = 0.0,
-            max_tokens  = 10,
-        )
-        score_str = response.choices[0].message.content.strip()
-        return min(1.0, max(0.0, float(score_str)))
+        return min(1.0, max(0.0, float(result)))
     except:
         return 0.5
 
@@ -199,7 +186,7 @@ def run_experiment(
     retriever:   str,
     bm25_chunks: list,
     bm25_index,
-    top_k:       int = 5,
+    top_k:       int = 10,
 ) -> dict:
     print(f"\n  ▶ strategy={strategy} | retriever={retriever}")
 
@@ -231,17 +218,17 @@ def run_experiment(
 
         # Generate answer
         answer = generate_answer(question, contexts)
-        time.sleep(0.5)  # avoid rate limiting
+        time.sleep(2)  # avoid rate limiting
 
         # Score all 4 metrics
         faith   = score_faithfulness(question, answer, contexts)
-        time.sleep(0.3)
+        time.sleep(1)
         rel     = score_answer_relevancy(question, answer)
-        time.sleep(0.3)
+        time.sleep(1)
         prec    = score_context_precision(question, contexts)
-        time.sleep(0.3)
+        time.sleep(1)
         rec     = score_context_recall(question, ground_truth, contexts)
-        time.sleep(0.3)
+        time.sleep(2)
 
         faith_scores.append(faith)
         relevancy_scores.append(rel)
@@ -273,7 +260,7 @@ def run_all_experiments():
     test_data = load_test_dataset()
 
     # Use first 10 questions for speed — change to 20 for full eval
-    eval_data = test_data[:10]
+    eval_data = test_data
     print(f"   Running on {len(eval_data)} questions × 9 experiments")
     print(f"   Estimated time: 25-35 minutes\n")
 
@@ -349,5 +336,54 @@ def print_comparison_table(results: list[dict]):
     print(f"🚀 Improvement: {improvement:.1f}% from worst to best")
 
 
+def run_remaining_experiments():
+    """
+    Runs only experiments 4-9 (recursive and clause strategies).
+    Use this after rate limit recovery.
+    """
+    print("\n📊 Loading test dataset...")
+    test_data = load_test_dataset()
+    eval_data = test_data  # all 51 questions
+
+    # Only run remaining strategies
+    strategies = ["recursive", "clause"]  # skip fixed — already done
+    retrievers = ["dense", "sparse", "hybrid"]
+
+    print("🔧 Loading BM25 indices...")
+    bm25_corpora = {}
+    for strategy in strategies:
+        chunks, bm25 = load_corpus(strategy=strategy)
+        bm25_corpora[strategy] = (chunks, bm25)
+    print("✅ All indices loaded\n")
+
+    # Load existing results
+    progress_file = RESULTS_DIR / "experiments_progress.json"
+    if progress_file.exists():
+        with open(progress_file) as f:
+            results = json.load(f)
+        print(f"📂 Loaded {len(results)} existing results\n")
+    else:
+        results = []
+
+    for strategy in strategies:
+        chunks, bm25 = bm25_corpora[strategy]
+        for retriever in retrievers:
+            result = run_experiment(
+                test_data   = eval_data,
+                strategy    = strategy,
+                retriever   = retriever,
+                bm25_chunks = chunks,
+                bm25_index  = bm25,
+                top_k       = 5,
+            )
+            results.append(result)
+            save_results(results, "experiments_progress.json")
+            print(f"\n  💾 Progress saved ({len(results)} experiments done)\n")
+
+    save_results(results, "all_experiments.json")
+    print_comparison_table(results)
+    return results
+
+
 if __name__ == "__main__":
-    run_all_experiments()
+    run_remaining_experiments()
