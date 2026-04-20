@@ -8,11 +8,11 @@ __pycache__/
 .python-version
 
 # Vector DB / generated data
-chroma_db/
+
 data/raw/
 
 *.zip
-*.sqlite3
+
 
 # Logs
 *.log
