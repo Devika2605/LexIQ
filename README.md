@@ -2,7 +2,7 @@
 title: LexIQ
 emoji: ⚖️
 colorFrom: yellow
-colorTo: brown
+colorTo: yellow
 sdk: docker
 app_port: 7860
 ---
