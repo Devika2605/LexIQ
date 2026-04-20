@@ -1,0 +1,1344 @@
+{
+  "metadata": {
+    "category": "templates",
+    "subcategory": "lease",
+    "doc_type": "template",
+    "filename": "template_lease_commercial",
+    "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+  },
+  "chunk_counts": {
+    "fixed": 38,
+    "recursive": 36,
+    "clause": 26
+  },
+  "chunks": {
+    "fixed": [
+      {
+        "chunk_id": "template_lease_commercial_fixed_00000",
+        "text": "COMMERCIAL LEASE AGREEMENT \nThis Commercial Lease Agreement (hereinafter referred as ‘Agreement’) was made \nat [.]on this [.] day of [.], 20[.] (‘Effective Date’). \n \nBY AND BETWEEN \nMr. [.], son of Mr. [.], aged [.] residing at [.], (herein after referred to as the \n“LESSOR”), which terms or expression shall unless repugnant to the subject or \ncontext mean and include his legal heirs, executors, successors, administrators, legal \nrepresentatives and assigns of the FIRST PART;  \nAND \nMr. [.], son of Mr. [.]",
+        "strategy": "fixed",
+        "page": 1,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_fixed_00001",
+        "text": "of the FIRST PART;  \nAND \nMr. [.], son of Mr. [.], aged [.] residing at [.], (hereinafter referred to as the \n“LESSEE”), which terms or expression shall unless repugnant to the subject or \ncontext mean and include his legal heirs, executors, successors, administrators, legal \nrepresentatives and assigns of the SECOND PART. \nWHEREAS, the Lessor, is the owner of the premises bearing no. [.], having total \narea measuring about [.] sq. metres, situated at [.], hereinafter referred to as the \n“Demised Premises”",
+        "strategy": "fixed",
+        "page": 1,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_fixed_00002",
+        "text": "hereinafter referred to as the \n“Demised Premises”. \nAND WHEREAS, the Lessor has agreed with the Lessee to grant to the Lessee \nunder the terms of this Deed the Demised Premises with all fittings, fixtures and \nfurniture installed therein and as fully described in Annexure-I detailed hereunder \nannexed and forming part of this Deed. The lessee has agreed to take on lease the \nsame, subject to the covenants, conditions and stipulations, hereinafter in these \npresents expressed and contained. \nNOW IT IS HEREB",
+        "strategy": "fixed",
+        "page": 1,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_fixed_00003",
+        "text": "presents expressed and contained. \nNOW IT IS HEREBY MUTUALLY AGREED BY AND BETWEEN THE \nPARTIES HERETO AS FOLLOWS:  \n1. \nm of Lease shall be for a fixed period of 11 Months which shall \ncommence from the effective date. \nThe Ter\n1",
+        "strategy": "fixed",
+        "page": 1,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_fixed_00004",
+        "text": "a. \nThe Lease for the demised premises measuring is fixed as Rs. [.] ([.] only)  \nper month.  \nb. \nThe security deposit for the demised premises is fixed as Rs. [.](Rupees [.] \nonly) which is repayable at the termination of this agreement, without \ninterest.  \nc. \nThe Lease amount shall be calculated from the [.]of every month to [.] of \nthe subsequent month.  \n2. \nase agreement shall be according to English calendar month, and the \nTenant shall pay the above said Lease amount for every month in advance on",
+        "strategy": "fixed",
+        "page": 2,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_fixed_00005",
+        "text": "e said Lease amount for every month in advance on \nor before the [.] of every month through CASH/CHEQUE/ECS/BANK TRANSFER to \nthe Owner.  \nThis Le\nDECLAR\n \n3. \nATIONS \nThe Lessor hereby declares that he is the absolute owner of the Leased premises \nbeing let out to the Lessee and is lawfully entitled to execute this Agreement. And \nthe Lessee hereby declares that the premises in question shall only be used for the \npurposes of business of the company and agrees that any other use of the property \nnot author",
+        "strategy": "fixed",
+        "page": 2,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_fixed_00006",
+        "text": "ees that any other use of the property \nnot authorized in advance in writing by the Lessor shall entitle the Lessor to \nunilaterally terminate this Agreement.  \n \n4. \nLATE CHARGES AND FAILED CHEQUES \nIf Lease amount is paid after the fifth day of the month, then the Lease amount will \nbe paid along with late charges of  [.] per each month. If any cheque given by Lessee \nremains unclear due to any reason, then the Lessee will pay return cheque charges of \nRs. [.]/- to the Lessor. \n \n5. \nSECURITY DEPOSITS \nUp",
+        "strategy": "fixed",
+        "page": 2,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_fixed_00007",
+        "text": "[.]/- to the Lessor. \n \n5. \nSECURITY DEPOSITS \nUpon the execution of this Agreement, the Lessee shall pay the Lessor a security \ndeposit of Rs. [.]/- (Rupees [.] only) to be held as security for the payment of Lease \namount and the due compliance by the Lessee of all of its obligations in this \nAgreement. The total of the security deposits with observance to the terms and \nconditions of this agreement shall be refunded to the Lessee within 10 days after the \npremises have been completely vacated. \n2",
+        "strategy": "fixed",
+        "page": 2,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_fixed_00008",
+        "text": "premises have been completely vacated. \n2",
+        "strategy": "fixed",
+        "page": 2,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_fixed_00009",
+        "text": "Lessor may deduct any amount necessary from the security deposit, and ask for \nfurther payment from the Lessee of any amount necessary if such amount exceeds \nthe value of the security deposit, to cover the Lessee’s default in any/some/all of the \nfollowing: \na. any unpaid Lease amount, \nb. cleaning costs, \nc. key replacement costs,  \nd. cost for repair of damages to premises and/or common areas exclusive of expected \nordinary wear and tear, and \n e. any other amount legally allowable under the terms of thi",
+        "strategy": "fixed",
+        "page": 3,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_fixed_00010",
+        "text": "er amount legally allowable under the terms of this agreement. \nA written accounting of said charges shall be presented to Lessee within 10 days of \nmove-out. If the costs are over and above the deposits the Lessee shall immediately \npay said additional costs for damages to the Lessor.  \n6. \nPOSSESSION OF THE PREMISES \nIf Lessor is unable to deliver possession of the premises for any reason not within \nLessor’s control the Lessor will not be held liable for the same. The agreement is not \nvoid or voidable.",
+        "strategy": "fixed",
+        "page": 3,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_fixed_00011",
+        "text": "the same. The agreement is not \nvoid or voidable. The Lessee do not have to pay any Lease amount until actual \npossession of the premises. \n \nIf Lessor is unable to deliver possession within 5 days after the agreed \ncommencement date, the Lessee may terminate this Agreement by giving written \nnotice to Lessor. The Lessor must refund all money and security deposits paid. The \nfailure of Lessee to take possession of the premises on the said date shall not relieve \nthem of their obligation to pay Lease amount",
+        "strategy": "fixed",
+        "page": 3,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_fixed_00012",
+        "text": "eve \nthem of their obligation to pay Lease amount on the agreed date. \n \n7. \nINSPECTION OF THE PREMISES \nBefore the delivery of residency by the Lessee, the Lessor and the Lessee shall inspect \nthe premises and shall record any existing damages to the premises on a check list. \n(Annexure – I). Both parties shall receive copies of the Document which should be \nduly signed by both the parties. \nAt the termination of the agreement and before possession is restored to the Lessor, \nthe Lessor shall inform the Le",
+        "strategy": "fixed",
+        "page": 3,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_fixed_00013",
+        "text": "red to the Lessor, \nthe Lessor shall inform the Lessee of his right to be present at the final inspection. \n3",
+        "strategy": "fixed",
+        "page": 3,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_fixed_00014",
+        "text": "The Lessor shall notify the Lessor of the time and date of the inspection, which must \nbe within seventy-two hours of the termination of occupancy. \n \n8. \nDUTIES AND OBLIGATIONS \na. \nThe Lessee hereby undertakes to not to sublet, assign or transfer the said \nLeased premises whole or any part thereof to any other person or concern in any \nmanner whatsoever, without obtaining written consent from the landlord.  \nb. \nThe accommodation under the lease shall be used as the registered office of \nthe Company.  \nc.",
+        "strategy": "fixed",
+        "page": 4,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_fixed_00015",
+        "text": "sed as the registered office of \nthe Company.  \nc. \nThe Lessee shall not make any material addition or alteration to the \naccommodation under the lease as let out without the previous consent of the \nowner in writing. \nd. \nThe Lessee shall not to do or cause to be done anything in or upon the \ndemised Premises which is or may grow to be a source or nuisance or annoyance to \nthe Lessor.  \ne. \nThe Lessee agrees to indemnify and hold harmless the Lessor for all its \nbusiness activities including but not limite",
+        "strategy": "fixed",
+        "page": 4,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_fixed_00016",
+        "text": "its \nbusiness activities including but not limited to statutory dues, municipal taxes and \nother charges. \nf. \nThe lessee shall not bring or cause to be brought into or store at the \nDemised Premises or any part thereof any hazardous goods articles of combustible \nor inflammable mature, except in small quantities for normal uses as permitted by \nlaw nor carry out any activity which is illegal in nature and not permissible by law. \ng. \nThe Lessee shall keep the premises let out to them in good condition and",
+        "strategy": "fixed",
+        "page": 4,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_fixed_00017",
+        "text": "the premises let out to them in good condition and \nshall carry out all minor repairs at his own cost and expenses. \nh. \nThe Lessee however, shall have the right to locate such fixtures and or \nfittings and wooden temporary partition or structure as shall be required to \nexecute partitions, chambers, office rooms, etc. However, the Lessee agrees to \nvacate the property in the same condition he received it in, carrying out repair \nwork to cover up any alterations, permissible under this clause, made by him",
+        "strategy": "fixed",
+        "page": 4,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_fixed_00018",
+        "text": "ions, permissible under this clause, made by him \nduring the period of the lease.  \ni. \nThe Lessee further acknowledges that he received the premises in question in \nexcellent condition with freshly painted walls. \n4",
+        "strategy": "fixed",
+        "page": 4,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_fixed_00019",
+        "text": "j. \nThe Lessor shall have the right to enter and inspect the premises as per their \nconvenience during reasonable hours of business and the Lessee agrees to create \nno impediments for the same. \nk. \nThe lessee here by agreed to pay the service tax if applicable. \n \n9. \nMISCELLANEOUS \nNotwithstanding any other provision of this agreement, the Lessor shall have the \nright to terminate this agreement at any point of time during the period of the lease.  \na. The provisions of this Agreement shall be governed by",
+        "strategy": "fixed",
+        "page": 5,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_fixed_00020",
+        "text": "provisions of this Agreement shall be governed by the Laws in force in \nthe Union of India, and any dispute arising from this Agreement shall be \nsubject to the laws of [.].  \nb. The Courts in [.] shall have sole jurisdiction to entertain disputes arising \nfrom / out of / as a result of this Agreement.  \nc. The Parties hereto agree that this Agreement shall be Registered in [.]. \nd. The Lessee will pay property taxes in respect of the demised premises due to \nthe government and corporation. \n \n10.     TERM",
+        "strategy": "fixed",
+        "page": 5,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_fixed_00021",
+        "text": "o \nthe government and corporation. \n \n10.     TERMINATION  \nThe agreement may be terminated by either party by issuing a notice thirty days \nprior to the agreed expiry of the Lease period. Where laws require \"just cause\", such \njust cause shall be so stated on said notice. The Premises will be deemed vacated only \nafter all areas including storage are vacated by the Lessee and the property provided \nby the Lessor for the Lessee and the keys returned to the Lessor. If the Lessee does \nnot vacate within 4 wee",
+        "strategy": "fixed",
+        "page": 5,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_fixed_00022",
+        "text": "essor. If the Lessee does \nnot vacate within 4 weeks the Lessee is liable to pay the Lessor additionally to cover \nthe damages caused due to the owner’s loss of prospective tenants. \n11.     EXTENSION OF LEASE \nAt the end of the period as stated in the agreement, the lease will automatically \ncovert to month to month. In the event of termination, a written notice must be \nserved by the Lessee or the Lessor to the other at least thirty days prior to the end of \nthe agreement. If the Lessee decides to continu",
+        "strategy": "fixed",
+        "page": 5,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_fixed_00023",
+        "text": "f \nthe agreement. If the Lessee decides to continue, he will pay the monthly rental or \ndecided otherwise and fulfil all other obligations in the agreement. \n \n12.      CHANGE OF TERMS \n5",
+        "strategy": "fixed",
+        "page": 5,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_fixed_00024",
+        "text": "The terms and conditions of this agreement are subject to future change by the \nLessor after the expiry of the Lease Period after issuing a thirty-day notice stating \nsuch change delivered to the Lessee. All changes made will be as per the governing \nlaw in existence at the time of the Notice. \n14.     SEVERABILITY \nEach paragraph of this lease agreement shall be and remain separate from and \nindependent of and severable from all and any other paragraphs herein except where \notherwise expressly indicated or",
+        "strategy": "fixed",
+        "page": 6,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_fixed_00025",
+        "text": "ein except where \notherwise expressly indicated or indicated by the context of the agreement. The \ndecision or declaration that one or more of the paragraphs are null and void shall \nhave no effect on the remaining paragraphs of this lease agreement. \n \n15.     ENTIRE AGREEMENT \n \nThis document constitutes the entire Agreement between the Lessee and Lessor. This \nAgreement cannot be modified except in writing and must be signed by all parties.  \nNeither Lessor nor Lessee have made any promises or representa",
+        "strategy": "fixed",
+        "page": 6,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_fixed_00026",
+        "text": "or nor Lessee have made any promises or representations, other than \nthose set forth in this Agreement and those implied by law. The failure of Lessee or \ntheir guests or invitees to comply with any term of this Agreement is grounds for \ntermination of the agreement with appropriate notice to Lessee and procedures as \nrequired by law.  \n \nIN WITNESSETH WHEREOF the parties hereto have herein unto set and \nsubscribed their respective hands on the day and year mentioned hereinabove. \nSigned, Sealed and Deliver",
+        "strategy": "fixed",
+        "page": 6,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_fixed_00027",
+        "text": "mentioned hereinabove. \nSigned, Sealed and Delivered by: \n \nLESSOR \n___________________________ \nName: \n \nLESSEE \n6",
+        "strategy": "fixed",
+        "page": 6,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_fixed_00028",
+        "text": "___________________________ \nName: \n \nIn the presence of Witnesses: \n1)__________________________ \n \n2)___________________________ \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n7",
+        "strategy": "fixed",
+        "page": 7,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_fixed_00029",
+        "text": "8 \n \nANNEXURE- I \nParticulars \nYes\nNo\nRemarks\n \n \n \n \n \n \n \n \nFURNITURE INVENTORY (If the furniture is provided by Lessor) \nItem \nNos.\nItem\nNos.",
+        "strategy": "fixed",
+        "page": 8,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_fixed_00030",
+        "text": "WHEREAS, the Lessor, is the owner of the premises bearing no. [.], having total\narea measuring about [.] sq. metres, situated at [.], hereinafter referred to as the\n“Demised Premises”.\nAND WHEREAS, the Lessor has agreed with the Lessee to grant to the Lessee\nunder the terms of this Deed the Demised Premises with all fittings, fixtures and\nfurniture installed therein and as fully described in Annexure-I detailed hereunder\nannexed and forming part of this Deed. The lessee has agreed to take on lease the\nsame,",
+        "strategy": "fixed",
+        "page": 1,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf",
+          "content_type": "table"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_fixed_00031",
+        "text": ". The lessee has agreed to take on lease the\nsame, subject to the covenants, conditions and stipulations, hereinafter in these\npresents expressed and contained.\nNOW IT IS HEREBY MUTUALLY AGREED BY AND BETWEEN THE\nPARTIES HERETO AS FOLLOWS:",
+        "strategy": "fixed",
+        "page": 1,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf",
+          "content_type": "table"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_fixed_00032",
+        "text": "A written accounting of said charges shall be presented to Lessee within 10 days of\nmove-out. If the costs are over and above the deposits the Lessee shall immediately\npay said additional costs for damages to the Lessor.",
+        "strategy": "fixed",
+        "page": 3,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf",
+          "content_type": "table"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_fixed_00033",
+        "text": "The agreement may be terminated by either party by issuing a notice thirty days\nprior to the agreed expiry of the Lease period. Where laws require \"just cause\", such\njust cause shall be so stated on said notice. The Premises will be deemed vacated only\nafter all areas including storage are vacated by the Lessee and the property provided\nby the Lessor for the Lessee and the keys returned to the Lessor. If the Lessee does\nnot vacate within 4 weeks the Lessee is liable to pay the Lessor additionally to cover\nt",
+        "strategy": "fixed",
+        "page": 5,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf",
+          "content_type": "table"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_fixed_00034",
+        "text": "s liable to pay the Lessor additionally to cover\nthe damages caused due to the owner’s loss of prospective tenants.",
+        "strategy": "fixed",
+        "page": 5,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf",
+          "content_type": "table"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_fixed_00035",
+        "text": "The terms and conditions of this agreement are subject to future change by the\nLessor after the expiry of the Lease Period after issuing a thirty-day notice stating\nsuch change delivered to the Lessee. All changes made will be as per the governing\nlaw in existence at the time of the Notice.",
+        "strategy": "fixed",
+        "page": 6,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf",
+          "content_type": "table"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_fixed_00036",
+        "text": "Particulars | Yes | No | Remarks\n |  |  | \n |  |  | \n |  |  | \n |  |  | \n |  |  | \n |  |  | \n |  |  |",
+        "strategy": "fixed",
+        "page": 8,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf",
+          "content_type": "table"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_fixed_00037",
+        "text": "Item | Nos. |  | Item | Nos.\n |  |  |  | \n |  |  |  | \n |  |  |  | \n |  |  |  | \n |  |  |  | \n |  |  |  | \n |  |  |  |",
+        "strategy": "fixed",
+        "page": 8,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf",
+          "content_type": "table"
+        }
+      }
+    ],
+    "recursive": [
+      {
+        "chunk_id": "template_lease_commercial_recursive_00000",
+        "text": "COMMERCIAL LEASE AGREEMENT \nThis Commercial Lease Agreement (hereinafter referred as ‘Agreement’) was made \nat [.]on this [.] day of [.], 20[.] (‘Effective Date’). \n \nBY AND BETWEEN \nMr. [.], son of Mr. [.], aged [.] residing at [.], (herein after referred to as the \n“LESSOR”), which terms or expression shall unless repugnant to the subject or \ncontext mean and include his legal heirs, executors, successors, administrators, legal \nrepresentatives and assigns of the FIRST PART;  \nAND",
+        "strategy": "recursive",
+        "page": 1,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_recursive_00001",
+        "text": "Mr. [.], son of Mr. [.], aged [.] residing at [.], (hereinafter referred to as the \n“LESSEE”), which terms or expression shall unless repugnant to the subject or \ncontext mean and include his legal heirs, executors, successors, administrators, legal \nrepresentatives and assigns of the SECOND PART. \nWHEREAS, the Lessor, is the owner of the premises bearing no. [.], having total \narea measuring about [.] sq. metres, situated at [.], hereinafter referred to as the \n“Demised Premises”.",
+        "strategy": "recursive",
+        "page": 1,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_recursive_00002",
+        "text": "AND WHEREAS, the Lessor has agreed with the Lessee to grant to the Lessee \nunder the terms of this Deed the Demised Premises with all fittings, fixtures and \nfurniture installed therein and as fully described in Annexure-I detailed hereunder \nannexed and forming part of this Deed. The lessee has agreed to take on lease the \nsame, subject to the covenants, conditions and stipulations, hereinafter in these \npresents expressed and contained. \nNOW IT IS HEREBY MUTUALLY AGREED BY AND BETWEEN THE",
+        "strategy": "recursive",
+        "page": 1,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_recursive_00003",
+        "text": "PARTIES HERETO AS FOLLOWS:  \n1. \nm of Lease shall be for a fixed period of 11 Months which shall \ncommence from the effective date. \nThe Ter\n1",
+        "strategy": "recursive",
+        "page": 1,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_recursive_00004",
+        "text": "a. \nThe Lease for the demised premises measuring is fixed as Rs. [.] ([.] only)  \nper month.  \nb. \nThe security deposit for the demised premises is fixed as Rs. [.](Rupees [.] \nonly) which is repayable at the termination of this agreement, without \ninterest.  \nc. \nThe Lease amount shall be calculated from the [.]of every month to [.] of \nthe subsequent month.  \n2. \nase agreement shall be according to English calendar month, and the",
+        "strategy": "recursive",
+        "page": 2,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_recursive_00005",
+        "text": "Tenant shall pay the above said Lease amount for every month in advance on \nor before the [.] of every month through CASH/CHEQUE/ECS/BANK TRANSFER to \nthe Owner.  \nThis Le\nDECLAR\n \n3. \nATIONS \nThe Lessor hereby declares that he is the absolute owner of the Leased premises \nbeing let out to the Lessee and is lawfully entitled to execute this Agreement. And \nthe Lessee hereby declares that the premises in question shall only be used for the",
+        "strategy": "recursive",
+        "page": 2,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_recursive_00006",
+        "text": "purposes of business of the company and agrees that any other use of the property \nnot authorized in advance in writing by the Lessor shall entitle the Lessor to \nunilaterally terminate this Agreement.  \n \n4. \nLATE CHARGES AND FAILED CHEQUES \nIf Lease amount is paid after the fifth day of the month, then the Lease amount will \nbe paid along with late charges of  [.] per each month. If any cheque given by Lessee \nremains unclear due to any reason, then the Lessee will pay return cheque charges of",
+        "strategy": "recursive",
+        "page": 2,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_recursive_00007",
+        "text": "Rs. [.]/- to the Lessor. \n \n5. \nSECURITY DEPOSITS \nUpon the execution of this Agreement, the Lessee shall pay the Lessor a security \ndeposit of Rs. [.]/- (Rupees [.] only) to be held as security for the payment of Lease \namount and the due compliance by the Lessee of all of its obligations in this \nAgreement. The total of the security deposits with observance to the terms and \nconditions of this agreement shall be refunded to the Lessee within 10 days after the \npremises have been completely vacated. \n2",
+        "strategy": "recursive",
+        "page": 2,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_recursive_00008",
+        "text": "Lessor may deduct any amount necessary from the security deposit, and ask for \nfurther payment from the Lessee of any amount necessary if such amount exceeds \nthe value of the security deposit, to cover the Lessee’s default in any/some/all of the \nfollowing: \na. any unpaid Lease amount, \nb. cleaning costs, \nc. key replacement costs,  \nd. cost for repair of damages to premises and/or common areas exclusive of expected \nordinary wear and tear, and",
+        "strategy": "recursive",
+        "page": 3,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_recursive_00009",
+        "text": "e. any other amount legally allowable under the terms of this agreement. \nA written accounting of said charges shall be presented to Lessee within 10 days of \nmove-out. If the costs are over and above the deposits the Lessee shall immediately \npay said additional costs for damages to the Lessor.  \n6. \nPOSSESSION OF THE PREMISES \nIf Lessor is unable to deliver possession of the premises for any reason not within \nLessor’s control the Lessor will not be held liable for the same. The agreement is not",
+        "strategy": "recursive",
+        "page": 3,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_recursive_00010",
+        "text": "void or voidable. The Lessee do not have to pay any Lease amount until actual \npossession of the premises. \n \nIf Lessor is unable to deliver possession within 5 days after the agreed \ncommencement date, the Lessee may terminate this Agreement by giving written \nnotice to Lessor. The Lessor must refund all money and security deposits paid. The \nfailure of Lessee to take possession of the premises on the said date shall not relieve \nthem of their obligation to pay Lease amount on the agreed date. \n \n7.",
+        "strategy": "recursive",
+        "page": 3,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_recursive_00011",
+        "text": "INSPECTION OF THE PREMISES \nBefore the delivery of residency by the Lessee, the Lessor and the Lessee shall inspect \nthe premises and shall record any existing damages to the premises on a check list. \n(Annexure – I). Both parties shall receive copies of the Document which should be \nduly signed by both the parties. \nAt the termination of the agreement and before possession is restored to the Lessor, \nthe Lessor shall inform the Lessee of his right to be present at the final inspection. \n3",
+        "strategy": "recursive",
+        "page": 3,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_recursive_00012",
+        "text": "The Lessor shall notify the Lessor of the time and date of the inspection, which must \nbe within seventy-two hours of the termination of occupancy. \n \n8. \nDUTIES AND OBLIGATIONS \na. \nThe Lessee hereby undertakes to not to sublet, assign or transfer the said \nLeased premises whole or any part thereof to any other person or concern in any \nmanner whatsoever, without obtaining written consent from the landlord.  \nb. \nThe accommodation under the lease shall be used as the registered office of \nthe Company.",
+        "strategy": "recursive",
+        "page": 4,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_recursive_00013",
+        "text": "c. \nThe Lessee shall not make any material addition or alteration to the \naccommodation under the lease as let out without the previous consent of the \nowner in writing. \nd. \nThe Lessee shall not to do or cause to be done anything in or upon the \ndemised Premises which is or may grow to be a source or nuisance or annoyance to \nthe Lessor.  \ne. \nThe Lessee agrees to indemnify and hold harmless the Lessor for all its \nbusiness activities including but not limited to statutory dues, municipal taxes and",
+        "strategy": "recursive",
+        "page": 4,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_recursive_00014",
+        "text": "other charges. \nf. \nThe lessee shall not bring or cause to be brought into or store at the \nDemised Premises or any part thereof any hazardous goods articles of combustible \nor inflammable mature, except in small quantities for normal uses as permitted by \nlaw nor carry out any activity which is illegal in nature and not permissible by law. \ng. \nThe Lessee shall keep the premises let out to them in good condition and \nshall carry out all minor repairs at his own cost and expenses. \nh.",
+        "strategy": "recursive",
+        "page": 4,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_recursive_00015",
+        "text": "The Lessee however, shall have the right to locate such fixtures and or \nfittings and wooden temporary partition or structure as shall be required to \nexecute partitions, chambers, office rooms, etc. However, the Lessee agrees to \nvacate the property in the same condition he received it in, carrying out repair \nwork to cover up any alterations, permissible under this clause, made by him \nduring the period of the lease.  \ni. \nThe Lessee further acknowledges that he received the premises in question in",
+        "strategy": "recursive",
+        "page": 4,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_recursive_00016",
+        "text": "excellent condition with freshly painted walls. \n4",
+        "strategy": "recursive",
+        "page": 4,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_recursive_00017",
+        "text": "j. \nThe Lessor shall have the right to enter and inspect the premises as per their \nconvenience during reasonable hours of business and the Lessee agrees to create \nno impediments for the same. \nk. \nThe lessee here by agreed to pay the service tax if applicable. \n \n9. \nMISCELLANEOUS \nNotwithstanding any other provision of this agreement, the Lessor shall have the \nright to terminate this agreement at any point of time during the period of the lease.",
+        "strategy": "recursive",
+        "page": 5,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_recursive_00018",
+        "text": "a. The provisions of this Agreement shall be governed by the Laws in force in \nthe Union of India, and any dispute arising from this Agreement shall be \nsubject to the laws of [.].  \nb. The Courts in [.] shall have sole jurisdiction to entertain disputes arising \nfrom / out of / as a result of this Agreement.  \nc. The Parties hereto agree that this Agreement shall be Registered in [.]. \nd. The Lessee will pay property taxes in respect of the demised premises due to \nthe government and corporation.",
+        "strategy": "recursive",
+        "page": 5,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_recursive_00019",
+        "text": "10.     TERMINATION  \nThe agreement may be terminated by either party by issuing a notice thirty days \nprior to the agreed expiry of the Lease period. Where laws require \"just cause\", such \njust cause shall be so stated on said notice. The Premises will be deemed vacated only \nafter all areas including storage are vacated by the Lessee and the property provided \nby the Lessor for the Lessee and the keys returned to the Lessor. If the Lessee does",
+        "strategy": "recursive",
+        "page": 5,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_recursive_00020",
+        "text": "not vacate within 4 weeks the Lessee is liable to pay the Lessor additionally to cover \nthe damages caused due to the owner’s loss of prospective tenants. \n11.     EXTENSION OF LEASE \nAt the end of the period as stated in the agreement, the lease will automatically \ncovert to month to month. In the event of termination, a written notice must be \nserved by the Lessee or the Lessor to the other at least thirty days prior to the end of",
+        "strategy": "recursive",
+        "page": 5,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_recursive_00021",
+        "text": "the agreement. If the Lessee decides to continue, he will pay the monthly rental or \ndecided otherwise and fulfil all other obligations in the agreement. \n \n12.      CHANGE OF TERMS \n5",
+        "strategy": "recursive",
+        "page": 5,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_recursive_00022",
+        "text": "The terms and conditions of this agreement are subject to future change by the \nLessor after the expiry of the Lease Period after issuing a thirty-day notice stating \nsuch change delivered to the Lessee. All changes made will be as per the governing \nlaw in existence at the time of the Notice. \n14.     SEVERABILITY \nEach paragraph of this lease agreement shall be and remain separate from and \nindependent of and severable from all and any other paragraphs herein except where",
+        "strategy": "recursive",
+        "page": 6,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_recursive_00023",
+        "text": "otherwise expressly indicated or indicated by the context of the agreement. The \ndecision or declaration that one or more of the paragraphs are null and void shall \nhave no effect on the remaining paragraphs of this lease agreement. \n \n15.     ENTIRE AGREEMENT \n \nThis document constitutes the entire Agreement between the Lessee and Lessor. This \nAgreement cannot be modified except in writing and must be signed by all parties.",
+        "strategy": "recursive",
+        "page": 6,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_recursive_00024",
+        "text": "Neither Lessor nor Lessee have made any promises or representations, other than \nthose set forth in this Agreement and those implied by law. The failure of Lessee or \ntheir guests or invitees to comply with any term of this Agreement is grounds for \ntermination of the agreement with appropriate notice to Lessee and procedures as \nrequired by law.  \n \nIN WITNESSETH WHEREOF the parties hereto have herein unto set and \nsubscribed their respective hands on the day and year mentioned hereinabove.",
+        "strategy": "recursive",
+        "page": 6,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_recursive_00025",
+        "text": "Signed, Sealed and Delivered by: \n \nLESSOR \n___________________________ \nName: \n \nLESSEE \n6",
+        "strategy": "recursive",
+        "page": 6,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_recursive_00026",
+        "text": "___________________________ \nName: \n \nIn the presence of Witnesses: \n1)__________________________ \n \n2)___________________________ \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n7",
+        "strategy": "recursive",
+        "page": 7,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_recursive_00027",
+        "text": "8 \n \nANNEXURE- I \nParticulars \nYes\nNo\nRemarks\n \n \n \n \n \n \n \n \nFURNITURE INVENTORY (If the furniture is provided by Lessor) \nItem \nNos.\nItem\nNos.",
+        "strategy": "recursive",
+        "page": 8,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_recursive_00028",
+        "text": "WHEREAS, the Lessor, is the owner of the premises bearing no. [.], having total\narea measuring about [.] sq. metres, situated at [.], hereinafter referred to as the\n“Demised Premises”.\nAND WHEREAS, the Lessor has agreed with the Lessee to grant to the Lessee\nunder the terms of this Deed the Demised Premises with all fittings, fixtures and\nfurniture installed therein and as fully described in Annexure-I detailed hereunder\nannexed and forming part of this Deed. The lessee has agreed to take on lease the",
+        "strategy": "recursive",
+        "page": 1,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf",
+          "content_type": "table"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_recursive_00029",
+        "text": "same, subject to the covenants, conditions and stipulations, hereinafter in these\npresents expressed and contained.\nNOW IT IS HEREBY MUTUALLY AGREED BY AND BETWEEN THE\nPARTIES HERETO AS FOLLOWS:",
+        "strategy": "recursive",
+        "page": 1,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf",
+          "content_type": "table"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_recursive_00030",
+        "text": "A written accounting of said charges shall be presented to Lessee within 10 days of\nmove-out. If the costs are over and above the deposits the Lessee shall immediately\npay said additional costs for damages to the Lessor.",
+        "strategy": "recursive",
+        "page": 3,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf",
+          "content_type": "table"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_recursive_00031",
+        "text": "The agreement may be terminated by either party by issuing a notice thirty days\nprior to the agreed expiry of the Lease period. Where laws require \"just cause\", such\njust cause shall be so stated on said notice. The Premises will be deemed vacated only\nafter all areas including storage are vacated by the Lessee and the property provided\nby the Lessor for the Lessee and the keys returned to the Lessor. If the Lessee does\nnot vacate within 4 weeks the Lessee is liable to pay the Lessor additionally to cover",
+        "strategy": "recursive",
+        "page": 5,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf",
+          "content_type": "table"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_recursive_00032",
+        "text": "the damages caused due to the owner’s loss of prospective tenants.",
+        "strategy": "recursive",
+        "page": 5,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf",
+          "content_type": "table"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_recursive_00033",
+        "text": "The terms and conditions of this agreement are subject to future change by the\nLessor after the expiry of the Lease Period after issuing a thirty-day notice stating\nsuch change delivered to the Lessee. All changes made will be as per the governing\nlaw in existence at the time of the Notice.",
+        "strategy": "recursive",
+        "page": 6,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf",
+          "content_type": "table"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_recursive_00034",
+        "text": "Particulars | Yes | No | Remarks\n |  |  | \n |  |  | \n |  |  | \n |  |  | \n |  |  | \n |  |  | \n |  |  |",
+        "strategy": "recursive",
+        "page": 8,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf",
+          "content_type": "table"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_recursive_00035",
+        "text": "Item | Nos. |  | Item | Nos.\n |  |  |  | \n |  |  |  | \n |  |  |  | \n |  |  |  | \n |  |  |  | \n |  |  |  | \n |  |  |  |",
+        "strategy": "recursive",
+        "page": 8,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf",
+          "content_type": "table"
+        }
+      }
+    ],
+    "clause": [
+      {
+        "chunk_id": "template_lease_commercial_clause_00000",
+        "text": "COMMERCIAL LEASE AGREEMENT \nThis Commercial Lease Agreement (hereinafter referred as ‘Agreement’) was made \nat [.]on this [.] day of [.], 20[.] (‘Effective Date’). \n \nBY AND BETWEEN \nMr. [.], son of Mr. [.], aged [.] residing at [.], (herein after referred to as the \n“LESSOR”), which terms or expression shall unless repugnant to the subject or \ncontext mean and include his legal heirs, executors, successors, administrators, legal \nrepresentatives and assigns of the FIRST PART;\nAND \nMr. [.], son of Mr. [.], aged [.] residing at [.], (hereinafter referred to as the \n“LESSEE”), which terms or expression shall unless repugnant to the subject or \ncontext mean and include his legal heirs, executors, successors, administrators, legal \nrepresentatives and assigns of the SECOND PART. \nWHEREAS, the Lessor, is the owner of the premises bearing no. [.], having total \narea measuring about [.] sq. metres, situated at [.], hereinafter referred to as the \n“Demised Premises”.",
+        "strategy": "clause",
+        "page": 1,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_clause_00001",
+        "text": "AND WHEREAS, the Lessor has agreed with the Lessee to grant to the Lessee \nunder the terms of this Deed the Demised Premises with all fittings, fixtures and \nfurniture installed therein and as fully described in Annexure-I detailed hereunder \nannexed and forming part of this Deed. The lessee has agreed to take on lease the \nsame, subject to the covenants, conditions and stipulations, hereinafter in these \npresents expressed and contained.\nNOW IT IS HEREBY MUTUALLY AGREED BY AND BETWEEN THE\nPARTIES HERETO AS FOLLOWS:  \n1. \nm of Lease shall be for a fixed period of 11 Months which shall \ncommence from the effective date. \nThe Ter\n1",
+        "strategy": "clause",
+        "page": 1,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_clause_00002",
+        "text": "a. \nThe Lease for the demised premises measuring is fixed as Rs. [.] ([.] only)  \nper month.  \nb. \nThe security deposit for the demised premises is fixed as Rs. [.](Rupees [.] \nonly) which is repayable at the termination of this agreement, without \ninterest.  \nc. \nThe Lease amount shall be calculated from the [.]of every month to [.] of \nthe subsequent month.  \n2. \nase agreement shall be according to English calendar month, and the \nTenant shall pay the above said Lease amount for every month in advance on \nor before the [.] of every month through CASH/CHEQUE/ECS/BANK TRANSFER to \nthe Owner.  \nThis Le\nDECLAR\n3.",
+        "strategy": "clause",
+        "page": 2,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_clause_00003",
+        "text": "ATIONS \nThe Lessor hereby declares that he is the absolute owner of the Leased premises \nbeing let out to the Lessee and is lawfully entitled to execute this Agreement. And \nthe Lessee hereby declares that the premises in question shall only be used for the \npurposes of business of the company and agrees that any other use of the property \nnot authorized in advance in writing by the Lessor shall entitle the Lessor to \nunilaterally terminate this Agreement.\n4.\nLATE CHARGES AND FAILED CHEQUES \nIf Lease amount is paid after the fifth day of the month, then the Lease amount will \nbe paid along with late charges of  [.] per each month. If any cheque given by Lessee \nremains unclear due to any reason, then the Lessee will pay return cheque charges of \nRs. [.]/- to the Lessor.\n5.",
+        "strategy": "clause",
+        "page": 2,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_clause_00004",
+        "text": "SECURITY DEPOSITS \nUpon the execution of this Agreement, the Lessee shall pay the Lessor a security \ndeposit of Rs. [.]/- (Rupees [.] only) to be held as security for the payment of Lease \namount and the due compliance by the Lessee of all of its obligations in this \nAgreement. The total of the security deposits with observance to the terms and \nconditions of this agreement shall be refunded to the Lessee within 10 days after the \npremises have been completely vacated. \n2",
+        "strategy": "clause",
+        "page": 2,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_clause_00005",
+        "text": "Lessor may deduct any amount necessary from the security deposit, and ask for \nfurther payment from the Lessee of any amount necessary if such amount exceeds \nthe value of the security deposit, to cover the Lessee’s default in any/some/all of the \nfollowing: \na. any unpaid Lease amount, \nb. cleaning costs, \nc. key replacement costs,  \nd. cost for repair of damages to premises and/or common areas exclusive of expected \nordinary wear and tear, and \n e. any other amount legally allowable under the terms of this agreement. \nA written accounting of said charges shall be presented to Lessee within 10 days of \nmove-out. If the costs are over and above the deposits the Lessee shall immediately \npay said additional costs for damages to the Lessor.\n6.",
+        "strategy": "clause",
+        "page": 3,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_clause_00006",
+        "text": "POSSESSION OF THE PREMISES \nIf Lessor is unable to deliver possession of the premises for any reason not within \nLessor’s control the Lessor will not be held liable for the same. The agreement is not \nvoid or voidable. The Lessee do not have to pay any Lease amount until actual \npossession of the premises. \n \nIf Lessor is unable to deliver possession within 5 days after the agreed \ncommencement date, the Lessee may terminate this Agreement by giving written \nnotice to Lessor. The Lessor must refund all money and security deposits paid. The \nfailure of Lessee to take possession of the premises on the said date shall not relieve \nthem of their obligation to pay Lease amount on the agreed date.\n7.",
+        "strategy": "clause",
+        "page": 3,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_clause_00007",
+        "text": "INSPECTION OF THE PREMISES \nBefore the delivery of residency by the Lessee, the Lessor and the Lessee shall inspect \nthe premises and shall record any existing damages to the premises on a check list. \n(Annexure – I). Both parties shall receive copies of the Document which should be \nduly signed by both the parties. \nAt the termination of the agreement and before possession is restored to the Lessor, \nthe Lessor shall inform the Lessee of his right to be present at the final inspection. \n3",
+        "strategy": "clause",
+        "page": 3,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_clause_00008",
+        "text": "The Lessor shall notify the Lessor of the time and date of the inspection, which must \nbe within seventy-two hours of the termination of occupancy.\n8.",
+        "strategy": "clause",
+        "page": 4,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_clause_00013",
+        "text": "DUTIES AND OBLIGATIONS \na. \nThe Lessee hereby undertakes to not to sublet, assign or transfer the said \nLeased premises whole or any part thereof to any other person or concern in any \nmanner whatsoever, without obtaining written consent from the landlord.  \nb. \nThe accommodation under the lease shall be used as the registered office of \nthe Company.  \nc. \nThe Lessee shall not make any material addition or alteration to the \naccommodation under the lease as let out without the previous consent of the",
+        "strategy": "clause",
+        "page": 4,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_clause_00014",
+        "text": "owner in writing. \nd. \nThe Lessee shall not to do or cause to be done anything in or upon the \ndemised Premises which is or may grow to be a source or nuisance or annoyance to \nthe Lessor.  \ne. \nThe Lessee agrees to indemnify and hold harmless the Lessor for all its \nbusiness activities including but not limited to statutory dues, municipal taxes and \nother charges. \nf. \nThe lessee shall not bring or cause to be brought into or store at the",
+        "strategy": "clause",
+        "page": 4,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_clause_00015",
+        "text": "Demised Premises or any part thereof any hazardous goods articles of combustible \nor inflammable mature, except in small quantities for normal uses as permitted by \nlaw nor carry out any activity which is illegal in nature and not permissible by law. \ng. \nThe Lessee shall keep the premises let out to them in good condition and \nshall carry out all minor repairs at his own cost and expenses. \nh. \nThe Lessee however, shall have the right to locate such fixtures and or",
+        "strategy": "clause",
+        "page": 4,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_clause_00016",
+        "text": "fittings and wooden temporary partition or structure as shall be required to \nexecute partitions, chambers, office rooms, etc. However, the Lessee agrees to \nvacate the property in the same condition he received it in, carrying out repair \nwork to cover up any alterations, permissible under this clause, made by him \nduring the period of the lease.  \ni. \nThe Lessee further acknowledges that he received the premises in question in \nexcellent condition with freshly painted walls. \n4",
+        "strategy": "clause",
+        "page": 4,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_clause_00017",
+        "text": "j. \nThe Lessor shall have the right to enter and inspect the premises as per their \nconvenience during reasonable hours of business and the Lessee agrees to create \nno impediments for the same. \nk. \nThe lessee here by agreed to pay the service tax if applicable.\n9.\nMISCELLANEOUS \nNotwithstanding any other provision of this agreement, the Lessor shall have the \nright to terminate this agreement at any point of time during the period of the lease.  \na. The provisions of this Agreement shall be governed by the Laws in force in \nthe Union of India, and any dispute arising from this Agreement shall be \nsubject to the laws of [.].  \nb. The Courts in [.] shall have sole jurisdiction to entertain disputes arising \nfrom / out of / as a result of this Agreement.  \nc. The Parties hereto agree that this Agreement shall be Registered in [.]. \nd. The Lessee will pay property taxes in respect of the demised premises due to \nthe government and corporation.",
+        "strategy": "clause",
+        "page": 5,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_clause_00018",
+        "text": "10.     TERMINATION  \nThe agreement may be terminated by either party by issuing a notice thirty days \nprior to the agreed expiry of the Lease period. Where laws require \"just cause\", such \njust cause shall be so stated on said notice. The Premises will be deemed vacated only \nafter all areas including storage are vacated by the Lessee and the property provided \nby the Lessor for the Lessee and the keys returned to the Lessor. If the Lessee does \nnot vacate within 4 weeks the Lessee is liable to pay the Lessor additionally to cover \nthe damages caused due to the owner’s loss of prospective tenants.",
+        "strategy": "clause",
+        "page": 5,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_clause_00019",
+        "text": "11.     EXTENSION OF LEASE \nAt the end of the period as stated in the agreement, the lease will automatically \ncovert to month to month. In the event of termination, a written notice must be \nserved by the Lessee or the Lessor to the other at least thirty days prior to the end of \nthe agreement. If the Lessee decides to continue, he will pay the monthly rental or \ndecided otherwise and fulfil all other obligations in the agreement.\n12.      CHANGE OF TERMS \n5",
+        "strategy": "clause",
+        "page": 5,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_clause_00020",
+        "text": "The terms and conditions of this agreement are subject to future change by the \nLessor after the expiry of the Lease Period after issuing a thirty-day notice stating \nsuch change delivered to the Lessee. All changes made will be as per the governing \nlaw in existence at the time of the Notice.\n14.     SEVERABILITY \nEach paragraph of this lease agreement shall be and remain separate from and \nindependent of and severable from all and any other paragraphs herein except where \notherwise expressly indicated or indicated by the context of the agreement. The \ndecision or declaration that one or more of the paragraphs are null and void shall \nhave no effect on the remaining paragraphs of this lease agreement.",
+        "strategy": "clause",
+        "page": 6,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_clause_00021",
+        "text": "15.     ENTIRE AGREEMENT \n \nThis document constitutes the entire Agreement between the Lessee and Lessor. This \nAgreement cannot be modified except in writing and must be signed by all parties.  \nNeither Lessor nor Lessee have made any promises or representations, other than \nthose set forth in this Agreement and those implied by law. The failure of Lessee or \ntheir guests or invitees to comply with any term of this Agreement is grounds for \ntermination of the agreement with appropriate notice to Lessee and procedures as \nrequired by law.\nIN WITNESSETH WHEREOF the parties hereto have herein unto set and \nsubscribed their respective hands on the day and year mentioned hereinabove. \nSigned, Sealed and Delivered by:\nLESSOR \n___________________________ \nName:\nLESSEE \n6",
+        "strategy": "clause",
+        "page": 6,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_clause_00022",
+        "text": "___________________________ \nName: \n \nIn the presence of Witnesses: \n1)__________________________ \n \n2)___________________________ \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n7",
+        "strategy": "clause",
+        "page": 7,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_clause_00023",
+        "text": "8 \n \nANNEXURE- I \nParticulars \nYes\nNo\nRemarks\nFURNITURE INVENTORY (If the furniture is provided by Lessor) \nItem \nNos.\nItem\nNos.",
+        "strategy": "clause",
+        "page": 8,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_clause_00024",
+        "text": "WHEREAS, the Lessor, is the owner of the premises bearing no. [.], having total\narea measuring about [.] sq. metres, situated at [.], hereinafter referred to as the\n“Demised Premises”.\nAND WHEREAS, the Lessor has agreed with the Lessee to grant to the Lessee\nunder the terms of this Deed the Demised Premises with all fittings, fixtures and\nfurniture installed therein and as fully described in Annexure-I detailed hereunder\nannexed and forming part of this Deed. The lessee has agreed to take on lease the\nsame, subject to the covenants, conditions and stipulations, hereinafter in these\npresents expressed and contained.\nNOW IT IS HEREBY MUTUALLY AGREED BY AND BETWEEN THE\nPARTIES HERETO AS FOLLOWS:",
+        "strategy": "clause",
+        "page": 1,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf",
+          "content_type": "table"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_clause_00025",
+        "text": "A written accounting of said charges shall be presented to Lessee within 10 days of\nmove-out. If the costs are over and above the deposits the Lessee shall immediately\npay said additional costs for damages to the Lessor.",
+        "strategy": "clause",
+        "page": 3,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf",
+          "content_type": "table"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_clause_00026",
+        "text": "The agreement may be terminated by either party by issuing a notice thirty days\nprior to the agreed expiry of the Lease period. Where laws require \"just cause\", such\njust cause shall be so stated on said notice. The Premises will be deemed vacated only\nafter all areas including storage are vacated by the Lessee and the property provided\nby the Lessor for the Lessee and the keys returned to the Lessor. If the Lessee does\nnot vacate within 4 weeks the Lessee is liable to pay the Lessor additionally to cover\nthe damages caused due to the owner’s loss of prospective tenants.",
+        "strategy": "clause",
+        "page": 5,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf",
+          "content_type": "table"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_clause_00027",
+        "text": "The terms and conditions of this agreement are subject to future change by the\nLessor after the expiry of the Lease Period after issuing a thirty-day notice stating\nsuch change delivered to the Lessee. All changes made will be as per the governing\nlaw in existence at the time of the Notice.",
+        "strategy": "clause",
+        "page": 6,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf",
+          "content_type": "table"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_clause_00028",
+        "text": "Particulars | Yes | No | Remarks\n |  |  | \n |  |  | \n |  |  | \n |  |  | \n |  |  | \n |  |  | \n |  |  |",
+        "strategy": "clause",
+        "page": 8,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf",
+          "content_type": "table"
+        }
+      },
+      {
+        "chunk_id": "template_lease_commercial_clause_00029",
+        "text": "Item | Nos. |  | Item | Nos.\n |  |  |  | \n |  |  |  | \n |  |  |  | \n |  |  |  | \n |  |  |  | \n |  |  |  | \n |  |  |  |",
+        "strategy": "clause",
+        "page": 8,
+        "metadata": {
+          "category": "templates",
+          "subcategory": "lease",
+          "doc_type": "template",
+          "filename": "template_lease_commercial",
+          "filepath": "data\\raw\\templates\\lease\\template_lease_commercial.pdf",
+          "content_type": "table"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,830 @@
+{
+  "metadata": {
+    "category": "compliance",
+    "subcategory": "msme",
+    "doc_type": "compliance",
+    "filename": "msme_45day_payment_rules",
+    "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf"
+  },
+  "chunk_counts": {
+    "fixed": 21,
+    "recursive": 20,
+    "clause": 20
+  },
+  "chunks": {
+    "fixed": [
+      {
+        "chunk_id": "msme_45day_payment_rules_fixed_00000",
+        "text": "SECTION 43B(h) OF THE INCOME TAX ACT (MSME)\n(Inserted by Finance Act 2023, applicable w.e.f 01.04.2024)\nA new clause (h) has been inserted after clause (g) of the section 43B by the Finance Act,\n2023:\n\"(h) any sum payable by the assessee to a micro or small enterprise beyond the\ntime limit specified in section 15 of the Micro, Small and Medium Enterprises\nDevelopment Act, 2006.\";\nshall be allowed (irrespective of the previous year in which the liability to pay such sum\nwas incurred by the assessee according",
+        "strategy": "fixed",
+        "page": 2,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_fixed_00001",
+        "text": "ay such sum\nwas incurred by the assessee according to the method of accounting regularly\nemployed by him) only in computing the income referred to in section 28 of that\nprevious year in which such sum is actually paid by him.\nProvided that nothing contained in this section [except the provisions of clause(h)] shall\napply in relation to any sum which is actually paid by the assessee on or before the due\ndate applicable in his case for furnishing the return of income under sub-section (1) of\nsection 139 in re",
+        "strategy": "fixed",
+        "page": 2,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_fixed_00002",
+        "text": "income under sub-section (1) of\nsection 139 in respect of the previous year in which the liability to pay such sum was\nincurred as aforesaid and the evidence of such payment is furnished by the assessee\nalong with such return.\nThese amendments will take effect from 1st April 2024 and will, accordingly, apply in relation\nto the assessment year 2024-2025 and subsequent assessment years.",
+        "strategy": "fixed",
+        "page": 2,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_fixed_00003",
+        "text": "Now let us understand the Definitions of Micro and Small Enterprise as per MSMED Act,\n2006.\nMicro Enterprise\nSmall Enterprise\nInvestment\nin\nPlant\n&\nMachinery\nLess\nthan\nINR\n1crore\nLess than INR 10\ncrore\nTurnover\nLess than INR 5\ncrore\nLess than INR 50\ncrore\nDisallowance u/s\n43Bof\nthe\nAct\nApplicable\nApplicable\nApplicable\nThe\nabove\ndefinition\nis\nfor\nboth\nManufacturing\nor\nProduction\nEnterprises\nand\nEnterprises rendering Services\nSec 15 of MSME Development Act, 2006 is reproduced below:\n“Where any supplier, suppl",
+        "strategy": "fixed",
+        "page": 3,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_fixed_00004",
+        "text": "06 is reproduced below:\n“Where any supplier, supplies any goods or renders any services to any buyer, the buyer\nshall make payment thereof or on before the date agreed upon between him and the supplier\nin writing or, where there is no agreement on this behalf, before the appointed day”, Where\nAppointed day means the day following immediately after the expiry of the period of fifteen\ndays from the day of acceptance or the day of deemed acceptance of any goods or any\nservices by a buyer from a supplier.”\nWher",
+        "strategy": "fixed",
+        "page": 3,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_fixed_00005",
+        "text": "or any\nservices by a buyer from a supplier.”\nWhere Supplier means as defined in Sec 2(n) in the MSMED Act, 2006,\nAs per Sec 2(n), “Supplier” means a micro or small enterprise, which has filed a\nmemorandum with the authority referred to in sub section (1) of Section 8.",
+        "strategy": "fixed",
+        "page": 3,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_fixed_00006",
+        "text": "Explanation.--For the purposes of this clause,--\n(i) \"the day of acceptance\" means,--\n(a) the day of the actual delivery of goods or the rendering of services; or\n(b) where any objection is made in writing by the buyer regarding acceptance of goods or\nservices within fifteen days from the day of the delivery of goods or the rendering of services,\nthe day on which such objection is removed by the supplier;\n(ii) \"the day of deemed acceptance\" means, where no objection is made in writing by the\nbuyer regarding",
+        "strategy": "fixed",
+        "page": 4,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_fixed_00007",
+        "text": "bjection is made in writing by the\nbuyer regarding acceptance of goods or services within fifteen days from the day of the\ndelivery of goods or the rendering of services, the day of the actual delivery of goods or the\nrendering of services;\nTherefore, if a buyer is entering into an agreement with an MSME supplier, the due date of\npayment cannot exceed 45 days from the date of actual delivery of goods or rendering\nof services as the case may be. Where there is no written agreement, the due date will\nbe the 1",
+        "strategy": "fixed",
+        "page": 4,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_fixed_00008",
+        "text": "s no written agreement, the due date will\nbe the 16th day of actual delivery. Provided that in no case the period agreed upon\nbetween the supplier and the buyer in writing shall exceed 45 days from the day of\nacceptance or the day of deemed acceptance.\nThus, Section 15 of the MSMED Act mandates payment to MSMEs within a period of45 days in\ncase there is a written agreement and15 days in other cases.\nSec 16 of MSMED Act, 2006\nprovides that delayed payments by the buyer shall\nattract compound interest at thre",
+        "strategy": "fixed",
+        "page": 4,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_fixed_00009",
+        "text": "the buyer shall\nattract compound interest at three times the bank rate notified by the RBI. It is also\npertinent to note that section 24 of the MSMED Act contains an overriding provision over all\nother Acts for the time being in force. This means that the MSMED Act prevails over all\nother Acts as far as timeline of payment is concerned.",
+        "strategy": "fixed",
+        "page": 4,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_fixed_00010",
+        "text": "So, the following may be noted:\n1. The interest is payable on the expiry of the 15th date if there is no written agreement.\n2. If there is a written agreement and the same provides the period within which payment is to\nbe made, and the agreed period of within 45 (Forty-Five) days, then the interest shall be\npayable upon the expiry of such agreed period.\n3. If there is a written agreement and the same provides the period within which payment is to\nbe made, and the agreed period of more than 45 (Forty Five) d",
+        "strategy": "fixed",
+        "page": 5,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_fixed_00011",
+        "text": "d the agreed period of more than 45 (Forty Five) days, than the interest shall be\npayable upon the expiry of 45 days.\nSec 17 of MSMED Act, 2006 provides that “For any goods supplied or services rendered by\nthe supplier, the buyer shall be liable to pay the amount with interest thereon as provided\nunder section 16.”\nFurther Sec 23 of MSMED Act, 2006 provides that  Interest not to be allowed as deduction\nfrom income.—\nNotwithstanding anything contained in the Income-tax Act, 1961 (43 of 1961), the amount of\ni",
+        "strategy": "fixed",
+        "page": 5,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_fixed_00012",
+        "text": "Income-tax Act, 1961 (43 of 1961), the amount of\ninterest payable or paid by any buyer, under or in accordance with the provisions of this Act,\nshall not, for the purposes of computation of income under the Income-tax Act, 1961, be\nallowed as deduction.\nSec 24 of MSMED Act, 2006 provides that :\nThe provisions of sections 15 to 23 shall have effect notwithstanding anything inconsistent\ntherewith contained in any other law for the time being in force.",
+        "strategy": "fixed",
+        "page": 5,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_fixed_00013",
+        "text": "IMPORTANT POINTS TO CONSIDER\n1. Only Micro and Small Enterprises are covered\n2. Applicability of proviso of making the payment within the due date of filing return\nu/s 139(1) is not applicable.\n3. If payment is made within the due date of filing the return u/s 139(1) but beyind\nthe due date mentioned in MSMED Act, 2006, then deduction shall be available\nin the year of payment and not in the year of accrual.\n4. Since the Definition of Micro and Small enterprise only includes Manufacturing\nor Production and S",
+        "strategy": "fixed",
+        "page": 6,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_fixed_00014",
+        "text": "se only includes Manufacturing\nor Production and Service industry, so Traders having registeration under NIC\ncode of Trading will not be covered under the provisions of Sec 43B(h) of\nIncome Tax Act, 1961\n5. Old Outstandings will not be considered in Sec 43B(h) but payment done to the\nsupplier will be considered on FIFO basis if proper references are not made for\npayment against Invoice.\n6. Sec 43B doesnot apply to the Assessee opting for Presumptive taxation. Hence\nno disallowance can be made in such cases",
+        "strategy": "fixed",
+        "page": 6,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_fixed_00015",
+        "text": ". Hence\nno disallowance can be made in such cases\n)of IncomeTaxAct,1961",
+        "strategy": "fixed",
+        "page": 6,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_fixed_00016",
+        "text": "| Micro Enterprise | Small Enterprise\nInvestment in\nPlant &\nMachinery | Less than INR\n1crore | Less than INR 10\ncrore\nTurnover | Less than INR 5\ncrore | Less than INR 50\ncrore\nDisallowance u/s\n43Bof the Act\nApplicable | Applicable | Applicable",
+        "strategy": "fixed",
+        "page": 3,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf",
+          "content_type": "table"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_fixed_00017",
+        "text": "So, the following may be noted:\n1. The interest is payable on the expiry of the 15th date if there is no written agreement.\n2. If there is a written agreement and the same provides the period within which payment is to\nbe made, and the agreed period of within 45 (Forty-Five) days, then the interest shall be\npayable upon the expiry of such agreed period.\n3. If there is a written agreement and the same provides the period within which payment is to\nbe made, and the agreed period of more than 45 (Forty Five)",
+        "strategy": "fixed",
+        "page": 5,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf",
+          "content_type": "table"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_fixed_00018",
+        "text": "nd the agreed period of more than 45 (Forty Five) days, than the interest shall be\npayable upon the expiry of 45 days.\nSec 17 of MSMED Act, 2006 provides that “For any goods supplied or services rendered by\nthe supplier, the buyer shall be liable to pay the amount with interest thereon as provided\nunder section 16.”\nFurther Sec 23 of MSMED Act, 2006 provides that Interest not to be allowed as deduction\nfrom income.—\nNotwithstanding anything contained in the Income-tax Act, 1961 (43 of 1961), the amount of\ni",
+        "strategy": "fixed",
+        "page": 5,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf",
+          "content_type": "table"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_fixed_00019",
+        "text": "Income-tax Act, 1961 (43 of 1961), the amount of\ninterest payable or paid by any buyer, under or in accordance with the provisions of this Act,\nshall not, for the purposes of computation of income under the Income-tax Act, 1961, be\nallowed as deduction.\nSec 24 of MSMED Act, 2006 provides that :\nThe provisions of sections 15 to 23 shall have effect notwithstanding anything inconsistent\ntherewith contained in any other law for the time being in force.",
+        "strategy": "fixed",
+        "page": 5,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf",
+          "content_type": "table"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_fixed_00020",
+        "text": "IMPORTANT POINTS TO CONSIDER",
+        "strategy": "fixed",
+        "page": 6,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf",
+          "content_type": "table"
+        }
+      }
+    ],
+    "recursive": [
+      {
+        "chunk_id": "msme_45day_payment_rules_recursive_00000",
+        "text": "SECTION 43B(h) OF THE INCOME TAX ACT (MSME)\n(Inserted by Finance Act 2023, applicable w.e.f 01.04.2024)\nA new clause (h) has been inserted after clause (g) of the section 43B by the Finance Act,\n2023:\n\"(h) any sum payable by the assessee to a micro or small enterprise beyond the\ntime limit specified in section 15 of the Micro, Small and Medium Enterprises\nDevelopment Act, 2006.\";\nshall be allowed (irrespective of the previous year in which the liability to pay such sum",
+        "strategy": "recursive",
+        "page": 2,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_recursive_00001",
+        "text": "was incurred by the assessee according to the method of accounting regularly\nemployed by him) only in computing the income referred to in section 28 of that\nprevious year in which such sum is actually paid by him.\nProvided that nothing contained in this section [except the provisions of clause(h)] shall\napply in relation to any sum which is actually paid by the assessee on or before the due\ndate applicable in his case for furnishing the return of income under sub-section (1) of",
+        "strategy": "recursive",
+        "page": 2,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_recursive_00002",
+        "text": "section 139 in respect of the previous year in which the liability to pay such sum was\nincurred as aforesaid and the evidence of such payment is furnished by the assessee\nalong with such return.\nThese amendments will take effect from 1st April 2024 and will, accordingly, apply in relation\nto the assessment year 2024-2025 and subsequent assessment years.",
+        "strategy": "recursive",
+        "page": 2,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_recursive_00003",
+        "text": "Now let us understand the Definitions of Micro and Small Enterprise as per MSMED Act,\n2006.\nMicro Enterprise\nSmall Enterprise\nInvestment\nin\nPlant\n&\nMachinery\nLess\nthan\nINR\n1crore\nLess than INR 10\ncrore\nTurnover\nLess than INR 5\ncrore\nLess than INR 50\ncrore\nDisallowance u/s\n43Bof\nthe\nAct\nApplicable\nApplicable\nApplicable\nThe\nabove\ndefinition\nis\nfor\nboth\nManufacturing\nor\nProduction\nEnterprises\nand\nEnterprises rendering Services\nSec 15 of MSME Development Act, 2006 is reproduced below:",
+        "strategy": "recursive",
+        "page": 3,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_recursive_00004",
+        "text": "“Where any supplier, supplies any goods or renders any services to any buyer, the buyer\nshall make payment thereof or on before the date agreed upon between him and the supplier\nin writing or, where there is no agreement on this behalf, before the appointed day”, Where\nAppointed day means the day following immediately after the expiry of the period of fifteen\ndays from the day of acceptance or the day of deemed acceptance of any goods or any\nservices by a buyer from a supplier.”",
+        "strategy": "recursive",
+        "page": 3,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_recursive_00005",
+        "text": "Where Supplier means as defined in Sec 2(n) in the MSMED Act, 2006,\nAs per Sec 2(n), “Supplier” means a micro or small enterprise, which has filed a\nmemorandum with the authority referred to in sub section (1) of Section 8.",
+        "strategy": "recursive",
+        "page": 3,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_recursive_00006",
+        "text": "Explanation.--For the purposes of this clause,--\n(i) \"the day of acceptance\" means,--\n(a) the day of the actual delivery of goods or the rendering of services; or\n(b) where any objection is made in writing by the buyer regarding acceptance of goods or\nservices within fifteen days from the day of the delivery of goods or the rendering of services,\nthe day on which such objection is removed by the supplier;\n(ii) \"the day of deemed acceptance\" means, where no objection is made in writing by the",
+        "strategy": "recursive",
+        "page": 4,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_recursive_00007",
+        "text": "buyer regarding acceptance of goods or services within fifteen days from the day of the\ndelivery of goods or the rendering of services, the day of the actual delivery of goods or the\nrendering of services;\nTherefore, if a buyer is entering into an agreement with an MSME supplier, the due date of\npayment cannot exceed 45 days from the date of actual delivery of goods or rendering\nof services as the case may be. Where there is no written agreement, the due date will",
+        "strategy": "recursive",
+        "page": 4,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_recursive_00008",
+        "text": "be the 16th day of actual delivery. Provided that in no case the period agreed upon\nbetween the supplier and the buyer in writing shall exceed 45 days from the day of\nacceptance or the day of deemed acceptance.\nThus, Section 15 of the MSMED Act mandates payment to MSMEs within a period of45 days in\ncase there is a written agreement and15 days in other cases.\nSec 16 of MSMED Act, 2006\nprovides that delayed payments by the buyer shall",
+        "strategy": "recursive",
+        "page": 4,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_recursive_00009",
+        "text": "attract compound interest at three times the bank rate notified by the RBI. It is also\npertinent to note that section 24 of the MSMED Act contains an overriding provision over all\nother Acts for the time being in force. This means that the MSMED Act prevails over all\nother Acts as far as timeline of payment is concerned.",
+        "strategy": "recursive",
+        "page": 4,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_recursive_00010",
+        "text": "So, the following may be noted:\n1. The interest is payable on the expiry of the 15th date if there is no written agreement.\n2. If there is a written agreement and the same provides the period within which payment is to\nbe made, and the agreed period of within 45 (Forty-Five) days, then the interest shall be\npayable upon the expiry of such agreed period.\n3. If there is a written agreement and the same provides the period within which payment is to",
+        "strategy": "recursive",
+        "page": 5,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_recursive_00011",
+        "text": "be made, and the agreed period of more than 45 (Forty Five) days, than the interest shall be\npayable upon the expiry of 45 days.\nSec 17 of MSMED Act, 2006 provides that “For any goods supplied or services rendered by\nthe supplier, the buyer shall be liable to pay the amount with interest thereon as provided\nunder section 16.”\nFurther Sec 23 of MSMED Act, 2006 provides that  Interest not to be allowed as deduction\nfrom income.—",
+        "strategy": "recursive",
+        "page": 5,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_recursive_00012",
+        "text": "Notwithstanding anything contained in the Income-tax Act, 1961 (43 of 1961), the amount of\ninterest payable or paid by any buyer, under or in accordance with the provisions of this Act,\nshall not, for the purposes of computation of income under the Income-tax Act, 1961, be\nallowed as deduction.\nSec 24 of MSMED Act, 2006 provides that :\nThe provisions of sections 15 to 23 shall have effect notwithstanding anything inconsistent\ntherewith contained in any other law for the time being in force.",
+        "strategy": "recursive",
+        "page": 5,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_recursive_00013",
+        "text": "IMPORTANT POINTS TO CONSIDER\n1. Only Micro and Small Enterprises are covered\n2. Applicability of proviso of making the payment within the due date of filing return\nu/s 139(1) is not applicable.\n3. If payment is made within the due date of filing the return u/s 139(1) but beyind\nthe due date mentioned in MSMED Act, 2006, then deduction shall be available\nin the year of payment and not in the year of accrual.\n4. Since the Definition of Micro and Small enterprise only includes Manufacturing",
+        "strategy": "recursive",
+        "page": 6,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_recursive_00014",
+        "text": "or Production and Service industry, so Traders having registeration under NIC\ncode of Trading will not be covered under the provisions of Sec 43B(h) of\nIncome Tax Act, 1961\n5. Old Outstandings will not be considered in Sec 43B(h) but payment done to the\nsupplier will be considered on FIFO basis if proper references are not made for\npayment against Invoice.\n6. Sec 43B doesnot apply to the Assessee opting for Presumptive taxation. Hence\nno disallowance can be made in such cases\n)of IncomeTaxAct,1961",
+        "strategy": "recursive",
+        "page": 6,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_recursive_00015",
+        "text": "| Micro Enterprise | Small Enterprise\nInvestment in\nPlant &\nMachinery | Less than INR\n1crore | Less than INR 10\ncrore\nTurnover | Less than INR 5\ncrore | Less than INR 50\ncrore\nDisallowance u/s\n43Bof the Act\nApplicable | Applicable | Applicable",
+        "strategy": "recursive",
+        "page": 3,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf",
+          "content_type": "table"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_recursive_00016",
+        "text": "So, the following may be noted:\n1. The interest is payable on the expiry of the 15th date if there is no written agreement.\n2. If there is a written agreement and the same provides the period within which payment is to\nbe made, and the agreed period of within 45 (Forty-Five) days, then the interest shall be\npayable upon the expiry of such agreed period.\n3. If there is a written agreement and the same provides the period within which payment is to",
+        "strategy": "recursive",
+        "page": 5,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf",
+          "content_type": "table"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_recursive_00017",
+        "text": "be made, and the agreed period of more than 45 (Forty Five) days, than the interest shall be\npayable upon the expiry of 45 days.\nSec 17 of MSMED Act, 2006 provides that “For any goods supplied or services rendered by\nthe supplier, the buyer shall be liable to pay the amount with interest thereon as provided\nunder section 16.”\nFurther Sec 23 of MSMED Act, 2006 provides that Interest not to be allowed as deduction\nfrom income.—",
+        "strategy": "recursive",
+        "page": 5,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf",
+          "content_type": "table"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_recursive_00018",
+        "text": "Notwithstanding anything contained in the Income-tax Act, 1961 (43 of 1961), the amount of\ninterest payable or paid by any buyer, under or in accordance with the provisions of this Act,\nshall not, for the purposes of computation of income under the Income-tax Act, 1961, be\nallowed as deduction.\nSec 24 of MSMED Act, 2006 provides that :\nThe provisions of sections 15 to 23 shall have effect notwithstanding anything inconsistent\ntherewith contained in any other law for the time being in force.",
+        "strategy": "recursive",
+        "page": 5,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf",
+          "content_type": "table"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_recursive_00019",
+        "text": "IMPORTANT POINTS TO CONSIDER",
+        "strategy": "recursive",
+        "page": 6,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf",
+          "content_type": "table"
+        }
+      }
+    ],
+    "clause": [
+      {
+        "chunk_id": "msme_45day_payment_rules_clause_00003",
+        "text": "SECTION 43B(h) OF THE INCOME TAX ACT (MSME)\n(Inserted by Finance Act 2023, applicable w.e.f 01.04.2024)\nA new clause (h) has been inserted after clause (g) of the section 43B by the Finance Act,\n2023:\n\"(h) any sum payable by the assessee to a micro or small enterprise beyond the\ntime limit specified in section 15 of the Micro, Small and Medium Enterprises\nDevelopment Act, 2006.\";\nshall be allowed (irrespective of the previous year in which the liability to pay such sum",
+        "strategy": "clause",
+        "page": 2,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_clause_00004",
+        "text": "was incurred by the assessee according to the method of accounting regularly\nemployed by him) only in computing the income referred to in section 28 of that\nprevious year in which such sum is actually paid by him.\nProvided that nothing contained in this section [except the provisions of clause(h)] shall\napply in relation to any sum which is actually paid by the assessee on or before the due\ndate applicable in his case for furnishing the return of income under sub-section (1) of",
+        "strategy": "clause",
+        "page": 2,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_clause_00005",
+        "text": "section 139 in respect of the previous year in which the liability to pay such sum was\nincurred as aforesaid and the evidence of such payment is furnished by the assessee\nalong with such return.\nThese amendments will take effect from 1st April 2024 and will, accordingly, apply in relation\nto the assessment year 2024-2025 and subsequent assessment years.",
+        "strategy": "clause",
+        "page": 2,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_clause_00006",
+        "text": "Now let us understand the Definitions of Micro and Small Enterprise as per MSMED Act,\n2006.\nMicro Enterprise\nSmall Enterprise\nInvestment\nin\nPlant\n&\nMachinery\nLess\nthan",
+        "strategy": "clause",
+        "page": 3,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_clause_00010",
+        "text": "INR\n1crore\nLess than INR 10\ncrore\nTurnover\nLess than INR 5\ncrore\nLess than INR 50\ncrore\nDisallowance u/s\n43Bof\nthe\nAct\nApplicable\nApplicable\nApplicable\nThe\nabove\ndefinition\nis\nfor\nboth\nManufacturing\nor\nProduction\nEnterprises\nand\nEnterprises rendering Services\nSec 15 of MSME Development Act, 2006 is reproduced below:\n“Where any supplier, supplies any goods or renders any services to any buyer, the buyer\nshall make payment thereof or on before the date agreed upon between him and the supplier",
+        "strategy": "clause",
+        "page": 3,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_clause_00011",
+        "text": "in writing or, where there is no agreement on this behalf, before the appointed day”, Where\nAppointed day means the day following immediately after the expiry of the period of fifteen\ndays from the day of acceptance or the day of deemed acceptance of any goods or any\nservices by a buyer from a supplier.”\nWhere Supplier means as defined in Sec 2(n) in the MSMED Act, 2006,\nAs per Sec 2(n), “Supplier” means a micro or small enterprise, which has filed a",
+        "strategy": "clause",
+        "page": 3,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_clause_00012",
+        "text": "memorandum with the authority referred to in sub section (1) of Section 8.",
+        "strategy": "clause",
+        "page": 3,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_clause_00017",
+        "text": "Explanation.--For the purposes of this clause,--\n(i) \"the day of acceptance\" means,--\n(a) the day of the actual delivery of goods or the rendering of services; or\n(b) where any objection is made in writing by the buyer regarding acceptance of goods or\nservices within fifteen days from the day of the delivery of goods or the rendering of services,\nthe day on which such objection is removed by the supplier;\n(ii) \"the day of deemed acceptance\" means, where no objection is made in writing by the",
+        "strategy": "clause",
+        "page": 4,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_clause_00018",
+        "text": "buyer regarding acceptance of goods or services within fifteen days from the day of the\ndelivery of goods or the rendering of services, the day of the actual delivery of goods or the\nrendering of services;\nTherefore, if a buyer is entering into an agreement with an MSME supplier, the due date of\npayment cannot exceed 45 days from the date of actual delivery of goods or rendering\nof services as the case may be. Where there is no written agreement, the due date will",
+        "strategy": "clause",
+        "page": 4,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_clause_00019",
+        "text": "be the 16th day of actual delivery. Provided that in no case the period agreed upon\nbetween the supplier and the buyer in writing shall exceed 45 days from the day of\nacceptance or the day of deemed acceptance.\nThus, Section 15 of the MSMED Act mandates payment to MSMEs within a period of45 days in\ncase there is a written agreement and15 days in other cases.\nSec 16 of MSMED Act, 2006\nprovides that delayed payments by the buyer shall",
+        "strategy": "clause",
+        "page": 4,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_clause_00020",
+        "text": "attract compound interest at three times the bank rate notified by the RBI. It is also\npertinent to note that section 24 of the MSMED Act contains an overriding provision over all\nother Acts for the time being in force. This means that the MSMED Act prevails over all\nother Acts as far as timeline of payment is concerned.",
+        "strategy": "clause",
+        "page": 4,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_clause_00021",
+        "text": "So, the following may be noted:\n1. The interest is payable on the expiry of the 15th date if there is no written agreement.\n2. If there is a written agreement and the same provides the period within which payment is to\nbe made, and the agreed period of within 45 (Forty-Five) days, then the interest shall be\npayable upon the expiry of such agreed period.",
+        "strategy": "clause",
+        "page": 5,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_clause_00024",
+        "text": "3. If there is a written agreement and the same provides the period within which payment is to\nbe made, and the agreed period of more than 45 (Forty Five) days, than the interest shall be\npayable upon the expiry of 45 days.\nSec 17 of MSMED Act, 2006 provides that “For any goods supplied or services rendered by\nthe supplier, the buyer shall be liable to pay the amount with interest thereon as provided\nunder section 16.”\nFurther Sec 23 of MSMED Act, 2006 provides that  Interest not to be allowed as deduction",
+        "strategy": "clause",
+        "page": 5,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_clause_00025",
+        "text": "from income.—\nNotwithstanding anything contained in the Income-tax Act, 1961 (43 of 1961), the amount of\ninterest payable or paid by any buyer, under or in accordance with the provisions of this Act,\nshall not, for the purposes of computation of income under the Income-tax Act, 1961, be\nallowed as deduction.\nSec 24 of MSMED Act, 2006 provides that :\nThe provisions of sections 15 to 23 shall have effect notwithstanding anything inconsistent\ntherewith contained in any other law for the time being in force.",
+        "strategy": "clause",
+        "page": 5,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_clause_00026",
+        "text": "IMPORTANT POINTS TO CONSIDER\n1. Only Micro and Small Enterprises are covered\n2. Applicability of proviso of making the payment within the due date of filing return\nu/s 139(1) is not applicable.\n3. If payment is made within the due date of filing the return u/s 139(1) but beyind\nthe due date mentioned in MSMED Act, 2006, then deduction shall be available\nin the year of payment and not in the year of accrual.\n4. Since the Definition of Micro and Small enterprise only includes Manufacturing\nor Production and Service industry, so Traders having registeration under NIC\ncode of Trading will not be covered under the provisions of Sec 43B(h) of\nIncome Tax Act, 1961\n5. Old Outstandings will not be considered in Sec 43B(h) but payment done to the\nsupplier will be considered on FIFO basis if proper references are not made for\npayment against Invoice.\n6. Sec 43B doesnot apply to the Assessee opting for Presumptive taxation. Hence\nno disallowance can be made in such cases\n)of IncomeTaxAct,1961",
+        "strategy": "clause",
+        "page": 6,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_clause_00027",
+        "text": "| Micro Enterprise | Small Enterprise\nInvestment in\nPlant &\nMachinery | Less than INR\n1crore | Less than INR 10\ncrore\nTurnover | Less than INR 5\ncrore | Less than INR 50\ncrore\nDisallowance u/s\n43Bof the Act\nApplicable | Applicable | Applicable",
+        "strategy": "clause",
+        "page": 3,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf",
+          "content_type": "table"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_clause_00028",
+        "text": "So, the following may be noted:\n1. The interest is payable on the expiry of the 15th date if there is no written agreement.\n2. If there is a written agreement and the same provides the period within which payment is to\nbe made, and the agreed period of within 45 (Forty-Five) days, then the interest shall be\npayable upon the expiry of such agreed period.",
+        "strategy": "clause",
+        "page": 5,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf",
+          "content_type": "table"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_clause_00031",
+        "text": "3. If there is a written agreement and the same provides the period within which payment is to\nbe made, and the agreed period of more than 45 (Forty Five) days, than the interest shall be\npayable upon the expiry of 45 days.\nSec 17 of MSMED Act, 2006 provides that “For any goods supplied or services rendered by\nthe supplier, the buyer shall be liable to pay the amount with interest thereon as provided\nunder section 16.”\nFurther Sec 23 of MSMED Act, 2006 provides that Interest not to be allowed as deduction",
+        "strategy": "clause",
+        "page": 5,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf",
+          "content_type": "table"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_clause_00032",
+        "text": "from income.—\nNotwithstanding anything contained in the Income-tax Act, 1961 (43 of 1961), the amount of\ninterest payable or paid by any buyer, under or in accordance with the provisions of this Act,\nshall not, for the purposes of computation of income under the Income-tax Act, 1961, be\nallowed as deduction.\nSec 24 of MSMED Act, 2006 provides that :\nThe provisions of sections 15 to 23 shall have effect notwithstanding anything inconsistent\ntherewith contained in any other law for the time being in force.",
+        "strategy": "clause",
+        "page": 5,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf",
+          "content_type": "table"
+        }
+      },
+      {
+        "chunk_id": "msme_45day_payment_rules_clause_00033",
+        "text": "IMPORTANT POINTS TO CONSIDER",
+        "strategy": "clause",
+        "page": 6,
+        "metadata": {
+          "category": "compliance",
+          "subcategory": "msme",
+          "doc_type": "compliance",
+          "filename": "msme_45day_payment_rules",
+          "filepath": "data\\raw\\compliance\\msme\\msme_45day_payment_rules.pdf",
+          "content_type": "table"
+        }
+      }
+    ]
+  }
+}
