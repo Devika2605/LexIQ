@@ -1,9 +1,47 @@
+# Python
 .env
 venv/
 __pycache__/
 *.pyc
 *.pyo
+*.pyd
+.python-version
+
+# Vector DB / generated data
 chroma_db/
 data/raw/
 data/chunks/
 *.zip
+*.sqlite3
+
+# Logs
+*.log
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# React / Node
+frontend-react/node_modules/
+frontend-react/build/
+frontend-react/.next/
+frontend-react/.env.local
+
+# Uploads / temp files
+uploads/
+temp/
+tmp/
+
+# Jupyter / notebook cache
+.ipynb_checkpoints/
+
+# Testing / coverage
+.coverage
+pytest_cache/
+htmlcov/
+
+# Render / deployment cache
+.render/
