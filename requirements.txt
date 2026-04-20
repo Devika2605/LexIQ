@@ -11,3 +11,4 @@ chromadb
 sentence-transformers
 scikit-learn
 tqdm
+pymupdf
