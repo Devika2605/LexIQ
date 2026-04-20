@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 
-const API = 'http://localhost:8000';
+const API = process.env.REACT_APP_API_URL || 'https://devikand-lexiq-api.hf.space';
 
 // API scan response shape from main.py /scan:
 // { session_id, overall_risk, overall_emoji, summary: { total_clauses, high_risk, medium_risk, low_risk },

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const API = 'http://localhost:8000';
+const API = process.env.REACT_APP_API_URL || 'https://devikand-lexiq-api.hf.space';
 
 // /results returns { experiments: [...] }  (NOT results:[])
 // Each item: { strategy, retriever, faithfulness, answer_relevancy, context_precision, context_recall }

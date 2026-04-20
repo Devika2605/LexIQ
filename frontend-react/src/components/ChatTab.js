@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 
-const API = process.env.REACT_APP_API_URL || 'http://localhost:8000';
+const API = process.env.REACT_APP_API_URL || 'https://devikand-lexiq-api.hf.space';
 
 // Risk badge using exact values from risk_scorer.py: HIGH / MEDIUM / LOW
 function RiskBadge({ level }) {
