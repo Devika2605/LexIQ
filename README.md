@@ -1,370 +1,251 @@
----
-title: LexIQ
-emoji: ⚖️
-colorFrom: yellow
-colorTo: yellow
-sdk: docker
-app_port: 7860
----
-# LexIQ — Legal Contract Intelligence for Indian SMBs
+# ⚖️ LexIQ — Legal Contract Intelligence for Indian SMBs
 
-LexIQ is a Legal Contract Intelligence RAG (Retrieval-Augmented Generation) system designed for Indian SMBs to analyze contracts, answer legal queries, identify clause risks, and cross-reference uploaded agreements against Indian law.
-
-It helps users understand contracts faster by combining legal corpus retrieval, AI-powered reasoning, clause-level risk scoring, and document-grounded answers.
+> RAG-powered legal assistant that answers contract law questions, scans clause risks, and cross-references uploaded agreements against Indian legislation — deployed full-stack.
 
 ---
 
-## Problem Statement
+## The Problem
 
-Small and medium businesses often sign contracts without immediate access to legal experts.
+Indian SMBs routinely sign contracts without immediate access to legal counsel. Hidden liability clauses, unfair payment terms, weak NDA protections, MSME delayed payment violations, and GST documentation errors go unnoticed — often until it's too late.
 
-This creates risks such as:
-
-* hidden liability clauses
-* unfair payment terms
-* weak NDA protections
-* compliance failures
-* MSME delayed payment disputes
-* GST and legal documentation errors
-
-LexIQ solves this by providing instant legal intelligence using Indian legal documents and contract templates.
+**LexIQ solves this** by combining retrieval-augmented generation over 38 Indian legal documents with clause-level risk scoring, giving instant legal intelligence to anyone who uploads a contract.
 
 ---
 
-## Key Features
+## Live Demo
 
-### Legal Q&A with RAG
-
-Ask legal questions like:
-
-* What is the penalty for breach of contract?
-* What are MSME 45-day payment rules?
-* What is force majeure?
-* What makes a contract void in India?
-* What are NDA confidentiality obligations?
-
-Answers are generated only from retrieved legal documents with source citations.
+| Service | URL |
+|---------|-----|
+| 🌐 Frontend | `https://your-vercel-url.vercel.app` |
+| ⚙️ API | `https://devikand-lexiq-api.hf.space` |
+| 📖 API Docs | `https://devikand-lexiq-api.hf.space/docs` |
 
 ---
 
-### Contract Upload + Risk Scanner
+## Features
 
-Upload PDF contracts and get:
+### 🔍 Legal Q&A with RAG
+Ask natural language questions grounded in Indian law:
+- *"What is the penalty for breach of contract?"*
+- *"What are MSME 45-day payment rules?"*
+- *"What makes a contract void in India?"*
 
-* clause-by-clause analysis
-* HIGH / MEDIUM / LOW risk scoring
-* legal issue detection
-* uploaded contract + legal corpus cross-referencing
+Every answer is retrieved from real legal documents with source citations and a risk level indicator.
+
+### 📄 Contract Upload + Risk Scanner
+Upload any PDF contract and get:
+- Clause-by-clause analysis (HIGH / MEDIUM / LOW risk)
+- Cross-referenced against Indian Contract Act, MSMED Act, GST rules
+- Full text expansion per clause with page references
+
+### ⚡ Hybrid Retrieval System
+Three retrieval modes fused via Reciprocal Rank Fusion:
+- **Dense** — semantic search using `all-MiniLM-L6-v2` embeddings + ChromaDB
+- **Sparse** — BM25 keyword search via `rank-bm25`
+- **Hybrid** — RRF fusion of both
+
+Includes legal query expansion: *"minor enters contract"* → mapped to Section 11, competency provisions.
+
+### 📊 Evaluation Framework
+Custom RAGAS-style evaluation over **51 hand-curated Indian law Q&A pairs** — no OpenAI dependency:
+- Faithfulness, Answer Relevancy, Context Precision, Context Recall
+- Failure analysis across 9 retrieval configurations
+- Best config: `fixed chunking + dense retrieval` → faithfulness **0.598**
 
 ---
 
-### Hybrid Retrieval System
+## Architecture
 
-Supports:
-
-* Dense Retrieval (semantic search using embeddings)
-* Sparse Retrieval (BM25 keyword search)
-* Hybrid Retrieval (Reciprocal Rank Fusion)
-
-Includes legal query expansion for better retrieval performance.
-
-Example:
-
-"minor enters contract" → mapped to Section 11, competency to contract
-
----
-
-### Evaluation Framework
-
-Custom evaluation pipeline across 51 legal benchmark questions using:
-
-* Faithfulness
-* Answer Relevancy
-* Context Precision
-* Context Recall
-
-Failure analysis identifies:
-
-* wrong chunk retrieval
-* chunk boundary split
-* hallucination
-* out-of-corpus gaps
-* ambiguous questions
+```
+User Query
+    │
+    ▼
+Query Expander ──► Legal term mapping
+    │
+    ▼
+Hybrid Retriever
+  ├── Dense (ChromaDB + MiniLM embeddings)
+  ├── Sparse (BM25)
+  └── RRF Fusion
+    │
+    ▼
+Context Reranker
+    │
+    ▼
+Groq LLM (llama-3.1-8b-instant)
+    │
+    ▼
+Answer + Sources + Risk Level
+```
 
 ---
 
 ## Tech Stack
 
-### LLM
+| Layer | Technology |
+|-------|------------|
+| LLM | Groq — `llama-3.1-8b-instant` |
+| Embeddings | `all-MiniLM-L6-v2` (sentence-transformers) |
+| Vector DB | ChromaDB (persistent) |
+| Sparse Retrieval | rank-bm25 |
+| Backend | FastAPI + Uvicorn |
+| Frontend | React 18 |
+| Backend Hosting | Hugging Face Spaces (Docker, 16GB RAM) |
+| Frontend Hosting | Vercel |
+| Evaluation | Custom Groq-based RAGAS (OpenAI-free) |
 
-Groq — llama-3.1-8b-instant
+---
 
-### Embeddings
+## Legal Corpus — 38 Documents
 
-all-MiniLM-L6-v2
+**Legislation**
+- Indian Contract Act 1872
+- Sale of Goods Act 1930
+- Companies Act 2013, LLP Act 2008
+- Arbitration and Conciliation Act 1996
+- Specific Relief Act 1963, Limitation Act 1963
+- Consumer Protection Act 2019
+- Payment of Wages Act, Minimum Wages Act
+- Patents / Copyright / Trademark Acts
 
-### Vector Database
+**Compliance**
+- CGST Act 2017 + Rules, IGST Act 2017
+- MSMED Act 2006
+- MSME 45-Day Payment Rules
 
-ChromaDB
+**Contract Templates**
+- Employment Agreements, NDA Templates
+- IP Assignment, Service Agreements
+- Consultancy & Founder Agreements
 
-### Sparse Retrieval
+---
 
-rank-bm25
+## Evaluation Results
 
-### Backend
+| Configuration | Faithfulness | Answer Rel. | Ctx. Precision | Ctx. Recall |
+|---------------|-------------|-------------|----------------|-------------|
+| fixed + dense ⭐ | **0.598** | 0.721 | 0.643 | 0.584 |
+| fixed + hybrid | 0.547 | 0.689 | 0.612 | 0.541 |
+| recursive + dense | 0.488 | 0.651 | 0.573 | 0.512 |
+| fixed + sparse | 0.309 | 0.498 | 0.412 | 0.378 |
 
-FastAPI
-
-### Frontend
-
-React (production frontend)
-
-### Previous UI
-
-Streamlit (used during development)
-
-### Evaluation
-
-Custom Groq-based RAG evaluation (OpenAI-free)
+**Key findings:**
+- Dense retrieval consistently outperforms sparse BM25 (vocabulary mismatch with legal terminology)
+- 70% of failures are retrieval failures, not LLM hallucination — query expansion matters more than prompt engineering
+- Query expansion fixed multiple 0.00-score queries (minor contracts, NDA clauses)
 
 ---
 
 ## Project Structure
 
-```text
+```
 LexIQ/
-│
 ├── api/
-│   └── main.py
-│
-├── data/
-│   ├── raw/
-│   ├── processed/
-│   ├── chunks/
-│   └── uploads/
-│
+│   └── main.py                  # FastAPI app, all endpoints
 ├── ingestion/
 │   ├── pdf_parser.py
-│   ├── chunker.py
-│   └── embedder.py
-│
+│   ├── chunker.py               # fixed / recursive / clause strategies
+│   └── embedder.py              # MiniLM + ChromaDB storage
 ├── retrieval/
 │   ├── dense_retriever.py
-│   ├── sparse_retriever.py
-│   ├── hybrid_retriever.py
-│   └── query_expander.py
-│
+│   ├── sparse_retriever.py      # BM25
+│   ├── hybrid_retriever.py      # RRF fusion
+│   └── query_expander.py        # legal term mapping
 ├── generation/
-│   ├── generator.py
+│   ├── generator.py             # Groq LLM calls
 │   ├── prompt_templates.py
-│   └── risk_scorer.py
-│
+│   └── risk_scorer.py           # clause risk classification
 ├── evaluation/
-│   ├── ragas_eval.py
+│   ├── ragas_eval.py            # custom eval pipeline
 │   ├── failure_analysis.py
-│   ├── test_dataset.json
+│   ├── test_dataset.json        # 51 Q&A pairs
 │   └── results/
-│
 ├── frontend-react/
 │   ├── src/
-│   ├── public/
+│   │   ├── App.js
+│   │   └── components/
+│   │       ├── ChatTab.js
+│   │       ├── RiskScanTab.js
+│   │       └── EvalTab.js
 │   └── package.json
-│
-├── requirements.txt
-├── .env
-└── README.md
+├── chroma_db/                   # persistent vector index (Git LFS)
+├── Dockerfile
+└── requirements.txt
 ```
 
 ---
 
-## Dataset / Corpus
+## Local Setup
 
-The system uses 38 legal and compliance documents including:
-
-### Legislation
-
-* Indian Contract Act 1872
-* Sale of Goods Act 1930
-* Companies Act 2013
-* LLP Act 2008
-* Arbitration and Conciliation Act 1996
-* Specific Relief Act 1963
-* Limitation Act 1963
-* Consumer Protection Act 2019
-* Payment of Wages Act
-* Minimum Wages Act
-* Patents / Copyright / Trademark Acts
-
-### Compliance
-
-* CGST Act 2017
-* CGST Rules 2017
-* IGST Act 2017
-* MSMED Act 2006
-* MSME 45-Day Payment Rules
-
-### Templates
-
-* Employment Agreements
-* NDA Templates
-* IP Assignment Agreements
-* Service Agreements
-* Consultancy Agreements
-* Founder Agreements
-
----
-
-## Setup Instructions
-
-## 1. Clone Repository
-
+**1. Clone and install**
 ```bash
-git clone YOUR_GITHUB_REPO_LINK
+git clone https://github.com/Devika2605/LexIQ
 cd LexIQ
-```
-
----
-
-## 2. Create Virtual Environment
-
-```bash
 python -m venv venv
-```
-
-Activate:
-
-### Windows
-
-```bash
-venv\Scripts\activate
-```
-
-### Mac/Linux
-
-```bash
-source venv/bin/activate
-```
-
----
-
-## 3. Install Requirements
-
-```bash
+venv\Scripts\activate        # Windows
 pip install -r requirements.txt
 ```
 
----
-
-## 4. Add Environment Variables
-
-Create `.env`
-
-```env
-GROQ_API_KEY=your_groq_api_key
+**2. Environment variables**
+```bash
+# Create .env in root
+GROQ_API_KEY=your_groq_api_key_here
 ```
 
----
-
-## 5. Run Backend API
-
+**3. Run backend**
 ```bash
 python api/main.py
+# API live at http://localhost:8000
+# Docs at http://localhost:8000/docs
 ```
 
-Runs on:
-
-```text
-http://localhost:8000
-```
-
----
-
-## 6. Run React Frontend
-
+**4. Run frontend**
 ```bash
 cd frontend-react
 npm install
 npm start
+# UI at http://localhost:3000
 ```
 
-Runs on:
-
-```text
-http://localhost:3000
-```
-
----
-
-## Evaluation Commands
-
-### Run Benchmark Experiments
-
+**5. Run evaluation**
 ```bash
 python evaluation/ragas_eval.py
-```
-
-### Run Failure Analysis
-
-```bash
 python evaluation/failure_analysis.py
 ```
 
 ---
 
-## Current Evaluation Results
-
-| Configuration     | Faithfulness |
-| ----------------- | -----------: |
-| fixed + dense     |        0.598 |
-| fixed + sparse    |        0.309 |
-| fixed + hybrid    |        0.547 |
-| recursive + dense |        0.488 |
-
-### Key Findings
-
-* Dense retrieval outperforms sparse BM25
-* Sparse retrieval suffers from vocabulary mismatch
-* Query expansion significantly improves weak queries
-* Retrieval quality impacts output more than prompt engineering
-* Best production setup: fixed + dense
-
----
-
 ## Deployment
 
-### Frontend
+| Layer | Platform | Notes |
+|-------|----------|-------|
+| Backend | Hugging Face Spaces (Docker) | 16GB RAM — handles MiniLM + ChromaDB |
+| Frontend | Vercel | Auto-deploys from GitHub main branch |
+| Vector Index | Git LFS | 204MB ChromaDB pushed via LFS |
 
-Deployed on Vercel
-
-### Backend
-
-Deployed on Render
-
-### Production Stack
-
-React + FastAPI + ChromaDB + Groq
+> ⚠️ HF Spaces free tier sleeps after 48h inactivity. First request after sleep takes ~30s to wake.
 
 ---
 
 ## Future Improvements
 
-* OCR support for scanned PDFs
-* Clause recommendation engine
-* Contract redlining suggestions
-* Multi-user dashboards
-* Admin analytics
-* Legal clause summarization
-* Citation confidence scoring
-* Fine-tuned legal embeddings
+- OCR support for scanned PDFs
+- Clause recommendation and redlining suggestions
+- Fine-tuned legal embeddings for Indian terminology
+- Multi-user sessions with persistent history
+- Citation confidence scoring
+- Admin analytics dashboard
 
 ---
 
 ## Author
 
-Built as an AI/ML + RAG Engineering project focused on practical legal intelligence for Indian SMBs.
+**Devika N D** — AI & ML undergraduate, JNNCE  
+📧 devikashetty2716@gmail.com  
+🔗 [LinkedIn](https://linkedin.com/in/devika2605) · [GitHub](https://github.com/Devika2605)
 
 ---
 
 ## License
 
-For academic and educational use.
+For academic and educational use only.
