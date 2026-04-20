@@ -10,7 +10,7 @@ __pycache__/
 # Vector DB / generated data
 chroma_db/
 data/raw/
-data/chunks/
+
 *.zip
 *.sqlite3
 
