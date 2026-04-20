@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 
-const API = 'http://localhost:8000';
+const API = process.env.REACT_APP_API_URL || 'http://localhost:8000';
 
 // Risk badge using exact values from risk_scorer.py: HIGH / MEDIUM / LOW
 function RiskBadge({ level }) {

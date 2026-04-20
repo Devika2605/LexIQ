@@ -39,8 +39,9 @@ app.add_middleware(
 )
 
 # ── Global State ──────────────────────────────────────────
-CHROMA_DIR   = "chroma_db"
-UPLOAD_DIR   = Path("data/uploads")
+BASE_DIR     = Path(__file__).parent.parent
+CHROMA_DIR   = str(BASE_DIR / "chroma_db")
+UPLOAD_DIR   = BASE_DIR / "data" / "uploads"
 UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
 
 chroma_client = chromadb.PersistentClient(path=CHROMA_DIR)

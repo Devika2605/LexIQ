@@ -1,3 +1,11 @@
+---
+title: LexIQ
+emoji: ⚖️
+colorFrom: yellow
+colorTo: brown
+sdk: docker
+app_port: 7860
+---
 # LexIQ — Legal Contract Intelligence for Indian SMBs
 
 LexIQ is a Legal Contract Intelligence RAG (Retrieval-Augmented Generation) system designed for Indian SMBs to analyze contracts, answer legal queries, identify clause risks, and cross-reference uploaded agreements against Indian law.
